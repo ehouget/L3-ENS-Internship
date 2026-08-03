@@ -1,6 +1,0 @@
-name: cat
-include: .
-depend: standard-library
-flags:
-  --allow-unsolved-metas
-  --rewriting
