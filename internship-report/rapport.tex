@@ -14,210 +14,206 @@
 \usepackage{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
 \usepackage{tikz}
 \usepackage{backnaur}
 \usepackage{tikz-cd}
 \usetikzlibrary{cd}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
-\usepackage{agda}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
-
-\title{Une approche non biaisée des catégories cartésiennes}
-
-\author{\IEEEauthorblockN{Eliott Houget}
-\IEEEauthorblockA{\textit{Équipe Cosynus} \\
-\textit{LIX, CNRS, École polytechnique, Institut Polytechnique de
-	Paris}\\
-Palaiseau, France \\
-eliott.houget@ens-rennes.fr}
-}
-\maketitle
-
-\begin{abstract} Il est possible d'engendrer des catégories cartésiennes à l'aide de termes composables. Nous souhaitons étendre cette idée aux catégories cartésiennes closes de dimension supérieure. Dans ce but, S. Mimram a introduit la théorie des types $CCCaTT_1$ qui nécessite dans sa construction d'identifier les situations où l'on s'attend à avoir une manière unique de composer les termes que l'on appelle "schéma composable". Nous proposons une adaptation de la notion de schéma composable pour les catégories et les catégories cartésiennes. Cela est une première étape pour proposer une variante à la construction de la théorie des types $CCCaTT_1$ telle qu'introduite par S. Mimram. Nous présentons les combinateurs catégoriques ainsi qu'une relation d'équivalence qui les identifie relativement aux axiomes de la théories des catégories. Nous introduisons un nouveau système de réécriture pour définir une forme normalisée des termes. Nous exposons une définition inductive des schémas composables et montrons que ceux-ci sont contractibles à équivalence près. Enfin, nous exposons comment adapter les notions précédentes après avoir introduit un produit et un objet terminal. Une partie de ce travail est implémentée en Agda.
-\end{abstract}
-
-\begin{IEEEkeywords}
-Théorie des types, théorie des catégories, réécriture
-\end{IEEEkeywords}
-
-\section{Introduction}
-
-\subsection{Théorie des types} La théorie des types est une branche de la logique et des langages de programmation qui s'attache à formaliser des termes mathématiques typés. Formellement, une théorie des types est un langage formel défini à l'aide d'un ensemble de règles d'inférence logique. Du point de vue de la logique, les types apparaissent comme des propositions (et les types dépendants comme des prédicats), tandis que les termes sont des preuves de leur type. Les preuves (i.e les termes) d'une théorie des types sont construits comme des arbres dont les nœuds sont les règles du système de d'inférence logique. Ainsi, la validité des arbres de dérivations peut être vérifiée mécaniquement à l'aide d'outils d'assistance de preuve tels qu'Agda, Rocq (anciennement Coq), Lean, etc. Les définitions, propositions et preuves de ce rapport sont formalisées et implémentés en Agda ; ainsi la théorie des types est ici autant un outil qu'un objet d'étude.
-
-\subsection{Théorie des catégories} La théorie des catégories est un vaste domaine décrivant les structures abstraites des mathématiques. Les catégories sont composées d'objets et de flèches entre ces derniers ; l'ajout d'une notion de produit d'objets et d'un objet terminal définit les catégories cartésiennes.
-
-\subsection{Motivation} L'objectif à long terme est la construction d'une théorie des types dépendants non biaisée pour les catégories cartésiennes closes de dimension supérieure, dans laquelle la notion d'égalité est remplacée par des témoins d'égalité (de dimension supérieure). Ce but s'inscrit lui-même dans un projet d'ériger des fondations constructivistes des mathématiques. Pour cela S. Mimram introduit la théorie des types non-baisée $CCCaTT_1$. Elle est dite non-biaisée car on considère les généralisations n-aires des opérations habituelles comme primitive. $CCCaTT_1$ ne possède qu'une unique règle d’introduction des termes. Cette règle s'appuie sur un calcul de séquent minimal introduisant les schémas composables. Ils définissent un ensemble de types contractiles (types uniquement habités). Cet ensemble est de taille assez grande pour permettre de dériver un certain nombre de séquents essentiels pour montrer la cohérence de $CCCaTT_1$ vis-à-vis du $\lambda$-calcul simplement typé. De plus, la définition des schémas composables est plus aisement manipulable que la définition des types contractiles.
-
-\subsection{Plan du papier} Ce rapport se découpe en trois parties. Dans la partie II, nous présenterons brièvement le cadre, les notions et les outils nécessaires à la bonne compréhension de ce travail. Les parties III et IV présentent chacune une construction et une preuve de la bonne définition des schémas composables dans le cas des catégories, d'une part, et dans le cas des catégories cartésiennes, d'autre part.
-
-\section{Cadres, notions, notations et outils}
-
-\subsection{Catégories} Une catégorie est la donnée d'une collection $\mathcal{C}_0$ d'objets, et pour toute paire d'objets $(x, y)$ une collection $\mathcal{C}(x, y)$ de morphismes (ou flèches) telles que : 
-\begin{itemize}
-	\item pour chaque morphisme $f$, il existe un objet $s(f)$ (appelé source) et un objet $t(f)$ (appelé but);
-	\item pour chaque paire de morphismes $f$ et $g$ tels que $t(f) = s(g)$, il existe un morphisme $g \circ f$ (appelé composé de $f$ et $g$);
-	\item pour chaque objet $X$, il existe un morphisme $id_X$ (appelé identité de $X$);
-	\item les quatre propriétés suivantes sont vérifiées :
+	
+	\title{Une approche non biaisée des catégories cartésiennes}
+	
+	\author{\IEEEauthorblockN{Eliott Houget}
+		\IEEEauthorblockA{\textit{Équipe Cosynus} \\
+			\textit{LIX, CNRS, École polytechnique, Institut Polytechnique de
+				Paris}\\
+			Palaiseau, France \\
+			eliott.houget@ens-rennes.fr}
+	}
+	\maketitle
+	
+	\begin{abstract} Il est possible d'engendrer des catégories cartésiennes à l'aide de termes composables. Nous souhaitons étendre cette idée aux catégories cartésiennes closes de dimension supérieure. Dans ce but, S. Mimram a introduit la théorie des types $CCCaTT_1$ qui nécessite dans sa construction d'identifier les situations où l'on s'attend à avoir une manière unique de composer les termes que l'on appelle "schéma composable". Nous proposons une adaptation de la notion de schéma composable pour les catégories et les catégories cartésiennes. Cela est une première étape pour proposer une variante à la construction de la théorie des types $CCCaTT_1$. Nous présentons les combinateurs catégoriques ainsi qu'une relation d'équivalence qui les identifie relativement aux axiomes de la théories des catégories. Nous introduisons un nouveau système d'inférence logique pour définir une forme normalisée des termes. Nous exposons une définition inductive des schémas composables et montrons que ceux-ci sont contractibles à équivalence près. Enfin, nous exposons comment adapter les notions précédentes après avoir introduit un produit et un objet terminal. Une partie de ce travail est implémentée en Agda.
+	\end{abstract}
+	
+	\begin{IEEEkeywords}
+		Théorie des types, théorie des catégories, réécriture
+	\end{IEEEkeywords}
+	
+	\section{Introduction} \label{intro}
+	
+	\subsection{Théorie des types} La théorie des types est une branche de la logique et de la théorie des langages de programmation qui s'attache à formaliser des termes mathématiques typés. Formellement, une théorie des types est un langage formel défini à l'aide d'un ensemble de règles d'inférence logique. Du point de vue de la logique, les types apparaissent comme des propositions (et les types dépendants comme des prédicats), tandis que les termes sont des preuves de leur type. Les preuves (i.e les termes) d'une théorie des types sont construits comme des arbres dont les nœuds sont les règles du système de d'inférence logique. Ainsi, la validité des arbres de dérivations peut être vérifiée mécaniquement à l'aide d'outils d'assistance de preuve tels qu'Agda, Rocq (anciennement Coq), Lean, etc. Les définitions, propositions et preuves de ce rapport sont formalisées et implémentés en Agda ; ainsi la théorie des types est ici autant un outil qu'un objet d'étude.
+	
+	\subsection{Théorie des catégories} La théorie des catégories est un vaste domaine décrivant les structures abstraites des mathématiques. Les catégories sont composées d'objets et de flèches entre ces derniers ; l'ajout d'une notion de produit d'objets et d'un objet terminal définit les catégories cartésiennes.
+	
+	\subsection{Motivation} L'objectif à long terme est la construction d'une théorie des types dépendants non biaisée pour les catégories cartésiennes closes de dimension supérieure, dans laquelle la notion d'égalité est remplacée par des témoins d'égalité (de dimension supérieure). Ce but s'inscrit lui-même dans un projet d'ériger des fondations constructivistes des mathématiques. Pour cela S. Mimram introduit la théorie des types non-baisée $CCCaTT_1$. Elle est dite non-biaisée car on considère les généralisations n-aires des opérations habituelles comme primitive. $CCCaTT_1$ ne possède qu'une unique règle d’introduction des termes. Cette règle s'appuie sur un calcul de séquent minimal introduisant les schémas composables. Ils définissent un ensemble de types contractiles (types uniquement habités). Cet ensemble est de taille assez grande pour permettre de dériver un certain nombre de séquents essentiels pour montrer la cohérence de $CCCaTT_1$ vis-à-vis du $\lambda$-calcul simplement typé. De plus, la définition des schémas composables est plus aisement manipulable que la définition des types contractiles.
+	
+	\subsection{Plan du papier} Ce rapport se découpe en trois parties. Dans la partie \ref{cadres}, nous présenterons brièvement le cadre, les notions et les outils nécessaires à la bonne compréhension de ce travail. Les parties \ref{cat} et \ref{ccat} présentent chacune une construction et une preuve de la bonne définition des schémas composables dans le cas des catégories, d'une part, et dans le cas des catégories cartésiennes, d'autre part.
+	
+	\section{Cadres, notions, notations et outils} \label{cadres}
+	
+	\subsection{Catégories} Une catégorie est la donnée d'une collection $\mathcal{C}_0$ d'objets, et pour toute paire d'objets $(x, y)$ une collection $\mathcal{C}(x, y)$ de morphismes (ou flèches) telles que : 
 	\begin{itemize}
-		\item la source et le but sont compatibles avec la composition : $s(g \cdot f) = s(f)$ et $t(g \cdot f) = t(g)$;
-		\item la source et le but sont compatibles avec les identités : $s(id_X) = X$ et $t(id_X) = X$;
-		\item Si $t(f) = s(g)$ et $t(g) = s(h)$, alors $(h \cdot g) \cdot f = h \cdot (g \cdot f)$;
-		\item Si $s(f) = X$ et $t(f) = Y$, alors $id_X \cdot f = f = f \cdot id_Y$.
+		\item pour chaque morphisme $f$, il existe un objet $s(f)$ (appelé source) et un objet $t(f)$ (appelé but);
+		\item pour chaque paire de morphismes $f$ et $g$ tels que $t(f) = s(g)$, il existe un morphisme $g \circ f$ (appelé composé de $f$ et $g$);
+		\item pour chaque objet $X$, il existe un morphisme $id_X$ (appelé identité de $X$);
+		\item les quatre propriétés suivantes sont vérifiées :
+		\begin{itemize}
+			\item la source et le but sont compatibles avec la composition : $s(g \cdot f) = s(f)$ et $t(g \cdot f) = t(g)$;
+			\item la source et le but sont compatibles avec les identités : $s(id_X) = X$ et $t(id_X) = X$;
+			\item Si $t(f) = s(g)$ et $t(g) = s(h)$, alors $(h \cdot g) \cdot f = h \cdot (g \cdot f)$;
+			\item Si $s(f) = X$ et $t(f) = Y$, alors $id_X \cdot f = f = f \cdot id_Y$.
+		\end{itemize}
 	\end{itemize}
-\end{itemize}
-
-\subsection{Catégories cartésiennes} Une catégorie $\mathcal{C}$ est dite cartésienne, si elle est munie d'un objet terminal $\mathbbm 1$ et si pour toute paire d'objets $A$ et $B$, il existe un produit $A \times B$ dans $\mathcal C$.
-Dans une catégorie cartésienne $\mathcal{C}$, pour toute paire d'objets $A$ et $B$, il existe deux morphismes de projection : $$\pi_0 : A \times B \rightarrow A$$ et $$\pi_1 : A \times B \rightarrow A$$
-De plus, pour toute paire de morphismes $f$ et $g$ telle que $s(f) = s(g)$, il existe un unique morphisme $\left<f, g\right>$ tel que le diagramme suivant commute :
-
-\begin{center}
-	\begin{tikzcd}
-		& X \arrow[d, "\left<f\, g\right>"] \arrow[rd, "g"] \arrow[ld, "f"]\\
-		A
-		& A \times B \arrow[r, "\pi_1"] \arrow[l, "\pi_0"]
-		& B
-	\end{tikzcd}
-\end{center}
-
-Ainsi les quatre propriétés suivantes sont vérifiées :
-\begin{itemize}
-	\item $\pi_0 \circ \left<f, g\right> = f$;
-	\item $\pi_1 \circ \left<f, g\right> = g$;
-	\item $\left<\pi_0, \pi_1\right> = id$;
-	\item $\left<g , h\right> \circ f = \left<g \circ f, h \circ f\right>$
-\end{itemize}
-
-\section{Schémas composables dans des catégories simples}
-
-\subsection{Types} L'ensemble des objets $\mathcal{C}_0  = \left\{x, y, \dots\right\}$ définit un ensemble de variables de type. Une \textbf{flèche} est un couple de variables de types, notée $x \rightarrow y$, avec $x$ la \textbf{source} et $y$ la \textbf{cible}. Ainsi tout morphisme $f$ de $\mathcal{C}_1$ est typé en notant $f : s(f) \rightarrow t(f)$.
-
-\subsection{Contextes} Les contextes sont des couples $(\Theta, \Gamma)$. $\Gamma$ prend la forme d'une liste de flèches définies inductivement par : $$ \Gamma ::= \epsilon \ \text{(contexte vide)} \ |\ \Gamma , f : x \rightarrow y$$
-$\Theta$ est un ensemble des variables de types, il est indispensable pour la cloture par substitution de la théorie des types $CCCaTT_1$ mais apparaît comme secondaire pour ce rapport. Ainsi on le supposera toujours égal à l'ensemble des variables de type appaissant dans $\Gamma$ et nous l'ommetrons afin d'alléger l'écriture.
-On notera $f : A \in \Gamma$ pour signifier que $f : A$ est une flèche apparaissant au moins une fois dans le contexte $\Gamma$. On note $Con$ l'ensemble des contextes. De plus, on note $t(\Gamma)$ l'ensemble des cibles des flèches de $\Gamma$
-
-\subsection{Termes} Un terme typé est un morphisme $f$ typé par une flèche $A$ et construit dans un contexte $\Gamma$. On définit inductivement le séquent $\Gamma \vdash f : x \rightarrow y$ par les règles suivantes :
-\begin{center}
-	\begin{prooftree}
-		\hypo[]{f : A \in \Gamma}
-		\infer1[(var)]{\Gamma \vdash f : A}
-	\end{prooftree}
-	\hspace{10pt}
-	\begin{prooftree}
-		\infer0[(id)]{\Gamma \vdash id_x : x \rightarrow x}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Gamma \vdash g : y \rightarrow z}
-		\infer2[(comp)]{\Gamma \vdash f \cdot g : x \rightarrow z}
-	\end{prooftree}
-\end{center}
-On note $Tm(\Gamma, A)$ l'ensemble des termes de contexte $\Gamma$ et de flèche $A$.
-
-\subsection{Relation $\sim$}
-On définit la relation $\sim\ \subset Tm(\Gamma, A)$ qui identifie les termes égaux relativement aux quatre axiomes de la définition d'une catégorie présentée dans la partie II. 
-\begin{center}
-	\begin{prooftree}
-		\infer0[(unitl)]{f \cdot id \sim f}
-	\end{prooftree}
-	\hspace{10pt}
-	\begin{prooftree}
-		\infer0[(unitr)]{id \cdot f \sim f}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\infer0[(assoc)]{f \cdot (g \cdot h) \sim (f \cdot g) \cdot h}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{f_l \sim f_r}
-		\hypo[]{g_l \sim g_r}
-		\infer2[(comp)]{f_l \cdot g_l \sim f_r \cdot g_r}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\infer0[($\sim$-refl)]{f \sim f}
-	\end{prooftree}
-	\hspace{20pt}
-	\begin{prooftree}
-		\hypo[]{f \sim g}
-		\infer1[($\sim$-sym)]{g \sim f}
-	\end{prooftree} \\
-	\vspace{18pt}
-	\begin{prooftree}
-		\hypo[]{f \sim g}
-		\hypo[]{g \sim h}
-		\infer2[($\sim$-trans)]{f \sim h}
-	\end{prooftree}
-	\vspace{10pt}
-\end{center}
-
-Par les règles $\sim$-refl, $\sim$-sym et $\sim$-trans, $\sim$ est une relation d'équivalence.
-
-\subsection{Combinateurs catégoriques}
-
-Les termes typés, quotientés par la relation d'équivalence $\sim$, engendrent une catégorie syntaxique. La vérification de l'ensemble des axiomes d'une catégorie est immédiate car chacune des définitions a été introduite dans ce but.
-
-\subsection{Termes normaux}
-
-On souhaite normaliser les arbres de dérivation des termes en les transformant en des peignes. Ces termes normalisés ont pour but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$. 
-On introduit un systeme d'écriture composé de 2 règles engendrant les termes normalisés. Ce système de réécriture doit apparaître comme un intermédiaire entre le système très souple qui définit les termes, et le système de réécriture linéaire qui définira les schémas composables.
-\begin{center}
-	\begin{prooftree}
-		\infer0[norm-id]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
-		\hypo[]{y \rightarrow z \in \Gamma}
-		\infer2[norm-comp]{\Gamma \vdash_{Norm} f \cdot var_{y \rightarrow z} : x \rightarrow z}
-	\end{prooftree} \\
-\end{center}
-
-\paragraph*{Composition de deux termes normaux} Afin de définir la transformation de normalisation, on introduit une transformation auxiliaire. C'est par cette transformation que la mise sous forme de peigne des arbres de dérivation devient effective.
-
-\begin{equation}
-\begin{gathered}
-	M \left(
-	\begin{prooftree}
-		\hypo[]{\Pi_f}
-		\infer1[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
-	\end{prooftree}
-	,
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash_{Norm} id_y : y \rightarrow y}
-	\end{prooftree}
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\hypo[]{\Pi_f}
-		\infer1[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
-	\end{prooftree}
-\end{gathered}
-\end{equation}
-
-\begin{equation}
-\begin{gathered}
-	M \left(
-	\begin{prooftree}
-		\hypo[]{\Pi_f}
-		\infer1[]{\Gamma \vdash_{Norm} f : w \rightarrow x}
-	\end{prooftree}
-	,
-	\begin{prooftree}
-		\hypo[]{\Pi_g}
-		\infer1[]{\Gamma \vdash_{Norm} g : x \rightarrow y}
-		\hypo[]{y \rightarrow z \in \Gamma}
-		\infer2[]{\Gamma \vdash_{Norm} g \cdot var_{y \rightarrow z} : x \rightarrow z}
-	\end{prooftree}
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\hypo[]{
+	
+	\subsection{Catégories cartésiennes} Une catégorie $\mathcal{C}$ est dite cartésienne, si elle est munie d'un objet terminal $\mathbbm 1$ et si pour toute paire d'objets $A$ et $B$, il existe un produit $A \times B$ dans $\mathcal C$.
+	Dans une catégorie cartésienne $\mathcal{C}$, pour toute paire d'objets $A$ et $B$, il existe deux morphismes de projection : $$\pi_0 : A \times B \rightarrow A$$ et $$\pi_1 : A \times B \rightarrow A$$
+	De plus, pour toute paire de morphismes $f$ et $g$ telle que $s(f) = s(g)$, il existe un unique morphisme $\left<f, g\right>$ tel que le diagramme suivant commute :
+	
+	\begin{center}
+		\begin{tikzcd}
+			& X \arrow[d, "\left<f\, g\right>"] \arrow[rd, "g"] \arrow[ld, "f"]\\
+			A
+			& A \times B \arrow[r, "\pi_1"] \arrow[l, "\pi_0"]
+			& B
+		\end{tikzcd}
+	\end{center}
+	
+	Ainsi les quatre propriétés suivantes sont vérifiées :
+	\begin{itemize}
+		\item $\pi_0 \circ \left<f, g\right> = f$;
+		\item $\pi_1 \circ \left<f, g\right> = g$;
+		\item $\left<\pi_0, \pi_1\right> = id$;
+		\item $\left<g , h\right> \circ f = \left<g \circ f, h \circ f\right>$
+	\end{itemize}
+	
+	\section{Schémas composables dans des catégories simples} \label{cat}
+	
+	\subsection{Types}
+	\footnote{Formalisation Agda des types :  \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-categories/Ty}{pasting-scheme-for-categories/Ty}}
+	Nous supposons donné un ensemble dénombrable de variables de type $x, y, \dots$. Une \textbf{flèche} est un couple de variables de types, notée $x \rightarrow y$, avec $x$ la \textbf{source} et $y$ la \textbf{cible}. Ainsi tout morphisme $f$ est typé en notant $f : s(f) \rightarrow t(f)$.
+	
+	\subsection{Contextes}
+	\footnote{Formalisation Agda des contextes : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-categories/Con}{pasting-scheme-for-categories/Con}}
+	Les contextes sont des couples $(\Theta, \Gamma)$. $\Gamma$ prend la forme d'une liste de flèches définies inductivement par : $$ \Gamma ::= \epsilon \ \text{(contexte vide)} \ |\ \Gamma , f : x \rightarrow y$$
+	$\Theta$ est un ensemble des variables de types, il est indispensable pour la cloture par substitution de la théorie des types $CCCaTT_1$ mais apparaît comme secondaire pour ce rapport. Ainsi, on le supposera toujours égal à l'ensemble des variables de type appaissant dans $\Gamma$ et nous l'ommetrons afin d'alléger l'écriture.
+	On notera $f : A \in \Gamma$ pour signifier que $f : A$ est une flèche apparaissant au moins une fois dans le contexte $\Gamma$. On note $Con$ l'ensemble des contextes. De plus, on note $t(\Gamma)$ l'ensemble des cibles des flèches de $\Gamma$.
+	
+	\subsection{Termes} Un terme typé est un morphisme $f$ typé par une flèche $A$ et construit dans un contexte $\Gamma$. On définit inductivement le séquent $\Gamma \vdash f : x \rightarrow y$ par les règles suivantes :
+	\begin{center}
+		\begin{prooftree}
+			\hypo[]{f : A \in \Gamma}
+			\infer1[(var)]{\Gamma \vdash f : A}
+		\end{prooftree}
+		\hspace{10pt}
+		\begin{prooftree}
+			\infer0[(id)]{\Gamma \vdash id_x : x \rightarrow x}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{\Gamma \vdash g : y \rightarrow z}
+			\infer2[(comp)]{\Gamma \vdash f \cdot g : x \rightarrow z}
+		\end{prooftree}
+	\end{center}
+	On note $Tm(\Gamma, A)$ l'ensemble des termes de contexte $\Gamma$ et de flèche $A$.
+	
+	\subsection{Relation $\sim$}
+	\footnote{Formalisation Agda des termes et de la relation $\sim$ : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-categories/Tm}{pasting-scheme-for-categories/Tm}}
+	On définit la relation $\sim\ \subset Tm(\Gamma, A)$ qui identifie les termes égaux relativement aux quatre axiomes de la définition d'une catégorie présentée dans la partie II. 
+	\begin{center}
+		\begin{prooftree}
+			\infer0[(unitl)]{f \cdot id \sim f}
+		\end{prooftree}
+		\hspace{10pt}
+		\begin{prooftree}
+			\infer0[(unitr)]{id \cdot f \sim f}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\infer0[(assoc)]{f \cdot (g \cdot h) \sim (f \cdot g) \cdot h}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{f_l \sim f_r}
+			\hypo[]{g_l \sim g_r}
+			\infer2[(comp)]{f_l \cdot g_l \sim f_r \cdot g_r}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\infer0[($\sim$-refl)]{f \sim f}
+		\end{prooftree}
+		\hspace{20pt}
+		\begin{prooftree}
+			\hypo[]{f \sim g}
+			\infer1[($\sim$-sym)]{g \sim f}
+		\end{prooftree} \\
+		\vspace{18pt}
+		\begin{prooftree}
+			\hypo[]{f \sim g}
+			\hypo[]{g \sim h}
+			\infer2[($\sim$-trans)]{f \sim h}
+		\end{prooftree}
+		\vspace{10pt}
+	\end{center}
+	
+	Par les règles $\sim$-refl, $\sim$-sym et $\sim$-trans, $\sim$ est une relation d'équivalence.
+	
+	\subsection{Combinateurs catégoriques}
+	
+	Les termes typés, quotientés par la relation d'équivalence $\sim$, engendrent une catégorie syntaxique. La vérification de l'ensemble des axiomes d'une catégorie est immédiate car chacune des définitions a été introduite dans ce but.
+	
+	\subsection{Termes normaux}
+	\footnote{Formalisation Agda des termes normaux : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-categories/NormTm}{pasting-scheme-for-categories/NormTm}}
+	On souhaite normaliser les arbres de dérivation des termes en les transformant en des peignes. Ces termes normalisés ont pour but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$. 
+	On introduit un systeme d'inférence logique composé de 2 règles engendrant les termes normalisés. Ces règles doivent apparaître comme des intermédiaires entre le système très souple qui définit les termes, et le système de réécriture linéaire qui définira les schémas composables.
+	\begin{center}
+		\begin{prooftree}
+			\infer0[norm-id]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
+			\hypo[]{y \rightarrow z \in \Gamma}
+			\infer2[norm-comp]{\Gamma \vdash_{Norm} f \cdot var_{y \rightarrow z} : x \rightarrow z}
+		\end{prooftree} \\
+	\end{center}
+	
+	\paragraph*{Composition de deux termes normaux} Afin de définir la transformation de normalisation, on introduit une transformation auxiliaire. C'est par cette transformation que la mise sous forme de peigne des arbres de dérivation devient effective.
+	
+	\begin{equation}
+		\begin{gathered}
+			M \left(
+			\begin{prooftree}
+				\hypo[]{\Pi_f}
+				\infer1[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
+			\end{prooftree}
+			,
+			\begin{prooftree}
+				\infer0[]{\Gamma \vdash_{Norm} id_y : y \rightarrow y}
+			\end{prooftree}
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\hypo[]{\Pi_f}
+				\infer1[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
+			\end{prooftree}
+		\end{gathered}
+	\end{equation}
+	
+	\begin{equation}
+		\begin{gathered}
 			M \left(
 			\begin{prooftree}
 				\hypo[]{\Pi_f}
@@ -227,557 +223,691 @@ On introduit un systeme d'écriture composé de 2 règles engendrant les termes 
 			\begin{prooftree}
 				\hypo[]{\Pi_g}
 				\infer1[]{\Gamma \vdash_{Norm} g : x \rightarrow y}
+				\hypo[]{y \rightarrow z \in \Gamma}
+				\infer2[]{\Gamma \vdash_{Norm} g \cdot var_{y \rightarrow z} : x \rightarrow z}
+			\end{prooftree}
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\hypo[]{
+					M \left(
+					\begin{prooftree}
+						\hypo[]{\Pi_f}
+						\infer1[]{\Gamma \vdash_{Norm} f : w \rightarrow x}
+					\end{prooftree}
+					,
+					\begin{prooftree}
+						\hypo[]{\Pi_g}
+						\infer1[]{\Gamma \vdash_{Norm} g : x \rightarrow y}
+					\end{prooftree}
+					\right)
+				}
+				\hypo[]{y \rightarrow z \in \Gamma}
+				\infer2[]{\Gamma \vdash_{Norm} (f \cdot g) \cdot var_{y \rightarrow z} : x \rightarrow z}
+			\end{prooftree}
+		\end{gathered}
+	\end{equation}
+	
+	
+	\paragraph*{Normalisation} On définit une transformation $N$ de la dérivation d'un terme renvoyant une dérivation du terme normal correspondant:
+	\begin{equation}
+		N \left(
+		\begin{prooftree}
+			\infer0[]{\Gamma \vdash id_x : x \rightarrow x}
+		\end{prooftree}
+		\right)
+		:=
+		\begin{prooftree}
+			\infer0[]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
+		\end{prooftree}
+	\end{equation}
+	
+	\begin{equation}
+		\begin{gathered}
+			N \left(
+			\begin{prooftree}
+				\hypo[]{x \rightarrow y \in \Gamma}
+				\infer1[]{\Gamma \vdash var_{x \rightarrow y} : x \rightarrow y}
+			\end{prooftree}
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\infer0[]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
+				\hypo[]{x \rightarrow y \in \Gamma}
+				\infer2[]{\Gamma \vdash_{Norm} id_x \cdot var_{x \rightarrow y} : x \rightarrow y}
+			\end{prooftree}\\
+		\end{gathered}
+	\end{equation}
+	
+	\begin{equation}
+		\begin{gathered}
+			N \left(
+			\begin{prooftree}
+				\hypo[]{\Pi_f}
+				\infer1[]{\Gamma \vdash f : x \rightarrow y}
+				\hypo[]{\Pi_g}
+				\infer1[]{\Gamma \vdash g : y \rightarrow z}
+				\infer2[]{\Gamma \vdash f \cdot g : y \rightarrow z}
+			\end{prooftree}
+			\right) \\
+			:= \\
+			M \left(
+			N \left(
+			\begin{prooftree}
+				\hypo[]{\Pi_f}
+				\infer1[]{\Gamma \vdash f : x \rightarrow y}
+			\end{prooftree}
+			\right),
+			N \left(
+			\begin{prooftree}
+				\hypo[]{\Pi_g}
+				\infer1[]{\Gamma \vdash g : y \rightarrow z}
 			\end{prooftree}
 			\right)
-		}
-		\hypo[]{y \rightarrow z \in \Gamma}
-		\infer2[]{\Gamma \vdash_{Norm} (f \cdot g) \cdot var_{y \rightarrow z} : x \rightarrow z}
-	\end{prooftree}
-\end{gathered}
-\end{equation}
-
-
-\paragraph*{Normalisation} On définit une transformation $N$ de la dérivation d'un terme renvoyant une dérivation du terme normal correspondant:
-\begin{equation}
-	N \left(
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash id_x : x \rightarrow x}
-	\end{prooftree}
-	\right)
-	:=
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
-	\end{prooftree}
-\end{equation}
-
-\begin{equation}
-\begin{gathered}
-	N \left(
-	\begin{prooftree}
-		\hypo[]{x \rightarrow y \in \Gamma}
-		\infer1[]{\Gamma \vdash var_{x \rightarrow y} : x \rightarrow y}
-	\end{prooftree}
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash_{Norm} id_x : x \rightarrow x}
-		\hypo[]{x \rightarrow y \in \Gamma}
-		\infer2[]{\Gamma \vdash_{Norm} id_x \cdot var_{x \rightarrow y} : x \rightarrow y}
-	\end{prooftree}\\
-\end{gathered}
-\end{equation}
-
-\begin{equation}
-\begin{gathered}
-	N \left(
-	\begin{prooftree}
-		\hypo[]{\Pi_f}
-		\infer1[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Pi_g}
-		\infer1[]{\Gamma \vdash g : y \rightarrow z}
-		\infer2[]{\Gamma \vdash f \cdot g : y \rightarrow z}
-	\end{prooftree}
-	\right) \\
-	:= \\
-	M \left(
-	N \left(
-	\begin{prooftree}
-		\hypo[]{\Pi_f}
-		\infer1[]{\Gamma \vdash f : x \rightarrow y}
-	\end{prooftree}
-	\right),
-	N \left(
-	\begin{prooftree}
-		\hypo[]{\Pi_g}
-		\infer1[]{\Gamma \vdash g : y \rightarrow z}
-	\end{prooftree}
-	\right)
-	\right)
-\end{gathered}
-\end{equation}
-
-\textbf{Lemme} Soient $f$ et $g$ dans $Tm(\Gamma, A)$, si $N(f) \equiv N(g)$, alors $f \sim g$.
-
-\subsection{Schémas composables} Un schéma composable est un couple contexte/flèche $(\Gamma, A)$ tels qu'il existe exactement un unique terme $\Gamma \vdash f : A$ à $\sim$-équivalence près.
-
-On introduit le calcul de séquent suivant :
-\begin{center}
-	\begin{prooftree}
-		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-	\end{prooftree}
-	\hspace{50pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{ps} x \rightarrow y}
-		\infer1[(ext) $z \notin b(\Gamma) \cup \{x\}$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
-	\end{prooftree}
-\end{center} 
-
-Nous montrons que ces deux règles définissent $PS \subset Con \times Arr$ un ensemble de schémas composables. Formellement, $\forall \Gamma \in Con, \forall (x , y) \in Ty^2, ((\Gamma, x \rightarrow y) \in PS \Rightarrow (\forall (f, g) \in Tm(\Gamma, x \rightarrow y)^2, f \sim g))$.
-
-\textbf{Lemme} Soient $\Gamma$ un contexte, $A$ une flèche, $\Gamma \vdash_{Norm} f : A$ et $\Gamma \vdash_{Norm} g : A$ deux termes normaux. Si $(\Gamma, A)$ est un schéma composable alors $f \equiv g$. \\
-
-\textbf{\textit{Preuve}} Nous raisonnons par induction sur l'arbre de dérivation du schéma composable : s'il est réduit à l'axiome alors $f$ et $g$ sont réduits à $id$. Si le schéma composable est une extension alors $f$ et $g$ sont respectivement de la forme $f' \cdot var$ et $g' \cdot var$. La flèche à droite de la composition est la même car la variable introduit par l'extension apparaît de manière unique dans le contexte, on conclut par hypothèse d'induction sur $f'$ et $g'$.
-
-\textbf{Theoreme} Soient $\Gamma$ un contexte, $A$ une flèche, $\Gamma \vdash f : A$ et $\Gamma \vdash g : A$ deux termes. Si $(\Gamma, A)$ est un schéma composable alors $f \sim g$.
-
-\textbf{\textit{Preuve}} On utilise les deux lemmes précédents : $N(f)$ et $N(g)$ sont deux termes normaux dont le couple contexte/flèche est un schéma composable ainsi, par le lemme 2, $N(f) \equiv N(g)$. Subséquemment, par le lemme 1, $f \sim g$.
-
-\subsection{Existence}
-Par le théorème précédent nous avons obtenu l'unicité sous réserve d'existence. Nous montrons que chaque schéma composable est habité par un terme. Pour cela nous construisons inductivement un terme en déconstruisant la l'arbre de dérivation du schéma composable. Formellement, pour tout context $\Gamma$, toute flèche $A$ tel que $\Gamma \vdash_{ps} A$ est dérivable, il existe un morphisme $f$ tel que $\Gamma \vdash f : A$ est dérivable.
-
-
-\subsection{Séquents}
-On peut donc dériver les séquents suivants, indispensables dans la construction de $CCCaTT_1$.
-
-\begin{enumerate}
-	\item $\emptyset \vdash_{ps} x \rightarrow x$
-	\item $x \rightarrow y \vdash_{ps} x \rightarrow y$
-	\item $f : x \rightarrow y, g : y \rightarrow z \vdash_{ps} x \rightarrow z$
-	\item $f : x \rightarrow y \vdash id \cdot f = f$
-	\item $f : x \rightarrow y \vdash f \cdot id = f$
-	\item $f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)$
-\end{enumerate}
-
-\section{Schémas composables dans des catégories cartésiennes}
-Nous souhaitons maintenant étendre aux catégories cartésiennes l'ensemble des notions développées dans la partie II. Du point de vu de la théorie des langages de programmation, la partie précedente ne modélise que les programmes ayant exactement un argument et une valeur renvoyée. L'introduction du produit cartésien permet de considérer les fonction à plusieurs variables ou renvoyant plusieurs valeurs de types distincts. Les objets terminaux peuvent être vu comme des produits cartésiens vides. Une flèche ayant un objet terminal à gauche peut être inteprété comme une fonction constante ; tandis qu'une flèche ayant un objet terminal à droite modélise une fonction dont le résultat aurait été jeté, on peut notament penser au effet de bord qui ne sont pas visible dans notre théorie des types.
-
-Nous n'avons pas pu conclure la preuve formelle implémentée en Agda, nous présentons ici les grandes idées de la preuve telle qu'envisagée. Nous détaillons les objets introduits ainsi que la défintion de schéma composable proposée. Nous expliquerons ce qui manque pour conclure. \\
-
-\subsection{Types}
-Nous enrichissons la définition des types en ajoutant une règle d'introduction pour le type terminal (noté $\mathbbm 1$) et pour les produits de types.
-\begin{center}
-	\begin{prooftree}
-		\infer0[$({\mathbbm 1}_I)$]{\mathbbm 1 \in Ty}
-	\end{prooftree}
-	\hspace{20pt}
-	\begin{prooftree}
-		\hypo[]{A \in Ty}
-		\hypo[]{B \in Ty}
-		\infer2[$(\times_I)$]{A \times B \in Ty}
-	\end{prooftree}
-\end{center}
-Notons que cette construction des types cartésiens est biaisé car elle n'introduit qu'un produit binaire. L'un des objectifs de $CCCaTT_1$ est d'identifier les termes afin de rendre primitif tout produit n-aire. \\
-
-Afin d'exprimer qu'une variable de type apparait dans un type produit nous introduisons le prédicat $\blacktriangleright$ défini inductivement de la manière suivante :
-\begin{center}
-	\begin{prooftree}
-		\infer0[$(\blacktriangleright_{ax})$]{x \blacktriangleright x}
-	\end{prooftree}
-	\hspace{30pt}
-	\begin{prooftree}
-		\hypo[]{A \blacktriangleright x}
-		\infer1[$(\blacktriangleright_g)$]{A \times B \blacktriangleright x}
-	\end{prooftree}
-	\hspace{30pt}
-	\begin{prooftree}
-		\hypo[]{B \blacktriangleright x}
-		\infer1[$(\blacktriangleright_d)$]{A \times B \blacktriangleright x}
-	\end{prooftree}
-\end{center}
-\vspace{20pt}
-
-Nous qualifions un type $A$ de \textbf{linéaire} lorsque pour chaque variable de type $x$, il existe au plus un arbre de dérivation de $A \blacktriangleright x$. Intuitivement, un type est linéaire si chaque variable de type y apparaît au plus une fois. \\
-
-\textit{exemples} : $(x \times y) \times z$ est linéaire, tandis que $(x \times y) \times (x \times z)$ ne l'est pas ($x$ apparaît deux fois).
-
-\subsection{Termes} Pour $\Gamma$ un contexte et $A$ une flèche nous enrichissons la définition de $Tm(\Gamma, A)$ : nous ajoutons pour chaque type une flèche terminale, des flèches universelles pour les produits et des projections sur respectivement la première et la seconde composante.
-\begin{center}
-	\begin{prooftree}
-		\infer0[(term)]{\Gamma \vdash term_x : x \rightarrow \mathbbm 1}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Gamma \vdash g : x \rightarrow z}
-		\infer2[(pair)]{\Gamma \vdash \left<f, g\right> : x \rightarrow y \times z}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\infer0[(fst)]{\Gamma \vdash \pi_0 : x \times y \rightarrow x}
-	\end{prooftree}
-	\hspace{20pt}
-	\begin{prooftree}
-		\infer0[(snd)]{\Gamma \vdash \pi_1 : x \times y \rightarrow y}
-	\end{prooftree}
-\end{center}
-
-\subsection{Contexte} Sans perte de généralité, nous travaillons sous l'hypothèse que toute flèche appartenant à un contexte a une cible qui n'est ni un produit, ni un objet terminal. Cette hypothèse n'est pas contraignante car un morphisme produisant une paire peut être vu comme une pair de morphisme (dont la source est identique).
-
-\textit{exemple :} les contextes $f : x \rightarrow y \times z$ et $g : x \rightarrow y, h : x \rightarrow z$ permettent tous deux de contruire un terme ayant pour type une flèche de $x$ vers $y \times z$. Dans le premier cas à l'aide de la règle de dérivation (var), dans le second en utilisant deux fois (var) et une fois (pair).
-
-\subsection{Relation $\sim$}
-De même, nous enrichissons la relation d'équivalence $\sim$ afin d'identifier les termes selon les axiomes des catégories cartésiennes.
-
-\begin{center}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Gamma \vdash g : x \rightarrow z}
-		\infer2[(pfst)]{\left<f, g\right> \cdot \pi_0 \sim f}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Gamma \vdash g : x \rightarrow z}
-		\infer2[(psnd)]{\left<f, g\right> \cdot \pi_1 \sim g}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\infer0[(pext)]{\left<\pi_0, \pi_1\right> \sim id}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash f : x \rightarrow y}
-		\hypo[]{\Gamma \vdash g : y \rightarrow z}
-		\hypo[]{\Gamma \vdash h : y \rightarrow z}
-		\infer3[(pnat)]{f \cdot \left<g, g\right> \sim \left<f \cdot g, f \cdot h\right>}
-	\end{prooftree}
-\end{center}
-
-\subsection{Combinateurs catégoriques cartésiens}
-
-De même que les termes typés, quotientés par la relation d'équivalence $\sim$ tels que définis dans la partie II engendre une catégorie. L'enrichissement des défitions permet de conclure que les termes identifiés par $\sim$ engendrent une catégorie cartésienne syntaxique.
-
-\subsection{Termes normaux}
-Comme nous l'avons fait dans la partie II, nous introduisons des termes normalisés qui ont pour double but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$ et de présenter des arbres de dérivation pour aisement manipulables dans la constuction de schémas composables cartésiens.
-
-\begin{center}
-	\begin{prooftree}
-		\infer0[(norm-term)]{\Gamma \vdash_{Norm} term_A : A \rightarrow \mathbbm 1}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{A \blacktriangleright x}
-		\infer1[(norm-proj)]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} t : A \rightarrow B}
-		\hypo[]{B \rightarrow x \in \Gamma}
-		\infer2[(norm-var)]{\Gamma \vdash_{Norm} t \cdot var_{B \rightarrow x} : A \rightarrow x}
-	\end{prooftree} \\
-	\vspace{20pt}
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
-		\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
-		\infer2[(norm-pair)]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
-	\end{prooftree}
-\end{center}
-\vspace{15pt}
-Avec C un élément de $Ty$, on définit les transformations $\mathrm{Aff}_g(\cdot, C)$ et $\mathrm{Aff}_d(\cdot, C)$ qui étant donné une preuve de $\Gamma \vdash_{Norm} f : A \rightarrow B$ renvoit respectivement $\Gamma \vdash_{Norm} f : A \times C \rightarrow B$ et $\Gamma \vdash_{Norm} f : C \times A \rightarrow B$.
-
-\begin{align}
-\begin{gathered}
-	\mathrm{Aff}_g \left(
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash_{Norm} term_A : A \rightarrow \mathbbm 1}
-	\end{prooftree}
-	, C
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\infer0[]{\Gamma \vdash_{Norm} term_{A \times C} : A \times C \rightarrow \mathbbm 1}
-	\end{prooftree}
-\end{gathered}
-\end{align}
-
-\begin{align}
-\begin{gathered}
-	\mathrm{Aff}_g \left(
-	\begin{prooftree}
-		\hypo[]{A \blacktriangleright x}
-		\infer1[]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
-	\end{prooftree} 
-	, C
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\hypo[]{A \blacktriangleright x}
-		\infer1[$\blacktriangleright_g$]{A \times C \blacktriangleright x}
-		\infer1[]{\Gamma \vdash_{Norm} proj_{A \times C,x} : A \times C \rightarrow x}
-	\end{prooftree}
-\end{gathered}
-\end{align}
-
-\begin{align}
-\begin{gathered}
-	\mathrm{Aff}_g \left(
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
-		\hypo[]{B \rightarrow x \in \Gamma}
-		\infer2[]{\Gamma \vdash_{Norm} f \cdot var_{B \rightarrow x} : A \rightarrow x}
-	\end{prooftree}
-	, C
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\hypo[]{\mathrm{Aff}_g \left(\Gamma \vdash_{Norm} f : A \rightarrow B , C\right)}
-		\hypo[]{B \rightarrow x \in \Gamma}
-		\infer2[]{\Gamma \vdash_{Norm} f \cdot var_{B \rightarrow x} : A \times C \rightarrow x}
-	\end{prooftree}
-\end{gathered}
-\end{align}
-
-\begin{align}
-\begin{gathered}
-	\mathrm{Aff}_g \left(
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
-		\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
-		\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
-	\end{prooftree}
-	, D
-	\right) \\
-	:= \\
-	\begin{prooftree}
-		\hypo[]{\mathrm{Aff}_g \left( \Gamma \vdash_{Norm} f : A \rightarrow B , D \right)}
-		\hypo[]{\mathrm{Aff}_g \left( \Gamma \vdash_{Norm} g : A \rightarrow C , D \right)}
-		\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \times D \rightarrow B \times C}
-	\end{prooftree}
-\end{gathered}
-\end{align}
-
-$\mathrm{Aff}_d$ est définie de manière similaire.
-
-\paragraph{Normalisation} On construit une fonction de normalisation N qui à un terme associe un terme normal en modifant inductivement la preuve : 
-\begin{align*}
-	N\left( 
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
-		\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
-		\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
-	\end{prooftree}
-	\right)
-	=
-\end{align*}
-
-
-\subsection{Schémas composables cartésiens}
-Les règles que nous proposons pour la construction de schémas composables dans le cas cartésiens apparaissent comme moins élégantes dû à leur démultiplication. 
-\begin{center}
-\begin{prooftree}
-	\infer0[(ps-term)]{\emptyset \vdash_{ps} : A \rightarrow \mathbbm 1}
-\end{prooftree} \\
-\vspace{15pt}
-\begin{prooftree}
-	\hypo[]{A \blacktriangleright x}
-	\infer1[(ps-proj) $[A$ linéaire$]$]{\emptyset \vdash_{ps} : A \rightarrow x}
-\end{prooftree} \\
-\vspace{15pt}
-\begin{prooftree}
-	\hypo[]{\Gamma \vdash_{ps} A \rightarrow B}
+			\right)
+		\end{gathered}
+	\end{equation}
 	
-	\infer1[(ps-ext) $[x \notin b(\Gamma) \wedge \neg\left(A \blacktriangleright x\right)]$]{\Gamma , B \rightarrow x \vdash_{ps} A \rightarrow x}
-\end{prooftree} \\
-\vspace{15pt}
-\begin{prooftree}
-	\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
-	\infer1[(ps-const) 
-	$[y \notin b(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
-	]{\Gamma , \mathbbm 1 \rightarrow y \vdash_{ps} A \rightarrow y}
-\end{prooftree} \\
-\vspace{15pt}
-\begin{prooftree}
-	\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
-	\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
-	\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
-\end{prooftree}
- \\
-\vspace{15pt}
-\begin{prooftree}
-	\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
-	\infer1[(ps-weak) 
-	$[y \notin b(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
-	]{\Gamma , B \rightarrow y \vdash_{ps} A \rightarrow x}
-\end{prooftree}
-\end{center}
-
-\subsection{Unicité}
-La preuve envisagée pour montrer que chaque schéma composable est habité par au plus un terme est très similaire à celle proposée dans le cas catégorique. Nous supposons donné $f$ et $g$ deux termes normaux typés par un schéma composable $\sigma$ et nous procédons par induction sur l'arbre de dérivation de $\sigma$.
-
-\subsubsection{cas (ps-term)}
+	\textbf{Lemme} Soient $f$ et $g$ dans $Tm(\Gamma, A)$, si $N(f) \equiv N(g)$, alors $f \sim g$.
+	
+	\subsection{Schémas composables} 
+	\footnote{Formalisation Agda des schémas composables $\sim$ : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-categories/PS}{pasting-scheme-for-categories/PS}}
+	Un schéma composable est un couple contexte/flèche $(\Gamma, A)$ tels qu'il existe exactement un unique terme $\Gamma \vdash f : A$ à $\sim$-équivalence près.
+	
+	On introduit le calcul de séquent $\vdash_{ps}$\footnote{La notation \textit{ps} pour désigner les schémas composables provient de leur dénomination originale anglaise \textit{pasting scheme}} suivant :
+	\begin{center}
+		\begin{prooftree}
+			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+		\end{prooftree}
+		\hspace{50pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} x \rightarrow y}
+			\infer1[(ext) $z \notin b(\Gamma) \cup \{x\}$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
+		\end{prooftree}
+	\end{center} 
+	
+	Nous montrons que ces deux règles définissent $PS \subset Con \times Arr$ un ensemble de schémas composables. Formellement, $\forall \Gamma \in Con, \forall (x , y) \in Ty^2, ((\Gamma, x \rightarrow y) \in PS \Rightarrow (\forall (f, g) \in Tm(\Gamma, x \rightarrow y)^2, f \sim g))$.
+	
+	\textbf{Lemme} Soient $\Gamma$ un contexte, $A$ une flèche, $\Gamma \vdash_{Norm} f : A$ et $\Gamma \vdash_{Norm} g : A$ deux termes normaux. Si $(\Gamma, A)$ est un schéma composable alors $f \equiv g$.
+	
+	\textbf{\textit{Preuve}} Nous raisonnons par induction sur l'arbre de dérivation du schéma composable : s'il est réduit à l'axiome alors $f$ et $g$ sont réduits à $id$. Si le schéma composable est une extension alors $f$ et $g$ sont respectivement de la forme $f' \cdot var$ et $g' \cdot var$. La flèche à droite de la composition est la même car la variable introduit par l'extension apparaît de manière unique dans le contexte, on conclut par hypothèse d'induction sur $f'$ et $g'$.\footnote{c.f. fonction Agda \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-categories/PSEq.agda}{\textup{PSEq-lem}}} \\
+	
+	\textbf{Theoreme} Soient $\Gamma$ un contexte, $A$ une flèche, $\Gamma \vdash f : A$ et $\Gamma \vdash g : A$ deux termes. Si $(\Gamma, A)$ est un schéma composable alors $f \sim g$.
+	
+	\textbf{\textit{Preuve}} On utilise les deux lemmes précédents : $N(f)$ et $N(g)$ sont deux termes normaux dont le couple contexte/flèche est un schéma composable ainsi, par le lemme 2, $N(f) \equiv N(g)$. Subséquemment, par le lemme 1, $f \sim g$.\footnote{c.f. fonction Agda \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-categories/PSEq.agda}{\textup{PSEq}}} \\
+	
+	\subsection{Existence}
+	Par le théorème précédent nous avons obtenu l'unicité sous réserve d'existence. Nous montrons que chaque schéma composable est habité par un terme. Pour cela nous construisons inductivement un terme en déconstruisant la l'arbre de dérivation du schéma composable. Formellement, pour tout context $\Gamma$, toute flèche $A$ tel que $\Gamma \vdash_{ps} A$ est dérivable, il existe un morphisme $f$ tel que $\Gamma \vdash f : A$ est dérivable.
+	
+	
+	\subsection{Séquents}
+	Afin de construire $CCCaTT_1$, on se doit de vérifier qu'un certain nombre de séquents sont correctement dérivables à l'aide des objets définis :
+	
+	\begin{enumerate}
+		\item $\emptyset \vdash_{ps} x \rightarrow x$
+		\item $x \rightarrow y \vdash_{ps} x \rightarrow y$
+		\item $f : x \rightarrow y, g : y \rightarrow z \vdash_{ps} x \rightarrow z$
+		\item $f : x \rightarrow y \vdash id \cdot f = f$
+		\item $f : x \rightarrow y \vdash f \cdot id = f$
+		\item $f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)$
+	\end{enumerate}
+	
+	Les trois premiers sont relatifs aux axiomes de la définition d'une catégorie. Les trois autres sont liés à la règle d'identification des termes dans un schéma composable introduit par S. Mimram dans la construction de $CCCaTT_1$.
+	\begin{center}
+	\begin{prooftree}
+		\hypo[]{\Theta \ |\ \Gamma \vdash_{ps} A}
+		\hypo[]{\Theta \ |\ \Gamma \vdash t : A}
+		\hypo[]{\Theta \ |\ \Gamma \vdash u : A}
+		\infer3[($ps^=$)]{\Theta \ |\ \Gamma \vdash t = u : A}
+	\end{prooftree}
+	\end{center}
+	
+	Vous trouverez les arbres de dérivation de ces séquents dans l'appendice \ref{seq-proof-cat}.
+	
+	\section{Schémas composables dans des catégories cartésiennes} \label{ccat}
+	Nous souhaitons maintenant étendre aux catégories cartésiennes l'ensemble des notions développées dans la partie \ref{cat}. Du point de vu de la théorie des langages de programmation, la partie précedente ne modélise que les programmes ayant exactement un argument et une valeur renvoyée. L'introduction du produit cartésien permet de considérer les fonction à plusieurs variables ou renvoyant plusieurs valeurs de types distincts. Les objets terminaux peuvent être vu comme des produits cartésiens vides. Une flèche ayant un objet terminal à gauche peut être inteprété comme une fonction constante ; tandis qu'une flèche ayant un objet terminal à droite modélise une fonction dont le résultat aurait été jeté, on peut notament penser au effet de bord qui ne sont pas visible dans notre théorie des types.
+	
+	Nous n'avons pas pu conclure la preuve formelle implémentée en Agda, nous présentons ici les grandes idées de la preuve telle qu'envisagée. Nous détaillons les objets introduits ainsi que la défintion de schéma composable proposée. Nous expliquerons ce qui manque pour conclure. \\
+	
+	\subsection{Types}
+	\footnote{Formalisation Agda des types cartésiens : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-cartesian-categories/Ty}{pasting-scheme-for-cartesian-categories/Ty}}
+	Nous enrichissons la définition des types en ajoutant une règle d'introduction pour le type terminal (noté $\mathbbm 1$) et pour les produits de types.
+	\begin{center}
+		\begin{prooftree}
+			\infer0[$({\mathbbm 1}_I)$]{\mathbbm 1 \in Ty}
+		\end{prooftree}
+		\hspace{20pt}
+		\begin{prooftree}
+			\hypo[]{A \in Ty}
+			\hypo[]{B \in Ty}
+			\infer2[$(\times_I)$]{A \times B \in Ty}
+		\end{prooftree}
+	\end{center}
+	Notons que cette construction des types cartésiens est biaisé car elle n'introduit qu'un produit binaire. L'un des objectifs de $CCCaTT_1$ est d'identifier les termes afin de rendre primitif tout produit n-aire. \\
+	
+	Afin d'exprimer qu'une variable de type apparait dans un type produit nous introduisons le prédicat $\blacktriangleright$ défini inductivement de la manière suivante :
+	\begin{center}
+		\begin{prooftree}
+			\infer0[$(\blacktriangleright_{ax})$]{x \blacktriangleright x}
+		\end{prooftree}
+		\hspace{30pt}
+		\begin{prooftree}
+			\hypo[]{A \blacktriangleright x}
+			\infer1[$(\blacktriangleright_g)$]{A \times B \blacktriangleright x}
+		\end{prooftree}
+		\hspace{30pt}
+		\begin{prooftree}
+			\hypo[]{B \blacktriangleright x}
+			\infer1[$(\blacktriangleright_d)$]{A \times B \blacktriangleright x}
+		\end{prooftree}
+	\end{center}
+	\vspace{20pt}
+	
+	Nous qualifions un type $A$ de \textbf{linéaire} lorsque pour chaque variable de type $x$, il existe au plus un arbre de dérivation de $A \blacktriangleright x$. Intuitivement, un type est linéaire si chaque variable de type y apparaît au plus une fois. \\
+	
+	\textit{exemples} : $(x \times y) \times z$ est linéaire, tandis que $(x \times y) \times (x \times z)$ ne l'est pas ($x$ apparaît deux fois).
+	
+	\subsection{Contexte}
+	\footnote{Formalisation Agda des contextes : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-cartesian-categories/Con}{pasting-scheme-for-cartesian-categories/Con}}
+	Sans perte de généralité, nous travaillons sous l'hypothèse que toute flèche appartenant à un contexte a une cible qui n'est ni un produit, ni un objet terminal. Cette hypothèse n'est pas contraignante car un morphisme produisant une paire peut être vu comme une pair de morphisme (dont la source est identique).
+	
+	\textit{exemple :} les contextes $f : x \rightarrow y \times z$ et $g : x \rightarrow y, h : x \rightarrow z$ permettent tous deux de contruire un terme ayant pour type une flèche de $x$ vers $y \times z$. Dans le premier cas à l'aide de la règle de dérivation (var), dans le second en utilisant deux fois (var) et une fois (pair).
+	
+	\subsection{Termes}
+	\footnote{Formalisation Agda des termes : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-cartesian-categories/Tm}{pasting-scheme-for-cartesian-categories/Tm}}
+	Pour $\Gamma$ un contexte et $A$ une flèche nous enrichissons la définition de $Tm(\Gamma, A)$ : nous ajoutons pour chaque type une flèche terminale, des flèches universelles pour les produits et des projections sur respectivement la première et la seconde composante.
+	\begin{center}
+		\begin{prooftree}
+			\infer0[(term)]{\Gamma \vdash term_x : x \rightarrow \mathbbm 1}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{\Gamma \vdash g : x \rightarrow z}
+			\infer2[(pair)]{\Gamma \vdash \left<f, g\right> : x \rightarrow y \times z}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\infer0[(fst)]{\Gamma \vdash \pi_0 : x \times y \rightarrow x}
+		\end{prooftree}
+		\hspace{20pt}
+		\begin{prooftree}
+			\infer0[(snd)]{\Gamma \vdash \pi_1 : x \times y \rightarrow y}
+		\end{prooftree}
+	\end{center}
+	
+	\subsection{Relation $\sim$}
+	De même, nous enrichissons la relation d'équivalence $\sim$ afin d'identifier les termes selon les axiomes des catégories cartésiennes.
+	
+	\begin{center}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{\Gamma \vdash g : x \rightarrow z}
+			\infer2[(pfst)]{\left<f, g\right> \cdot \pi_0 \sim f}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{\Gamma \vdash g : x \rightarrow z}
+			\infer2[(psnd)]{\left<f, g\right> \cdot \pi_1 \sim g}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\infer0[(pext)]{\left<\pi_0, \pi_1\right> \sim id}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{\Gamma \vdash g : y \rightarrow z}
+			\hypo[]{\Gamma \vdash h : y \rightarrow z}
+			\infer3[(pnat)]{f \cdot \left<g, g\right> \sim \left<f \cdot g, f \cdot h\right>}
+		\end{prooftree}
+	\end{center}
+	
+	\subsection{Combinateurs catégoriques cartésiens}
+	
+	De même que les termes typés, quotientés par la relation d'équivalence $\sim$ tels que définis dans la partie II engendre une catégorie. L'enrichissement des défitions permet de conclure que les termes identifiés par $\sim$ engendrent une catégorie cartésienne syntaxique.
+	
+	\subsection{Termes normaux}
+	Comme nous l'avons fait dans la partie II, nous introduisons des termes normalisés qui ont pour double but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$ et de présenter des arbres de dérivation pour aisement manipulables dans la constuction de schémas composables cartésiens.
+	
+	\begin{center}
+		\begin{prooftree}
+			\infer0[(norm-term)]{\Gamma \vdash_{Norm} term_A : A \rightarrow \mathbbm 1}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{A \blacktriangleright x}
+			\infer1[(norm-proj)]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{Norm} t : A \rightarrow B}
+			\hypo[]{B \rightarrow x \in \Gamma}
+			\infer2[(norm-var)]{\Gamma \vdash_{Norm} t \cdot var_{B \rightarrow x} : A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{20pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
+			\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
+			\infer2[(norm-pair)]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
+		\end{prooftree}
+	\end{center}
+	\vspace{15pt}
+	Avec C un élément de $Ty$, on définit les transformations $\mathrm{Aff}_g(\cdot, C)$ et $\mathrm{Aff}_d(\cdot, C)$ qui étant donné une preuve de $\Gamma \vdash_{Norm} f : A \rightarrow B$ renvoit respectivement $\Gamma \vdash_{Norm} f : A \times C \rightarrow B$ et $\Gamma \vdash_{Norm} f : C \times A \rightarrow B$.
+	
+	\begin{align}
+		\begin{gathered}
+			\mathrm{Aff}_g \left(
+			\begin{prooftree}
+				\infer0[]{\Gamma \vdash_{Norm} term_A : A \rightarrow \mathbbm 1}
+			\end{prooftree}
+			, C
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\infer0[]{\Gamma \vdash_{Norm} term_{A \times C} : A \times C \rightarrow \mathbbm 1}
+			\end{prooftree}
+		\end{gathered}
+	\end{align}
+	
+	\begin{align}
+		\begin{gathered}
+			\mathrm{Aff}_g \left(
+			\begin{prooftree}
+				\hypo[]{A \blacktriangleright x}
+				\infer1[]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
+			\end{prooftree} 
+			, C
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\hypo[]{A \blacktriangleright x}
+				\infer1[$\blacktriangleright_g$]{A \times C \blacktriangleright x}
+				\infer1[]{\Gamma \vdash_{Norm} proj_{A \times C,x} : A \times C \rightarrow x}
+			\end{prooftree}
+		\end{gathered}
+	\end{align}
+	
+	\begin{align}
+		\begin{gathered}
+			\mathrm{Aff}_g \left(
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
+				\hypo[]{B \rightarrow x \in \Gamma}
+				\infer2[]{\Gamma \vdash_{Norm} f \cdot var_{B \rightarrow x} : A \rightarrow x}
+			\end{prooftree}
+			, C
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\hypo[]{\mathrm{Aff}_g \left(\Gamma \vdash_{Norm} f : A \rightarrow B , C\right)}
+				\hypo[]{B \rightarrow x \in \Gamma}
+				\infer2[]{\Gamma \vdash_{Norm} f \cdot var_{B \rightarrow x} : A \times C \rightarrow x}
+			\end{prooftree}
+		\end{gathered}
+	\end{align}
+	
+	\begin{align}
+		\begin{gathered}
+			\mathrm{Aff}_g \left(
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
+				\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
+				\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
+			\end{prooftree}
+			, D
+			\right) \\
+			:= \\
+			\begin{prooftree}
+				\hypo[]{\mathrm{Aff}_g \left( \Gamma \vdash_{Norm} f : A \rightarrow B , D \right)}
+				\hypo[]{\mathrm{Aff}_g \left( \Gamma \vdash_{Norm} g : A \rightarrow C , D \right)}
+				\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \times D \rightarrow B \times C}
+			\end{prooftree}
+		\end{gathered}
+	\end{align}
+	
+	$\mathrm{Aff}_d$ est définie de manière similaire.
+	
+	\paragraph{Normalisation} On construit une fonction de normalisation N qui à un terme associe un terme normal en modifant inductivement la preuve : 
+	\begin{align*}
+		N\left( 
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
+			\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
+			\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
+		\end{prooftree}
+		\right)
+		=
+	\end{align*}
+	
+	
+	\subsection{Schémas composables cartésiens}
+	Les règles que nous proposons pour la construction de schémas composables dans le cas cartésiens apparaissent comme moins élégantes dû à leur démultiplication. 
+	\begin{center}
+		\begin{prooftree}
+			\infer0[(ps-term)]{\emptyset \vdash_{ps} : A \rightarrow \mathbbm 1}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{A \blacktriangleright x}
+			\infer1[(ps-proj) $[A$ linéaire$]$]{\emptyset \vdash_{ps} : A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow B}
+			
+			\infer1[(ps-ext) $[x \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright x\right)]$]{\Gamma , B \rightarrow x \vdash_{ps} A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+			\infer1[(ps-const) 
+			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+			]{\Gamma , \mathbbm 1 \rightarrow y \vdash_{ps} A \rightarrow y}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
+			\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
+			\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
+		\end{prooftree}
+		\\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+			\infer1[(ps-weak) 
+			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+			]{\Gamma , B \rightarrow y \vdash_{ps} A \rightarrow x}
+		\end{prooftree}
+	\end{center}
+	
+	\subsection{Unicité}
+	\footnote{Preuve formalisée partiellement : \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-cartesian-categories/PSEq.agda}{pasting-scheme-for-cartesian-categories/PSEq.agda} }
+	La preuve envisagée pour montrer que chaque schéma composable est habité par au plus un terme est très similaire à celle proposée dans le cas catégorique. Nous supposons donné $f$ et $g$ deux termes normaux typés par un schéma composable $\sigma$ et nous procédons par induction sur l'arbre de dérivation de $\sigma$.
+	
+	\subsubsection{cas (ps-term)}
 	Il n'y a qu'un seul terme normal typé par le type terminal à droite de la flèche, ainsi on déduit immédiatement l'unicité dans ce cas.
 	
-\subsubsection{cas (ps-proj)}
+	\subsubsection{cas (ps-proj)}
 	Dans le cas d'une projection, le type $A$ à gauche de la flèche est linéaire. Ainsi par définition il existe un unique arbre de dérivation de $A \blacktriangleright x$. Cela permet de conclure pour l'unicité.
-\subsubsection{cas (ps-pair)}
+	\subsubsection{cas (ps-pair)}
 	Nous travaillons sous l'hyposthèse que toutes les flèches du contexte ont pour but une variable de type. Ainsi pour le cas (ps-pair) il suffit d'appliquer l'hypothèse d'induction aux branches gauche et droite de l'arbre de dérivation.
-\subsubsection{cas (ps-weak)}
+	\subsubsection{cas (ps-weak)}
 	Affaiblir un schéma composable en ajoutant une flèche vers une variable fraiche permet de s'appuyer directement sur l'hypothèse d'induction. Il suffit de justifier que l'on peut reconstruire $f$ et $g$ dans le contexte privé cette nouvelle flèche "inutile". On obtient l'unicité en montrant que cette étape de reconstruction est injective. Nous n'avons pas réussi à formaliser ce résultat en Agda.
-\subsubsection{cas (ps-const), (ps-ext)}
+	\subsubsection{cas (ps-const), (ps-ext)}
 	Ces deux cas sont similaires car ils consiste tous les deux à étendre le contexte avec une nouvelle flèche et à mettre à jour la flèche du schéma composable. Nous souhaitons alors montrer que $f$ et $g$ ont (norm-var) pour dernière règle dans leur arbre de dérivation. C'est-à-dire 
-
-\subsection{Existence}
-Montrer que chaque schéma composable est habité par au moins un terme se fait de manière similaire au cas catégorique.
-
-\subsection{Séquent}
-\begin{enumerate}
-	\item $\emptyset \vdash_{ps} A \rightarrow \mathbbm 1$
-	\item $f : A \rightarrow B, g : A \rightarrow C \vdash_{ps} A \rightarrow B \times C$
-	\item $\emptyset \vdash_{ps} A \times B \rightarrow A$
-	\item $\emptyset \vdash_{ps} A \times B \rightarrow B$
 	
-	\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot fst = f$
-	\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot snd = g$
-	\item $f : A \rightarrow B, g : B \rightarrow C, h : C \rightarrow D \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>$
-	\item $\emptyset \vdash \left<fst, snd\right> = id$
-	\item $f : A \rightarrow B \vdash f \cdot term_B = term_A$
-\end{enumerate}
-
-\begin{thebibliography}{00}
-\bibitem{b1} \href{https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/docs/mimram_cccatt.pdf}{Samuel Mimram, ``An unbiased simply typed combinatory logic,'' LIX, CNRS, École polytechnique, Institut Polytechnique de Paris, Palaiseau, France, 2026}
-\bibitem{b2} Dominique Boucher, ``La Théorie des catégories en informatique :
-notions de base et application,'' Département d'informatique et recherche opérationnelle
-Faculté des études supérieures, Université de Montréal, Août 1993
-\bibitem{b3} Alexander Grothendieck, Section 4 of: Techniques de construction et théorèmes d’existence en géométrie algébrique III: préschémas quotients, Séminaire Bourbaki: années 1960/61, exposés 205-222, Séminaire Bourbaki, no. 6 (1961), Exposé no. 212
-\end{thebibliography}
-
-\appendices
-
-\section{Preuves séquents catégories simples}
-
-\begin{enumerate}
-	\item
-	\begin{prooftree}
-		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-	\end{prooftree}
-	\vspace{15pt}
-	\item
-	\begin{prooftree}
-		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-	\end{prooftree}
-	\vspace{15pt}
-	\item
-	\begin{prooftree}
-		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-		\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
-	\end{prooftree}
-	\vspace{15pt}
-	\item
-	\begin{prooftree}
-		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-		\hypo[]{\Pi_{id \cdot f}}
-		\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
+	\subsection{Existence}
+	Montrer que chaque schéma composable est habité par au moins un terme se fait de manière similaire au cas catégorique.\footnote{Formalisation Agda de la preuve : \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-cartesian-categories/PSTm.agda}{pasting-scheme-for-cartesian-categories/PSTm.agda}}
+	
+	\subsection{Séquents}
+	Tout comme dans le cas des catégories non cartésiennes, afin mener à bien la construction d'une variante de $CCCaTT_1$ pour les catégories cartésiennes, nous vérifions la bonne dérivation des séquents suivants :
+	
+	\begin{enumerate}
+		\item $\emptyset \vdash_{ps} A \rightarrow \mathbbm 1$
+		\item $f : A \rightarrow B, g : A \rightarrow C \vdash_{ps} A \rightarrow B \times C$
+		\item $\emptyset \vdash_{ps} A \times B \rightarrow A$
+		\item $\emptyset \vdash_{ps} A \times B \rightarrow B$
+		
+		\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot fst = f$
+		\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot snd = g$
+		\item $f : A \rightarrow B, g : B \rightarrow C, h : C \rightarrow D \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>$
+		\item $\emptyset \vdash \left<fst, snd\right> = id$
+		\item $f : A \rightarrow B \vdash f \cdot term_B = term_A$
+	\end{enumerate}
+	
+	Vous trouverez les arbres de dérivation de ces séquents dans l'appendice \ref{seq-proof-ccat}.	
+	
+	\begin{thebibliography}{00}
+		\bibitem{b1} \href{https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/docs/mimram_cccatt.pdf}
+		{Samuel Mimram, ``An unbiased simply typed combinatory logic,'' LIX, CNRS, École polytechnique, Institut Polytechnique de Paris, Palaiseau, France, 2026}
+		\bibitem{b2} \href{https://umontreal.scholaris.ca/items/f2d7e64e-fc35-4149-ad60-113a22d4011a}
+		{Dominique Boucher, ``La Théorie des catégories en informatique :
+		notions de base et application,'' Département d'informatique et recherche opérationnelle
+		Faculté des études supérieures, Université de Montréal, Août 1993}
+		\bibitem{b3} \href{https://www.numdam.org/item/?id=SB_1960-1961__6__99_0}
+		{Alexander Grothendieck, Section 4 of: Techniques de construction et théorèmes d’existence en géométrie algébrique III: préschémas quotients, Séminaire Bourbaki: années 1960/61, exposés 205-222, Séminaire Bourbaki, no. 6 (1961), Exposé no. 212}
+	\end{thebibliography}
+	
+	\appendices
+	
+	\section{Preuves séquents catégories simples}\label{seq-proof-cat}
+	
+	Nous développons ici les arbres de preuves des séquents énumérés 
+	
+	\begin{enumerate}
+		\item
+		\begin{prooftree}
+			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+		\end{prooftree}
+		\vspace{15pt}
+		\item
+		\begin{prooftree}
+			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+		\end{prooftree}
+		\vspace{15pt}
+		\item
+		\begin{prooftree}
+			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+			\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
+		\end{prooftree}
+		\vspace{15pt}
+		\item
+		\begin{prooftree}
+			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+			\hypo[]{\Pi_{id \cdot f}}
+			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
 			\infer1[(var)]{f : x \rightarrow y \vdash f : x \rightarrow y}
-		\infer3[$(ps^=)$]{f : x \rightarrow y \vdash id \cdot f = f}
-	\end{prooftree}
-	avec
-	\begin{align*}
-	\begin{gathered}
-	\Pi_{id \cdot f} \\
-	:= \\
-	\begin{prooftree}
-		\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
-		\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-		\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-		\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
-	\end{prooftree}
-	\end{gathered}
-	\end{align*}
+			\infer3[$(ps^=)$]{f : x \rightarrow y \vdash id \cdot f = f}
+		\end{prooftree}
+		
+		\begin{align*}
+			\begin{gathered}
+				\Pi_{id \cdot f} \\
+				:= \\
+				\begin{prooftree}
+					\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
+					\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
+					\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
+					\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
+				\end{prooftree}
+			\end{gathered}
+		\end{align*}
+		
+		\item
+		\begin{prooftree}
+			\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+			\hypo[]{\Pi_{f \cdot id}}
+			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
+			\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
+			\infer3[$(ps^=)$]{f : x \rightarrow y \vdash f \cdot id = f}
+		\end{prooftree}
+		avec
+		\begin{align*}
+			\begin{gathered}
+				\Pi_{f \cdot id} \\
+				:= \\
+				\begin{prooftree}
+					\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
+					\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
+					\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
+					\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
+				\end{prooftree}
+			\end{gathered}
+		\end{align*}
+		\vspace{15pt}
+		\item
+		\begin{prooftree}
+			\hypo[]{\Pi_{ps}}
+			\hypo[]{\Pi_{(f \cdot g) \cdot h}}
+			\hypo[]{\Pi_{f \cdot (g \cdot h)}}
+			\infer3[$(ps^=)$]{\Gamma \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)}
+		\end{prooftree} \\
+		\vspace{15pt}
+		avec \\
+		$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\ 
+		\begin{align*}
+			\begin{gathered}
+				\Pi_{id \cdot f} \\
+				:= \\
+				\begin{prooftree}
+					\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
+					\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+					\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
+					\infer1[(ext)]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
+				\end{prooftree}
+			\end{gathered}
+		\end{align*} \\
+		\begin{align*}
+			\begin{gathered}
+				\Pi_{(f \cdot g) \cdot h} \\
+				:= \\
+				\begin{prooftree}
+					\hypo[]{f : x \rightarrow y \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
+					\hypo[]{g : y \rightarrow z \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
+					\hypo[]{h : z \rightarrow w \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
+					\infer2[(comp)]{\Gamma \vdash g \cdot h : y \rightarrow w}
+					\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+				\end{prooftree}
+			\end{gathered}
+		\end{align*} \\
+		\begin{align*}
+			\begin{gathered}
+				\Pi_{(f \cdot g) \cdot h} \\
+				:= \\
+				\begin{prooftree}
+					\hypo[]{f : x \rightarrow y \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
+					\hypo[]{g : y \rightarrow z \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
+					\infer2[(comp)]{\Gamma \vdash f \cdot g : x \rightarrow z}
+					\hypo[]{h : z \rightarrow w \in \Gamma}
+					\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
+					\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+				\end{prooftree}
+			\end{gathered}
+		\end{align*}
+	\end{enumerate}
 	
-	\item
-	\begin{prooftree}
-		\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
-		\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-		\hypo[]{\Pi_{f \cdot id}}
-		\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-		\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-		\infer3[$(ps^=)$]{f : x \rightarrow y \vdash f \cdot id = f}
-	\end{prooftree}
-	avec
-	\begin{align*}
-		\begin{gathered}
-			\Pi_{f \cdot id} \\
-			:= \\
-			\begin{prooftree}
-				\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-				\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-				\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
-				\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
-			\end{prooftree}
-		\end{gathered}
-	\end{align*}
-	\vspace{15pt}
-	\item
-	\begin{prooftree}
-		\hypo[]{\Pi_{ps}}
-		\hypo[]{\Pi_{(f \cdot g) \cdot h}}
-		\hypo[]{\Pi_{f \cdot (g \cdot h)}}
-		\infer3[$(ps^=)$]{\Gamma \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)}
-	\end{prooftree} \\
-	\vspace{15pt}
-	avec \\
-	$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\ 
-	\begin{align*}
-		\begin{gathered}
-			\Pi_{id \cdot f} \\
-			:= \\
-			\begin{prooftree}
-				\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
-				\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-				\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
-				\infer1[(ext)]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
-			\end{prooftree}
-		\end{gathered}
-	\end{align*} \\
-	\begin{align*}
-		\begin{gathered}
-			\Pi_{id \cdot f} \\
-			:= \\
-			\begin{prooftree}
-				\hypo[]{f : x \rightarrow y \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
-				\hypo[]{g : y \rightarrow z \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
-				\hypo[]{h : z \rightarrow w \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
-				\infer2[(comp)]{\Gamma \vdash g \cdot h : y \rightarrow w}
-				\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
-			\end{prooftree}
-		\end{gathered}
-	\end{align*} \\
-	\begin{align*}
-		\begin{gathered}
-			\Pi_{(f \cdot g) \cdot h} \\
-			:= \\
-			\begin{prooftree}
-				\hypo[]{f : x \rightarrow y \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
-				\hypo[]{g : y \rightarrow z \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
-				\infer2[(comp)]{\Gamma \vdash f \cdot g : x \rightarrow z}
-				\hypo[]{h : z \rightarrow w \in \Gamma}
-				\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
-				\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
-			\end{prooftree}
-		\end{gathered}
-	\end{align*}
-\end{enumerate}
-
-\section{Preuves séquents catégories cartésiennes}
-
-\begin{enumerate}
-	\item 
-	\begin{prooftree}
-		\infer0[(ps-term)]{\emptyset \vdash_{ps} : A \rightarrow \mathbbm 1}
-	\end{prooftree}
-	\item
-	\begin{prooftree}
-		\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
-		\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
-		\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
-	\end{prooftree}
+	\section{Preuves séquents catégories cartésiennes} \label{seq-proof-ccat}
 	
-	\item $\emptyset \vdash_{ps} A \times B \rightarrow A$
-	\item $\emptyset \vdash_{ps} A \times B \rightarrow B$
+	\begin{enumerate}
+		\item 
+		\begin{align*}
+			\Pi_{ps-term} :=
+			\begin{prooftree}
+				\infer0[(ps-term)]{\emptyset \vdash_{ps} : A \rightarrow \mathbbm 1}
+			\end{prooftree}
+		\end{align*}
+		\item
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
+			\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
+			\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
+		\end{prooftree}
+		
+		\item 
+		\begin{align*}
+			\Pi_{ps-fst} :=
+			\begin{prooftree}
+				\infer0[($\blacktriangleright_{ax}$)]{x \blacktriangleright x}
+				\infer1[($\blacktriangleright_g$)]{x \times y \blacktriangleright x}
+				\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \times y \rightarrow x}
+			\end{prooftree}
+		\end{align*}
+		
+		\item 
+		\begin{align*}
+			\Pi_{ps-snd} :=
+			\begin{prooftree}
+				\infer0[($\blacktriangleright_{ax}$)]{y \blacktriangleright y}
+				\infer1[($\blacktriangleright_d$)]{x \times y \blacktriangleright y}
+				\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \times y \rightarrow y}
+			\end{prooftree}
+		\end{align*}
+		
+		On pose les objets auxiliaires suivants :
+		\begin{itemize}
+			\item $\Gamma := f : x \rightarrow y, g : x \rightarrow z$
+			
+			\item
+			\begin{align*}
+				\Pi_{ps_f} :=
+				\begin{prooftree}
+					\infer0[$\blacktriangleright_{ax}$]{x \blacktriangleright x}
+					\infer1[(ps-proj)]{\emptyset \vdash_{ps} : x \rightarrow x}
+					\infer1[(ps-ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+					\infer1[(ps-weak)]{\Gamma \vdash_{ps} x \rightarrow y}
+				\end{prooftree}
+			\end{align*}
+			
+			\item
+			\begin{align*}
+				\Pi_{ps_g} :=
+				\begin{prooftree}
+					\infer0[$\blacktriangleright_{ax}$]{x \blacktriangleright x}
+					\infer1[(ps-proj)]{\emptyset \vdash_{ps} : x \rightarrow x}
+					\infer1[(ps-weak)]{x \rightarrow y \vdash_{ps} x \rightarrow x}
+					\infer1[(ps-ext)]{\Gamma \vdash_{ps} x \rightarrow z}
+				\end{prooftree}
+			\end{align*}
+			\item
+			\begin{align*}
+				\Pi_{ps_{id-pair}} :=
+				\begin{prooftree}
+					\hypo[]{\Pi_{ps-fst}}
+					\infer1[]{\emptyset \vdash_{ps} x \times y \rightarrow x}
+					\hypo[]{\Pi_{ps-snd}}
+					\infer1[]{\emptyset \vdash_{ps} x \times y \rightarrow y}
+					\infer2[(ps-pair)]{\emptyset \vdash_{ps} x \times y \rightarrow x \times y}
+				\end{prooftree}
+			\end{align*}
+			\item $\Gamma' := f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$
+			\item
+			\begin{align*}
+				\Pi_{ps-f \cdot g} :=
+				\begin{prooftree}
+					\infer0[($\blacktriangleright_{ax}$)]{x \blacktriangleright x}
+					\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \rightarrow x}
+					\infer1[(ps-ext)]{f : x \rightarrow y \vdash_{ps} x \rightarrow y}
+					\infer1[(ps-ext)]{f : x \rightarrow y, g : y \rightarrow z \vdash_{ps} x \rightarrow z}
+					\infer1[(ps-weak)]{\Gamma' \vdash_{ps} x \rightarrow z}
+				\end{prooftree}
+			\end{align*}
+			\item
+			\begin{align*}
+				\Pi_{ps-f \cdot h} :=
+				\begin{prooftree}
+					\infer0[($\blacktriangleright_{ax}$)]{x \blacktriangleright x}
+					\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \rightarrow x}
+					\infer1[(ps-ext)]{f : x \rightarrow y \vdash_{ps} x \rightarrow y}
+					\infer1[(ps-weak)]{f : x \rightarrow y, g : y \rightarrow z \vdash_{ps} x \rightarrow w}
+					\infer1[(ps-ext)]{\Gamma' \vdash_{ps} x \rightarrow w}
+				\end{prooftree}
+			\end{align*}
+			\item
+			\begin{align*}
+				\Pi_{ps_7} :=
+				\begin{prooftree}
+				\hypo[]{\Pi_{ps-f \cdot g}}
+				\hypo[]{\Pi_{ps-f \cdot h}}
+				\infer2[(ps-pair)]{\Gamma' \vdash_{ps} x \rightarrow z \times w}
+				\end{prooftree}
+			\end{align*}
+		\end{itemize}
+		\item $f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot fst = f$
+		\item $f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot snd = g$
+		\item $f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>$
+		\item $\emptyset \vdash \left<fst, snd\right> = id$
+		\item $f : x \rightarrow y \vdash f \cdot term_y = term_x$
+	\end{enumerate}
 	
-	\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot fst = f$
-	\item $f : A \rightarrow B, g : A \rightarrow C \vdash \left<f, g\right> \cdot snd = g$
-	\item $f : A \rightarrow B, g : B \rightarrow C, h : C \rightarrow D \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>$
-	\item $\emptyset \vdash \left<fst, snd\right> = id$
-	\item $f : A \rightarrow B \vdash f \cdot term_B = term_A$
-\end{enumerate}
-
 \end{document}
