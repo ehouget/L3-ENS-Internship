@@ -466,37 +466,55 @@
 	
 	\subsection{Combinateurs catégoriques cartésiens}
 	
-	De même que les termes typés, quotientés par la relation d'équivalence $\sim$ tels que définis dans la partie II engendre une catégorie. L'enrichissement des défitions permet de conclure que les termes identifiés par $\sim$ engendrent une catégorie cartésienne syntaxique.
+	De même que les termes typés, quotientés par la relation d'équivalence $\sim$ tels que définis dans la partie \ref{cat} engendre une catégorie, l'enrichissement des définitions permet de conclure que les termes identifiés par $\sim$ engendrent une catégorie cartésienne syntaxique.
 	
 	\subsection{Termes normaux}
-	Comme nous l'avons fait dans la partie II, nous introduisons des termes normalisés qui ont pour double but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$ et de présenter des arbres de dérivation pour aisement manipulables dans la constuction de schémas composables cartésiens.
+	\footnote{Formalisation Agda des termes normaux : \href{https://github.com/ehouget/L3-ENS-Internship/tree/main/pasting-scheme-for-cartesian-categories/NormTm}{pasting-scheme-for-cartesian-categories/NormTm}}
+	Comme nous l'avons fait dans la partie \ref{cat}, nous introduisons des termes normalisés qui ont pour double but d'être des représentants canoniques pour les classes d'équivalence de la relation $\sim$ et de présenter des arbres de dérivation pour aisement manipulables dans la constuction de schémas composables cartésiens.
 	
-	\begin{center}
+	Nous introduisons quatre règles correspondantes chacune à un cas d'une induction que l'on souhaite mené pour démontrer que les schémas composables cartésiens sont au plus habité par un terme (à équivalence près).
+	
+	\begin{enumerate}
+		\item cas où le but de la flèche est l'objet terminal :
+		\begin{center}
 		\begin{prooftree}
 			\infer0[(norm-term)]{\Gamma \vdash_{Norm} term_A : A \rightarrow \mathbbm 1}
-		\end{prooftree} \\
-		\vspace{20pt}
-		\begin{prooftree}
-			\hypo[]{A \blacktriangleright x}
-			\infer1[(norm-proj)]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
-		\end{prooftree} \\
-		\vspace{20pt}
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{Norm} t : A \rightarrow B}
-			\hypo[]{B \rightarrow x \in \Gamma}
-			\infer2[(norm-var)]{\Gamma \vdash_{Norm} t \cdot var_{B \rightarrow x} : A \rightarrow x}
-		\end{prooftree} \\
-		\vspace{20pt}
+		\end{prooftree}
+		\end{center}
+		\vspace{15pt}
+		\item cas où le but de la flèche est un produit :
+		\begin{center}
 		\begin{prooftree}
 			\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
 			\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
 			\infer2[(norm-pair)]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
 		\end{prooftree}
-	\end{center}
-	\vspace{15pt}
-	Avec C un élément de $Ty$, on définit les transformations $\mathrm{Aff}_g(\cdot, C)$ et $\mathrm{Aff}_d(\cdot, C)$ qui étant donné une preuve de $\Gamma \vdash_{Norm} f : A \rightarrow B$ renvoit respectivement $\Gamma \vdash_{Norm} f : A \times C \rightarrow B$ et $\Gamma \vdash_{Norm} f : C \times A \rightarrow B$.
+		\end{center}
+		\vspace{15pt}
+		\item cas où le but de la flèche apparait dans la source :
+		\begin{center}
+		\begin{prooftree}
+			\hypo[]{A \blacktriangleright x}
+			\infer1[(norm-proj)]{\Gamma \vdash_{Norm} proj_{A,x} : A \rightarrow x}
+		\end{prooftree}
+		\end{center}
+		\vspace{15pt}
+		\item cas où le but de la flèche apparait dans le contexte :
+		\begin{center}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{Norm} t : A \rightarrow B}
+			\hypo[]{B \rightarrow x \in \Gamma}
+			\infer2[(norm-var)]{\Gamma \vdash_{Norm} t \cdot var_{B \rightarrow x} : A \rightarrow x}
+		\end{prooftree}
+		\end{center}
+		\vspace{15pt}
+	\end{enumerate}
 	
-	\begin{align}
+	Pour réaliser, comme dans le cas des catégories non cartésiennes, une transformation injective des termes vers les termes normaux. Il faut resconstruire les identités de types produits et les compositions avec des flèches dont le but est un produit.
+	
+	Pour cela, avec C un élément de $Ty$, on définit les transformations $\mathrm{Aff}_g(\cdot, C)$ et $\mathrm{Aff}_d(\cdot, C)$ qui étant donné une preuve de $\Gamma \vdash_{Norm} f : A \rightarrow B$ renvoit respectivement $\Gamma \vdash_{Norm} f : A \times C \rightarrow B$ et $\Gamma \vdash_{Norm} f : C \times A \rightarrow B$.
+	
+	\begin{align*}
 		\begin{gathered}
 			\mathrm{Aff}_g \left(
 			\begin{prooftree}
@@ -509,9 +527,9 @@
 				\infer0[]{\Gamma \vdash_{Norm} term_{A \times C} : A \times C \rightarrow \mathbbm 1}
 			\end{prooftree}
 		\end{gathered}
-	\end{align}
+	\end{align*}
 	
-	\begin{align}
+	\begin{align*}
 		\begin{gathered}
 			\mathrm{Aff}_g \left(
 			\begin{prooftree}
@@ -527,9 +545,9 @@
 				\infer1[]{\Gamma \vdash_{Norm} proj_{A \times C,x} : A \times C \rightarrow x}
 			\end{prooftree}
 		\end{gathered}
-	\end{align}
+	\end{align*}
 	
-	\begin{align}
+	\begin{align*}
 		\begin{gathered}
 			\mathrm{Aff}_g \left(
 			\begin{prooftree}
@@ -546,9 +564,9 @@
 				\infer2[]{\Gamma \vdash_{Norm} f \cdot var_{B \rightarrow x} : A \times C \rightarrow x}
 			\end{prooftree}
 		\end{gathered}
-	\end{align}
+	\end{align*}
 	
-	\begin{align}
+	\begin{align*}
 		\begin{gathered}
 			\mathrm{Aff}_g \left(
 			\begin{prooftree}
@@ -565,22 +583,11 @@
 				\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \times D \rightarrow B \times C}
 			\end{prooftree}
 		\end{gathered}
-	\end{align}
+	\end{align*}
 	
 	$\mathrm{Aff}_d$ est définie de manière similaire.
 	
-	\paragraph{Normalisation} On construit une fonction de normalisation N qui à un terme associe un terme normal en modifant inductivement la preuve : 
-	\begin{align*}
-		N\left( 
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{Norm} f : A \rightarrow B}
-			\hypo[]{\Gamma \vdash_{Norm} g : A \rightarrow C}
-			\infer2[]{\Gamma \vdash_{Norm} \left<f, g\right> : A \rightarrow B \times C}
-		\end{prooftree}
-		\right)
-		=
-	\end{align*}
-	
+	Nous n'avons pas formaliser en agda 
 	
 	\subsection{Schémas composables cartésiens}
 	Les règles que nous proposons pour la construction de schémas composables dans le cas cartésiens apparaissent comme moins élégantes dû à leur démultiplication. 
@@ -624,7 +631,7 @@
 	
 	\subsection{Unicité}
 	\footnote{Preuve formalisée partiellement : \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-cartesian-categories/PSEq.agda}{pasting-scheme-for-cartesian-categories/PSEq.agda} }
-	La preuve envisagée pour montrer que chaque schéma composable est habité par au plus un terme est très similaire à celle proposée dans le cas catégorique. Nous supposons donné $f$ et $g$ deux termes normaux typés par un schéma composable $\sigma$ et nous procédons par induction sur l'arbre de dérivation de $\sigma$.
+	La preuve envisagée pour montrer que chaque schéma composable est habité par au plus un terme est très similaire à celle proposée dans le cas catégorique. Nous supposons donné $f$ et $g$ deux termes normaux typés par un schéma composable $\sigma$ et nous procédons par induction sur l'arbre de dérivation de $\sigma$ pour montrer que $f \equiv g$.
 	
 	\subsubsection{cas (ps-term)}
 	Il n'y a qu'un seul terme normal typé par le type terminal à droite de la flèche, ainsi on déduit immédiatement l'unicité dans ce cas.
@@ -636,7 +643,13 @@
 	\subsubsection{cas (ps-weak)}
 	Affaiblir un schéma composable en ajoutant une flèche vers une variable fraiche permet de s'appuyer directement sur l'hypothèse d'induction. Il suffit de justifier que l'on peut reconstruire $f$ et $g$ dans le contexte privé cette nouvelle flèche "inutile". On obtient l'unicité en montrant que cette étape de reconstruction est injective. Nous n'avons pas réussi à formaliser ce résultat en Agda.
 	\subsubsection{cas (ps-const), (ps-ext)}
-	Ces deux cas sont similaires car ils consiste tous les deux à étendre le contexte avec une nouvelle flèche et à mettre à jour la flèche du schéma composable. Nous souhaitons alors montrer que $f$ et $g$ ont (norm-var) pour dernière règle dans leur arbre de dérivation. C'est-à-dire 
+	Ces deux cas sont similaires car ils consiste tous les deux à étendre le contexte avec une nouvelle flèche et à mettre à jour la flèche du schéma composable. Nous souhaitons alors montrer que $f$ et $g$ ont (norm-var) pour dernière règle dans leur arbre de dérivation. C'est-à-dire montrer que $f \equiv F \cdot var_A$ et $g \equiv G \cdot var_A$ avec $A$ une flèche vers une variable de type fraiche. Et donc utiliser le cas précédent pour conclure que $F \equiv G$. \\
+	
+	Le coeur de la preuve est que les schémas composables ont été définis afin qu'à chaque étape de l'induction on est de façon exclusif l'un des deux cas suivant :
+	\begin{enumerate}
+		\item Il existe une unique flèche dans le contexte dont le but est celui de $f$ et $g$ On est alors dans le cas de l'extension par une composition avec une flèche du contexte.
+		\item Le but n'apparait pas dans le contexte et apparait dans la source de $f$ et $g$. On est alors dans le cas d'une projection.
+	\end{enumerate}
 	
 	\subsection{Existence}
 	Montrer que chaque schéma composable est habité par au moins un terme se fait de manière similaire au cas catégorique.\footnote{Formalisation Agda de la preuve : \href{https://github.com/ehouget/L3-ENS-Internship/blob/main/pasting-scheme-for-cartesian-categories/PSTm.agda}{pasting-scheme-for-cartesian-categories/PSTm.agda}}

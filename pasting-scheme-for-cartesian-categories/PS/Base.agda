@@ -28,8 +28,7 @@ data PS : {n : ℕ} (Γ : Con n) (A : Arr n) → Set where
 ------------------------------------------------------------------------
 -- ps-weak⁻¹
 
-ps-weak⁻¹ : {n : ℕ} {Γ : Con n} {A B : Ty n} {k : Fin n} (ps : PS {n = suc n} (WkCon Γ ▹ (WkTy B , X (# 0))) (WkTy A , X (suc k))) → PS Γ (A , X k)
-ps-weak⁻¹ ps = {!!}
+-- ps-weak⁻¹ : {n : ℕ} {Γ : Con n} {A B : Ty n} {k : Fin n} (ps : PS {n = suc n} (WkCon Γ ▹ (WkTy B , X (# 0))) (WkTy A , X (suc k))) → PS Γ (A , X k)
 
 ------------------------------------------------------------------------
 -- Examples of cartesian pasting scheme

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  3 AUG 2026 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  4 AUG 2026 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,103 +1000,99 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 439.
 
 [4]
-Underfull \hbox (badness 1648) in paragraph at lines 472--473
-\OT1/ptm/m/n/10 la relation $\OMS/cmsy/m/n/10 ^^X$ \OT1/ptm/m/n/10 et de pr[]es
-enter des arbres de d[]erivation
+Overfull \hbox (9.7526pt too wide) in paragraph at lines 491--492
+ [] 
  []
 
 
-Overfull \hbox (15.6363pt too wide) detected at line 568
+Overfull \hbox (15.6363pt too wide) detected at line 586
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--573
- \OT1/ptm/m/it/10 a) Normalisation: [][] \OT1/ptm/m/n/10 On construit une fonct
-ion de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
+Underfull \hbox (badness 10000) in paragraph at lines 631--631
 [][][][]\OT1/ptm/m/n/8 Preuve formalis[]ee partiellement : [][]pasting-scheme-f
 or-cartesian-
  []
 
 [5]
-Underfull \hbox (badness 4967) in paragraph at lines 642--642
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+
+Underfull \hbox (badness 4967) in paragraph at lines 653--653
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda de la preuve : [][]pasting-scheme-for
 -cartesian-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 670--671
+Underfull \hbox (badness 1365) in paragraph at lines 681--682
 \OT1/ptm/m/n/8 quotients, S[]eminaire Bourbaki: ann[]ees 1960/61, expos[]es 205
 -222,
  []
 
 
-Overfull \hbox (43.99425pt too wide) in paragraph at lines 706--707
+Overfull \hbox (43.99425pt too wide) in paragraph at lines 717--718
 [][] 
  []
 
 
-Overfull \hbox (22.45781pt too wide) detected at line 719
+Overfull \hbox (22.45781pt too wide) detected at line 730
 []
  []
 
 
-Overfull \hbox (37.33434pt too wide) in paragraph at lines 729--731
+Overfull \hbox (37.33434pt too wide) in paragraph at lines 740--742
 [][]
  []
 
 
-Overfull \hbox (27.4756pt too wide) detected at line 742
+Overfull \hbox (27.4756pt too wide) detected at line 753
+[]
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 761--765
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
+
+ []
+
+
+Overfull \hbox (62.08351pt too wide) detected at line 792
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--754
+Underfull \hbox (badness 10000) in paragraph at lines 792--793
 
  []
 
 
-Underfull \vbox (badness 1281) has occurred while \output is active []
-
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 765--766
-
- []
-
-
-Overfull \hbox (62.08351pt too wide) detected at line 781
+Overfull \hbox (71.50566pt too wide) detected at line 808
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 781--782
-
- []
-
-
-Overfull \hbox (71.50566pt too wide) detected at line 797
+Overfull \hbox (41.0285pt too wide) detected at line 883
 []
  []
 
 
-Overfull \hbox (41.0285pt too wide) detected at line 872
+Overfull \hbox (15.45155pt too wide) detected at line 895
 []
  []
 
 
-Overfull \hbox (15.45155pt too wide) detected at line 884
+Overfull \hbox (18.3188pt too wide) detected at line 906
 []
  []
 
-
-Overfull \hbox (18.3188pt too wide) detected at line 895
-[]
- []
-
+[7]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1108,7 +1104,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./rapport.aux)
+[8
+
+] (./rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1117,10 +1115,10 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 5B89418F139DF3A7D21D5A8F471E3B0C;5665.
  ) 
 Here is how much of TeX's memory you used:
- 25157 strings out of 469486
- 469357 string characters out of 5469659
- 889669 words of memory out of 5000000
- 53302 multiletter control sequences out of 15000+600000
+ 25159 strings out of 469486
+ 469314 string characters out of 5469659
+ 894669 words of memory out of 5000000
+ 53301 multiletter control sequences out of 15000+600000
  670093 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,17n,97p,1337b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1140,10 +1138,10 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on rapport.pdf (7 pages, 245477 bytes).
+Output written on rapport.pdf (8 pages, 248000 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 372 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 435 PDF objects out of 1000 (max. 8388607)
+ 384 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 

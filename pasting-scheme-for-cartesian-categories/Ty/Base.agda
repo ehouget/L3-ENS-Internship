@@ -12,8 +12,6 @@ open import Data.Fin
 open import Data.Fin.Properties
 open import Data.Product renaming (_×_ to _∧_)
 
-{-# BUILTIN REWRITE _≡_ #-}
-
 ------------------------------------------------------------------------
 -- Types
 
@@ -60,8 +58,6 @@ Wk►-Wk►⁻¹ : {n : ℕ} {A : Ty n} {k : Fin n} {x : WkTy A ► suc k} → W
 Wk►-Wk►⁻¹ {A = X _}   {x = ►-here refl} = refl
 Wk►-Wk►⁻¹ {A = _ × _} {x = ►-left x}    = cong ►-left Wk►-Wk►⁻¹
 Wk►-Wk►⁻¹ {A = _ × _} {x = ►-right x}   = cong ►-right Wk►-Wk►⁻¹
-
-{-# REWRITE Wk►-Wk►⁻¹ #-}
 
 ------------------------------------------------------------------------
 -- Arrow

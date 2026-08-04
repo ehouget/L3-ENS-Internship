@@ -64,8 +64,6 @@ Wk►⁻¹-Wk► {x = ►-here refl} = refl
 Wk►⁻¹-Wk► {x = ►-left x} = cong ►-left Wk►⁻¹-Wk►
 Wk►⁻¹-Wk► {x = ►-right x} = cong ►-right Wk►⁻¹-Wk►
 
-{-# REWRITE Wk►⁻¹-Wk► #-}
-
 ------------------------------------------------------------------------
 -- Arrow weakening injectivity
 
@@ -98,11 +96,11 @@ linTyProj {k = zero} (right _) (►-left (►-here refl)) (►-left (►-here re
 linTyProj {k = zero} (right pred₁) _ (►-right y) = contradiction y no-0-in-WkTy
 linTyProj {k = zero} (right pred₁) (►-right x) _ = contradiction x no-0-in-WkTy
 linTyProj {k = zero} (weak _) x _ = contradiction x no-0-in-WkTy
-linTyProj {n = suc .(suc _)} {k = suc zero} (left pred₁) (►-left x) (►-left y) = cong (λ z → ►-left z) {!x!}
-linTyProj {n = suc .(suc _)} {k = suc (suc k)} (left pred₁) (►-left x) (►-left y) = cong (λ z → ►-left z) {!(Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y)))!}
+linTyProj {n = suc .(suc _)} {k = suc zero} (left pred₁) (►-left x) (►-left y) = cong (λ z → ►-left z) (Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y)))
+linTyProj {n = suc .(suc _)} {k = suc (suc k)} (left pred₁) (►-left x) (►-left y) = cong (λ z → ►-left z) (Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y)))
 linTyProj {k = suc k} (left _) _ (►-right (►-here ()))
 linTyProj {k = suc k} (left _) (►-right (►-here ())) _
 linTyProj {k = suc k} (right _) (►-left (►-here ())) _
 linTyProj {k = suc k} (right _) _ (►-left (►-here ()))
-linTyProj {k = suc k} (right pred₁) (►-right x) (►-right y) = cong (λ z → ►-right z) {!!} -- (Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y)))
-linTyProj {k = suc k} (weak pred₁) x y = {!!} -- Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y))
+linTyProj {k = suc k} (right pred₁) (►-right x) (►-right y) = cong (λ z → ►-right z) (Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y)))
+linTyProj {k = suc k} (weak pred₁) x y = Wk►⁻¹-injective (linTyProj pred₁ (Wk►⁻¹ x) (Wk►⁻¹ y))

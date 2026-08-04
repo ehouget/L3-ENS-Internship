@@ -47,6 +47,6 @@ Wk∈⁻¹ : {n : ℕ} {Γ : Con n} {A B : Ty n} → (WkTy A , WkTy B) ∈ WkCon
 Wk∈⁻¹ {Γ = Γ ▹ A} (∈-here x) = ∈-here (WkArr-injective x)
 Wk∈⁻¹ {Γ = Γ ▹ A} (∈-drop k) = ∈-drop (Wk∈⁻¹ k)
 
-Wk∈-Wk∈⁻¹ : {n : ℕ} {Γ : Con n} {A B : Ty n} {k : (WkTy A , WkTy B) ∈ WkCon Γ} → Wk∈ (Wk∈⁻¹ k) ≡ k
-Wk∈-Wk∈⁻¹ {Γ = Γ ▹ (A' , B')} {A} {B} {k = ∈-here eq} = {!!}
-Wk∈-Wk∈⁻¹ {Γ = Γ ▹ A} {k = ∈-drop k} = cong ∈-drop Wk∈-Wk∈⁻¹
+-- Wk∈-Wk∈⁻¹ : {n : ℕ} {Γ : Con n} {A B : Ty n} {k : (WkTy A , WkTy B) ∈ WkCon Γ} → Wk∈ (Wk∈⁻¹ k) ≡ k
+-- Wk∈-Wk∈⁻¹ {Γ = Γ ▹ (A' , B')} {A} {B} {k = ∈-here eq} = {!!}
+-- Wk∈-Wk∈⁻¹ {Γ = Γ ▹ A} {k = ∈-drop k} = cong ∈-drop Wk∈-Wk∈⁻¹

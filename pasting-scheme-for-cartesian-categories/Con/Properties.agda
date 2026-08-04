@@ -49,7 +49,13 @@ Wk∈-injective {k = ∈-drop k}    {l = ∈-drop l}    eq = cong ∈-drop (Wk�
 
 Wk∈⁻¹-injective : {n : ℕ} {Γ : Con n} {A B : Ty n} {k l : (WkTy A , WkTy B) ∈ (WkCon Γ)}
                 → Wk∈⁻¹ k ≡ Wk∈⁻¹ l → k ≡ l
-Wk∈⁻¹-injective {Γ = Γ ▹ (A , B)} {k = ∈-here _} {l = ∈-here _} eq = {!!}
+Wk∈⁻¹-injective {Γ = Γ ▹ (A , B)} {C} {D} {k = ∈-here x} {l = ∈-here y} eq = cong ∈-here (Wk∈⁻¹-injective-lem (WkTy-injective (,-injectiveˡ x)) (WkTy-injective (,-injectiveʳ y)) x y refl refl)
+  where
+  Wk∈⁻¹-injective-lem : C ≡ A → D ≡ B
+                      → (x' y' : (WkTy C , WkTy D) ≡ (WkTy A , WkTy B))
+                      → (eqx : x' ≡ x) → (eqy : y' ≡ y)
+                      → x ≡ y
+  Wk∈⁻¹-injective-lem refl refl refl refl refl refl = refl
 Wk∈⁻¹-injective {Γ = Γ ▹ A} {k = ∈-drop k} {l = ∈-drop l} eq = cong ∈-drop (Wk∈⁻¹-injective (∈-drop-injective eq))
 
 ------------------------------------------------------------------------
