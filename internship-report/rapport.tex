@@ -587,7 +587,7 @@
 	
 	$\mathrm{Aff}_d$ est définie de manière similaire.
 	
-	Nous n'avons pas formaliser en agda 
+	Nous n'avons pas conclu la formalisation en Agda de cette partie, il manque la transformation des compositions avec une flèche qui a pour but un produit.
 	
 	\subsection{Schémas composables cartésiens}
 	Les règles que nous proposons pour la construction de schémas composables dans le cas cartésiens apparaissent comme moins élégantes dû à leur démultiplication. 
@@ -731,121 +731,99 @@
 			\end{gathered}
 		\end{align*}
 		
-		\item
-		\begin{prooftree}
+		\item \begin{prooftree}
 			\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
 			\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 			\hypo[]{\Pi_{f \cdot id}}
 			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
 			\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
 			\infer3[$(ps^=)$]{f : x \rightarrow y \vdash f \cdot id = f}
-		\end{prooftree}
-		avec
-		\begin{align*}
-			\begin{gathered}
-				\Pi_{f \cdot id} \\
-				:= \\
-				\begin{prooftree}
-					\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-					\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-					\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
-					\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
-				\end{prooftree}
-			\end{gathered}
-		\end{align*}
+		\end{prooftree} 
 		\vspace{15pt}
+		Avec $\Pi_{f \cdot id} =$
+			\begin{prooftree}
+				\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
+				\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
+				\infer0[]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
+				\infer2[]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
+			\end{prooftree}
+		\vspace{20pt}
 		\item
 		\begin{prooftree}
 			\hypo[]{\Pi_{ps}}
 			\hypo[]{\Pi_{(f \cdot g) \cdot h}}
 			\hypo[]{\Pi_{f \cdot (g \cdot h)}}
 			\infer3[$(ps^=)$]{\Gamma \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)}
-		\end{prooftree} \\
-		\vspace{15pt}
-		avec \\
-		$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\ 
-		\begin{align*}
-			\begin{gathered}
-				\Pi_{id \cdot f} \\
-				:= \\
+		\end{prooftree}
+		\begin{itemize}
+			\item $\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\
+			\item $\Pi_{id \cdot f} =$
 				\begin{prooftree}
 					\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
 					\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 					\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
 					\infer1[(ext)]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
 				\end{prooftree}
-			\end{gathered}
-		\end{align*} \\
-		\begin{align*}
-			\begin{gathered}
-				\Pi_{(f \cdot g) \cdot h} \\
-				:= \\
+			\vspace{15pt}
+			\item $\Pi_{(f \cdot g) \cdot h} =$
+			\begin{prooftree}
+				\hypo[]{f : x \rightarrow y \in \Gamma}
+				\infer1[]{\Gamma \vdash f : x \rightarrow y}
+				\hypo[]{g : y \rightarrow z \in \Gamma}
+				\infer1[]{\Gamma \vdash g : y \rightarrow z}
+				\infer2[]{\Gamma \vdash f \cdot g : x \rightarrow z}
+				\hypo[]{h : z \rightarrow w \in \Gamma}
+				\infer1[]{\Gamma \vdash h : z \rightarrow w}
+				\infer2[]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+			\end{prooftree}
+			\vspace{15pt}
+			\item $\Pi_{f \cdot (g \cdot h)} =$
 				\begin{prooftree}
 					\hypo[]{f : x \rightarrow y \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
+					\infer1[]{\Gamma \vdash f : x \rightarrow y}
 					\hypo[]{g : y \rightarrow z \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
+					\infer1[]{\Gamma \vdash g : y \rightarrow z}
 					\hypo[]{h : z \rightarrow w \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
-					\infer2[(comp)]{\Gamma \vdash g \cdot h : y \rightarrow w}
-					\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+					\infer1[]{\Gamma \vdash h : z \rightarrow w}
+					\infer2[]{\Gamma \vdash g \cdot h : y \rightarrow w}
+					\infer2[]{\Gamma \vdash f \cdot (g \cdot h)  : x \rightarrow w}
 				\end{prooftree}
-			\end{gathered}
-		\end{align*} \\
-		\begin{align*}
-			\begin{gathered}
-				\Pi_{(f \cdot g) \cdot h} \\
-				:= \\
-				\begin{prooftree}
-					\hypo[]{f : x \rightarrow y \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash f : x \rightarrow y}
-					\hypo[]{g : y \rightarrow z \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash g : y \rightarrow z}
-					\infer2[(comp)]{\Gamma \vdash f \cdot g : x \rightarrow z}
-					\hypo[]{h : z \rightarrow w \in \Gamma}
-					\infer1[(var)]{\Gamma \vdash h : z \rightarrow w}
-					\infer2[(comp)]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
-				\end{prooftree}
-			\end{gathered}
-		\end{align*}
+
+		\end{itemize}
 	\end{enumerate}
 	
 	\section{Preuves séquents catégories cartésiennes} \label{seq-proof-ccat}
 	
 	\begin{enumerate}
-		\item 
-		\begin{align*}
-			\Pi_{ps-term} :=
+		\item
+			$\Pi_{ps_{term}} :=$
 			\begin{prooftree}
 				\infer0[(ps-term)]{\emptyset \vdash_{ps} : A \rightarrow \mathbbm 1}
 			\end{prooftree}
-		\end{align*}
+		\vspace{15pt}
+		
 		\item
 		\begin{prooftree}
 			\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
 			\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
 			\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
 		\end{prooftree}
+		\vspace{15pt}
 		
-		\item 
-		\begin{align*}
-			\Pi_{ps-fst} :=
+		\item $\Pi_{ps-fst} =$
 			\begin{prooftree}
 				\infer0[($\blacktriangleright_{ax}$)]{x \blacktriangleright x}
 				\infer1[($\blacktriangleright_g$)]{x \times y \blacktriangleright x}
 				\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \times y \rightarrow x}
 			\end{prooftree}
-		\end{align*}
+		\vspace{15pt}
 		
-		\item 
-		\begin{align*}
-			\Pi_{ps-snd} :=
+		\item $\Pi_{ps-snd} =$
 			\begin{prooftree}
 				\infer0[($\blacktriangleright_{ax}$)]{y \blacktriangleright y}
 				\infer1[($\blacktriangleright_d$)]{x \times y \blacktriangleright y}
 				\infer1[(ps-proj)]{\emptyset \vdash_{ps} x \times y \rightarrow y}
 			\end{prooftree}
-		\end{align*}
 		
 		On pose les objets auxiliaires suivants :
 		\begin{itemize}
@@ -916,11 +894,47 @@
 				\end{prooftree}
 			\end{align*}
 		\end{itemize}
-		\item $f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot fst = f$
-		\item $f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot snd = g$
-		\item $f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>$
-		\item $\emptyset \vdash \left<fst, snd\right> = id$
-		\item $f : x \rightarrow y \vdash f \cdot term_y = term_x$
+		
+		\item \begin{prooftree}
+			\hypo[]{\Pi_{ps_f}}
+			\hypo[]{\Pi_{\left<\right>\cdot fst}}
+			\hypo[]{\Pi_{f}}
+			\infer3[]{f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot fst = f}
+		\end{prooftree}
+		\vspace{15pt}
+		
+		\item \begin{prooftree}
+			\hypo[]{\Pi_{ps_g}}
+			\hypo[]{\Pi_{\left<\right>\cdot snd}}
+			\hypo[]{\Pi_{g}}
+			\infer3[]{f : x \rightarrow y, g : x \rightarrow z \vdash \left<f, g\right> \cdot snd = g}
+		\end{prooftree}
+		\vspace{15pt}
+		
+		\item \begin{prooftree}
+			\hypo[]{\Pi_{ps_g}}
+			\hypo[]{\Pi_{\left<\right>\cdot snd}}
+			\hypo[]{\Pi_{g}}
+			\infer3[]{f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w \vdash f \cdot \left<g, h\right> = \left< f \cdot g, f \cdot h\right>}
+		\end{prooftree}
+		\vspace{15pt}
+		
+		\item \begin{prooftree}
+			\hypo[]{\Pi_{ps_{id-pair}}}
+			\hypo[]{\Pi_{\left<\right>\cdot snd}}
+			\hypo[]{\Pi_{g}}
+			\infer3[]{\emptyset \vdash \left<fst, snd\right> = id_{x \times y}}
+		\end{prooftree}
+		\vspace{15pt}
+		
+		\item \begin{prooftree}
+			\infer0[]{f : x \rightarrow y \vdash_{ps} : x \rightarrow \mathbbm 1}
+			\hypo[]{\Gamma \vdash f : x \rightarrow y}
+			\infer0[]{\Gamma \vdash term_y : y \rightarrow \mathbbm 1}
+			\infer2[]{\Gamma \vdash f \cdot term_y : x \rightarrow \mathbbm 1}
+			\infer0[]{\Gamma \vdash term_x : x \rightarrow \mathbbm 1}
+			\infer3[]{f : x \rightarrow y \vdash f \cdot term_y = term_x}
+		\end{prooftree}
 	\end{enumerate}
 	
 \end{document}
