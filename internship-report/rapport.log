@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  4 AUG 2026 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  5 AUG 2026 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,11 +828,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 47--48
-\OT1/ptm/b/n/9 Nous proposons une adaptation de la notion de sch[]ema
- []
-
-
 Underfull \hbox (badness 1552) in paragraph at lines 50--52
 []\OT1/ptm/b/it/9 Index Terms\OT1/ptm/b/n/9 ---Th[]eorie des types, th[]eorie d
 es cat[]egories,
@@ -925,8 +920,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--338
  []
 
 
-Underfull \hbox (badness 3364) in paragraph at lines 340--341
-\OT1/ptm/m/n/10 composable est habit[]e par un terme. Pour cela nous
+Underfull \hbox (badness 2753) in paragraph at lines 340--341
+\OT1/ptm/m/n/10 composable est habit[]e par un terme. Pour cela, nous
  []
 
 [3]
@@ -947,11 +942,6 @@ Underfull \hbox (badness 1776) in paragraph at lines 368--369
 
 Underfull \hbox (badness 5203) in paragraph at lines 370--371
 []\OT1/ptm/m/n/10 Nous n'avons pas pu conclure la preuve formelle
- []
-
-
-Underfull \hbox (badness 1490) in paragraph at lines 370--371
-\OT1/ptm/m/n/10 introduits ainsi que la d[]efintion de sch[]ema composable
  []
 
 
@@ -1016,83 +1006,75 @@ or-cartesian-
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
 
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 655--655
+Underfull \hbox (badness 4967) in paragraph at lines 658--658
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda de la preuve : [][]pasting-scheme-for
 -cartesian-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 683--684
+Underfull \hbox (badness 1365) in paragraph at lines 686--687
 \OT1/ptm/m/n/8 quotients, S[]eminaire Bourbaki: ann[]ees 1960/61, expos[]es 205
 -222,
  []
 
 
-Overfull \hbox (43.99425pt too wide) in paragraph at lines 719--720
+Overfull \hbox (43.99425pt too wide) in paragraph at lines 722--723
 [][] 
  []
 
 
-Overfull \hbox (22.45781pt too wide) detected at line 732
+Overfull \hbox (22.45781pt too wide) detected at line 734
 []
  []
 
 
-Overfull \hbox (62.1442pt too wide) in paragraph at lines 741--752
-[][]  \OT1/ptm/m/n/10 Avec
- []
-
-
-Overfull \hbox (17.6426pt too wide) in paragraph at lines 741--752
-\OT1/cmr/m/n/10 ^^E[] =$ []
+Overfull \hbox (41.93425pt too wide) in paragraph at lines 743--745
+[][]   
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 759--760
-
- []
-
-
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 768--780
+Overfull \hbox (17.6426pt too wide) in paragraph at lines 746--755
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 780--791
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
+
+ []
+
+
+Overfull \hbox (43.09302pt too wide) in paragraph at lines 771--783
+[]$\OT1/cmr/m/n/10 ^^E[] =$ []
+ []
+
+
+Overfull \hbox (43.09302pt too wide) in paragraph at lines 783--794
 []$\OT1/cmr/m/n/10 ^^E[] =$ [] 
  []
 
 
-Underfull \vbox (badness 6364) has occurred while \output is active []
-
-
-Overfull \hbox (41.0285pt too wide) detected at line 863
+Overfull \hbox (37.4104pt too wide) detected at line 860
 []
  []
 
 
-Overfull \hbox (15.45155pt too wide) detected at line 875
+Overfull \hbox (37.2391pt too wide) detected at line 892
 []
  []
 
-
-Overfull \hbox (18.3188pt too wide) detected at line 886
-[]
- []
-
-
-Overfull \hbox (14.40181pt too wide) in paragraph at lines 919--921
-[][]
- []
-
-
-Overfull \hbox (138.6842pt too wide) in paragraph at lines 937--938
+[7]
+Overfull \hbox (20.99895pt too wide) in paragraph at lines 971--972
 [][] 
+ []
+
+
+Overfull \hbox (21.01535pt too wide) detected at line 980
+[]
  []
 
 
@@ -1106,7 +1088,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] [8
+[8
 
 ] (./rapport.aux)
  ***********
@@ -1117,13 +1099,13 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 5B89418F139DF3A7D21D5A8F471E3B0C;5665.
  ) 
 Here is how much of TeX's memory you used:
- 25159 strings out of 469486
- 469314 string characters out of 5469659
- 892669 words of memory out of 5000000
- 53301 multiletter control sequences out of 15000+600000
+ 25160 strings out of 469486
+ 469322 string characters out of 5469659
+ 893669 words of memory out of 5000000
+ 53302 multiletter control sequences out of 15000+600000
  670093 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,17n,97p,1337b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,17n,97p,1365b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/typ
@@ -1140,7 +1122,7 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on rapport.pdf (8 pages, 249100 bytes).
+Output written on rapport.pdf (8 pages, 250170 bytes).
 PDF statistics:
  435 PDF objects out of 1000 (max. 8388607)
  384 compressed objects within 4 object streams
