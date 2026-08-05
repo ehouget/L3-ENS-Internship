@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  5 AUG 2026 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  5 AUG 2026 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,221 +859,240 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 132.
+(hyperref)                removing `math shift' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 132.
+(hyperref)                removing `\sim' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 132.
+(hyperref)                removing `math shift' on input line 134.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des termes normaux : [][]pasting-sche
 me-for-
  []
 
 [2]
-Underfull \hbox (badness 7012) in paragraph at lines 193--194
- []\OT1/ptm/m/it/10 Composition de deux termes normaux: [] \OT1/ptm/m/n/10 Afin
- de
+Overfull \hbox (5.72632pt too wide) detected at line 254
+[][]
  []
 
 
-Overfull \hbox (5.72632pt too wide) detected at line 249
-[][][][][]
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+[]\OT1/ptm/m/n/10 Nous montrons que ces deux r[]egles d[]efinissent
  []
 
 
-Underfull \hbox (badness 7613) in paragraph at lines 329--330
-\OML/cmm/m/it/10 Con \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 Arr$ \OT1/ptm/m/n/10
- un ensemble de sch[]emas composables.
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 333--334
+Underfull \hbox (badness 1424) in paragraph at lines 340--341
 []\OT1/ptm/b/it/10 Preuve \OT1/ptm/m/n/10 Nous raisonnons par induction sur l'a
 rbre de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
 
-Underfull \hbox (badness 5189) in paragraph at lines 337--338
+Underfull \hbox (badness 5189) in paragraph at lines 344--345
 \OT1/ptm/m/n/10 et $\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/c
 mr/m/n/10 )$ \OT1/ptm/m/n/10 sont deux termes normaux dont le couple
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 337--338
+Underfull \hbox (badness 1668) in paragraph at lines 344--345
 \OT1/ptm/m/n/10 contexte/fl[]eche est un sch[]ema composable ainsi, par le
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
 
  []
 
 
-Underfull \hbox (badness 2753) in paragraph at lines 340--341
+Underfull \hbox (badness 2753) in paragraph at lines 347--348
 \OT1/ptm/m/n/10 composable est habit[]e par un terme. Pour cela, nous
  []
 
 [3]
-Underfull \hbox (badness 3148) in paragraph at lines 355--356
+Underfull \hbox (badness 3148) in paragraph at lines 361--362
 []\OT1/ptm/m/n/10 Les trois premiers sont relatifs aux axiomes de la
  []
 
 
-Underfull \hbox (badness 7576) in paragraph at lines 368--369
+Underfull \hbox (badness 7576) in paragraph at lines 374--375
 []\OT1/ptm/m/n/10 Nous souhaitons maintenant []etendre aux cat[]egories
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 368--369
+Underfull \hbox (badness 1776) in paragraph at lines 374--375
 \OT1/ptm/m/n/10 renvoy[]ee. L'introduction du produit cart[]esien permet de
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 370--371
+Underfull \hbox (badness 5203) in paragraph at lines 376--377
 []\OT1/ptm/m/n/10 Nous n'avons pas pu conclure la preuve formelle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 388--389
+Underfull \hbox (badness 1490) in paragraph at lines 394--396
 \OT1/ptm/m/n/10 un type produit nous introduisons le pr[]edicat $\U/msa/m/n/10 
 I$ \OT1/ptm/m/n/10 d[]efini
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 411--411
+Underfull \hbox (badness 6001) in paragraph at lines 418--418
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des contextes : [][]pasting-scheme-fo
 r-cartesian-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des termes : [][]pasting-scheme-for-c
 artesian-
  []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 439.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 439.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 439.
-
 [4]
-Overfull \hbox (9.7526pt too wide) in paragraph at lines 491--492
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 446.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sim' on input line 446.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 446.
+
+
+Overfull \hbox (9.7526pt too wide) in paragraph at lines 498--499
  [] 
  []
 
 
-Overfull \hbox (15.6363pt too wide) detected at line 586
+Overfull \hbox (15.6363pt too wide) detected at line 593
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--633
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 [][][][]\OT1/ptm/m/n/8 Preuve formalis[]ee partiellement : [][]pasting-scheme-f
 or-cartesian-
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 658--658
+Underfull \hbox (badness 4967) in paragraph at lines 685--685
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda de la preuve : [][]pasting-scheme-for
 -cartesian-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 686--687
+Underfull \hbox (badness 1365) in paragraph at lines 713--714
 \OT1/ptm/m/n/8 quotients, S[]eminaire Bourbaki: ann[]ees 1960/61, expos[]es 205
 -222,
  []
 
-
-Overfull \hbox (43.99425pt too wide) in paragraph at lines 722--723
+[6]
+Overfull \hbox (43.99425pt too wide) in paragraph at lines 749--750
 [][] 
  []
 
 
-Overfull \hbox (22.45781pt too wide) detected at line 734
+Overfull \hbox (22.45781pt too wide) detected at line 761
 []
  []
 
 
-Overfull \hbox (41.93425pt too wide) in paragraph at lines 743--745
+Overfull \hbox (41.93425pt too wide) in paragraph at lines 770--772
 [][]   
  []
 
-[6]
-Overfull \hbox (17.6426pt too wide) in paragraph at lines 746--755
+
+Overfull \hbox (17.6426pt too wide) in paragraph at lines 773--782
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 762--763
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
 
  []
 
 
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 771--783
+Overfull \hbox (43.09302pt too wide) in paragraph at lines 798--810
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 783--794
+Overfull \hbox (43.09302pt too wide) in paragraph at lines 810--821
 []$\OT1/cmr/m/n/10 ^^E[] =$ [] 
  []
 
 
-Overfull \hbox (37.4104pt too wide) detected at line 860
+Overfull \hbox (37.4104pt too wide) detected at line 887
 []
  []
 
 
-Overfull \hbox (37.2391pt too wide) detected at line 892
+Overfull \hbox (37.2391pt too wide) detected at line 919
 []
  []
 
 [7]
-Overfull \hbox (20.99895pt too wide) in paragraph at lines 971--972
+Overfull \hbox (16.59053pt too wide) detected at line 972
+[]
+ []
+
+
+Overfull \hbox (98.53352pt too wide) detected at line 985
+[]
+ []
+
+
+Overfull \hbox (20.99895pt too wide) in paragraph at lines 1022--1023
 [][] 
  []
 
 
-Overfull \hbox (21.01535pt too wide) detected at line 980
+Overfull \hbox (21.01535pt too wide) detected at line 1031
 []
  []
 
@@ -1088,24 +1107,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8
-
-] (./rapport.aux)
+[8] (./rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 5B89418F139DF3A7D21D5A8F471E3B0C;5665.
+(rerunfilecheck)             Checksum: 835344F983D822BD18F783135AFBDB2E;5665.
  ) 
 Here is how much of TeX's memory you used:
- 25160 strings out of 469486
- 469322 string characters out of 5469659
- 893669 words of memory out of 5000000
- 53302 multiletter control sequences out of 15000+600000
+ 25158 strings out of 469486
+ 469348 string characters out of 5469659
+ 892669 words of memory out of 5000000
+ 53304 multiletter control sequences out of 15000+600000
  670093 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,17n,97p,1365b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,17n,97p,1367b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/typ
@@ -1122,10 +1139,10 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on rapport.pdf (8 pages, 250170 bytes).
+Output written on rapport.pdf (8 pages, 251584 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 384 compressed objects within 4 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 383 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 
