@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  5 AUG 2026 17:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  7 AUG 2026 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,18 +1032,8 @@ Underfull \hbox (badness 1365) in paragraph at lines 713--714
  []
 
 [6]
-Overfull \hbox (43.99425pt too wide) in paragraph at lines 749--750
-[][] 
- []
-
-
-Overfull \hbox (22.45781pt too wide) detected at line 761
+Overfull \hbox (18.12035pt too wide) detected at line 761
 []
- []
-
-
-Overfull \hbox (41.93425pt too wide) in paragraph at lines 770--772
-[][]   
  []
 
 
@@ -1052,47 +1042,47 @@ Overfull \hbox (17.6426pt too wide) in paragraph at lines 773--782
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--790
+Underfull \hbox (badness 10000) in paragraph at lines 790--791
 
  []
 
 
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 798--810
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 801--824
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Overfull \hbox (43.09302pt too wide) in paragraph at lines 810--821
-[]$\OT1/cmr/m/n/10 ^^E[] =$ [] 
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 801--824
+$\OT1/cmr/m/n/10 ^^E[] =$ [] 
  []
 
 
-Overfull \hbox (37.4104pt too wide) detected at line 887
+Overfull \hbox (37.4104pt too wide) detected at line 888
 []
  []
 
 
-Overfull \hbox (37.2391pt too wide) detected at line 919
+Overfull \hbox (37.2391pt too wide) detected at line 920
 []
  []
 
 [7]
-Overfull \hbox (16.59053pt too wide) detected at line 972
+Overfull \hbox (16.59053pt too wide) detected at line 973
 []
  []
 
 
-Overfull \hbox (98.53352pt too wide) detected at line 985
+Overfull \hbox (98.53352pt too wide) detected at line 986
 []
  []
 
 
-Overfull \hbox (20.99895pt too wide) in paragraph at lines 1022--1023
+Overfull \hbox (20.99895pt too wide) in paragraph at lines 1023--1024
 [][] 
  []
 
 
-Overfull \hbox (21.01535pt too wide) detected at line 1031
+Overfull \hbox (21.01535pt too wide) detected at line 1032
 []
  []
 
@@ -1107,7 +1097,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] (./rapport.aux)
+[8
+
+] (./rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1139,7 +1131,7 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on rapport.pdf (8 pages, 251584 bytes).
+Output written on rapport.pdf (8 pages, 251383 bytes).
 PDF statistics:
  434 PDF objects out of 1000 (max. 8388607)
  383 compressed objects within 4 object streams

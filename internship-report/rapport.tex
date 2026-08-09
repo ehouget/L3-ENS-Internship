@@ -11,7 +11,7 @@
 \usepackage{amssymb}
 \usepackage{bbm}
 \usepackage{ebproof}
-\usepackage{babel}
+\usepackage{babel}[french]
 \usepackage{graphicx}
 \usepackage{hyperref}
 \hypersetup{
@@ -740,33 +740,33 @@
 		\vspace{15pt}
 		\item
 		\begin{prooftree}
-			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+			\infer0[]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 			\hypo[]{\Pi_{id \cdot f}}
 			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-			\infer1[(var)]{f : x \rightarrow y \vdash f : x \rightarrow y}
-			\infer3[$(ps^=)$]{f : x \rightarrow y \vdash id \cdot f = f}
+			\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
+			\infer3[]{f : x \rightarrow y \vdash id \cdot f = f}
 		\end{prooftree}
 		
 		\begin{align*}
 			\begin{gathered}
-				\Pi_{id \cdot f} = \\
+				\Pi_{id \cdot f} =
 				\begin{prooftree}
-					\infer0[id]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
+					\infer0[]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
 					\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-					\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-					\infer2[comp]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
+					\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
+					\infer2[]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
 				\end{prooftree}
 			\end{gathered}
 		\end{align*}
 		
 		\item \begin{prooftree}
-			\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
-			\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+			\infer0[]{\emptyset \vdash_{ps} x \rightarrow x}
+			\infer1[]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 			\hypo[]{\Pi_{f \cdot id}}
 			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
-			\infer1[var]{f : x \rightarrow y \vdash f : x \rightarrow y}
-			\infer3[$(ps^=)$]{f : x \rightarrow y \vdash f \cdot id = f}
+			\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
+			\infer3[]{f : x \rightarrow y \vdash f \cdot id = f}
 		\end{prooftree} 
 		\vspace{15pt}
 		
@@ -784,42 +784,43 @@
 			\hypo[]{\Pi_{(f \cdot g) \cdot h}}
 			\hypo[]{\Pi_{f \cdot (g \cdot h)}}
 			\infer3[$(ps^=)$]{\Gamma \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)}
-		\end{prooftree}
-		\begin{itemize}
-			\item $\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\
-			\item $\Pi_{id \cdot f} =$
-				\begin{prooftree}
-					\infer0[ax]{\emptyset \vdash_{ps} x \rightarrow x}
-					\infer1[ext]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-					\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
-					\infer1[(ext)]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
-				\end{prooftree}
-			\vspace{15pt}
-			\item $\Pi_{(f \cdot g) \cdot h} =$
+		\end{prooftree} \\
+		\vspace{10pt}
+		
+		$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\
+		
+		$\Pi_{id \cdot f} =$
 			\begin{prooftree}
-				\hypo[]{f : x \rightarrow y \in \Gamma}
-				\infer1[]{\Gamma \vdash f : x \rightarrow y}
-				\hypo[]{g : y \rightarrow z \in \Gamma}
-				\infer1[]{\Gamma \vdash g : y \rightarrow z}
-				\infer2[]{\Gamma \vdash f \cdot g : x \rightarrow z}
-				\hypo[]{h : z \rightarrow w \in \Gamma}
-				\infer1[]{\Gamma \vdash h : z \rightarrow w}
-				\infer2[]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+				\infer0[]{\emptyset \vdash_{ps} x \rightarrow x}
+				\infer1[]{x \rightarrow y \vdash_{ps} x \rightarrow y}
+				\infer1[]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
+				\infer1[]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
 			\end{prooftree}
 			\vspace{15pt}
-			\item $\Pi_{f \cdot (g \cdot h)} =$
-				\begin{prooftree}
-					\hypo[]{f : x \rightarrow y \in \Gamma}
-					\infer1[]{\Gamma \vdash f : x \rightarrow y}
-					\hypo[]{g : y \rightarrow z \in \Gamma}
-					\infer1[]{\Gamma \vdash g : y \rightarrow z}
-					\hypo[]{h : z \rightarrow w \in \Gamma}
-					\infer1[]{\Gamma \vdash h : z \rightarrow w}
-					\infer2[]{\Gamma \vdash g \cdot h : y \rightarrow w}
-					\infer2[]{\Gamma \vdash f \cdot (g \cdot h)  : x \rightarrow w}
-				\end{prooftree}
-
-		\end{itemize}
+		
+		$\Pi_{(f \cdot g) \cdot h} =$
+		\begin{prooftree}
+			\hypo[]{f : x \rightarrow y \in \Gamma}
+			\infer1[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{g : y \rightarrow z \in \Gamma}
+			\infer1[]{\Gamma \vdash g : y \rightarrow z}
+			\infer2[]{\Gamma \vdash f \cdot g : x \rightarrow z}
+			\hypo[]{h : z \rightarrow w \in \Gamma}
+			\infer1[]{\Gamma \vdash h : z \rightarrow w}
+			\infer2[]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
+		\end{prooftree}
+			\vspace{15pt}
+		$\Pi_{f \cdot (g \cdot h)} =$
+		\begin{prooftree}
+			\hypo[]{f : x \rightarrow y \in \Gamma}
+			\infer1[]{\Gamma \vdash f : x \rightarrow y}
+			\hypo[]{g : y \rightarrow z \in \Gamma}
+			\infer1[]{\Gamma \vdash g : y \rightarrow z}
+			\hypo[]{h : z \rightarrow w \in \Gamma}
+			\infer1[]{\Gamma \vdash h : z \rightarrow w}
+			\infer2[]{\Gamma \vdash g \cdot h : y \rightarrow w}
+			\infer2[]{\Gamma \vdash f \cdot (g \cdot h)  : x \rightarrow w}
+		\end{prooftree}
 	\end{enumerate}
 	
 	\section{Preuves séquents catégories cartésiennes} \label{seq-proof-ccat}
@@ -839,7 +840,7 @@
 		\end{prooftree}
 		\vspace{15pt}
 		
-		\item $\Pi_{ps-fst} =$
+		\item $\Pi_{ps_{fst}} =$
 			\begin{prooftree}
 				\infer0[($\blacktriangleright_{ax}$)]{x \blacktriangleright x}
 				\infer1[($\blacktriangleright_g$)]{x \times y \blacktriangleright x}
@@ -847,7 +848,7 @@
 			\end{prooftree}
 		\vspace{15pt}
 		
-		\item $\Pi_{ps-snd} =$
+		\item $\Pi_{ps_{snd}} =$
 			\begin{prooftree}
 				\infer0[($\blacktriangleright_{ax}$)]{y \blacktriangleright y}
 				\infer1[($\blacktriangleright_d$)]{x \times y \blacktriangleright y}
@@ -996,9 +997,9 @@
 		\begin{align*}
 			\Pi_{ps_{id-pair}} =
 			\begin{prooftree}
-				\hypo[]{\Pi_{ps-fst}}
+				\hypo[]{\Pi_{ps_{fst}}}
 				\infer1[]{\emptyset \vdash_{ps} x \times y \rightarrow x}
-				\hypo[]{\Pi_{ps-snd}}
+				\hypo[]{\Pi_{ps_{snd}}}
 				\infer1[]{\emptyset \vdash_{ps} x \times y \rightarrow y}
 				\infer2[]{\emptyset \vdash_{ps} x \times y \rightarrow x \times y}
 			\end{prooftree}
