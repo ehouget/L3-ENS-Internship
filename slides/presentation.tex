@@ -1,22 +1,118 @@
-\documentclass{beamer}
+\documentclass[t,14pt]{beamer}
 
-\usepackage{babel}[french]
-%Information to be included in the title page:
-\title{Une approche non biaisÃ©e des catÃ©gories cartÃ©siennes}
+\usepackage[T1]{fontenc} 
+\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pslatex}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd}
+\usepackage{ebproof}
+
+\usetheme{Copenhagen}
+
+\title{Une approche non biaisée des catégories cartésiennes}
+\subtitle{Stage de recherche L3}
 \author{Eliott Houget}
-\institute{LIX, CNRS, Ã‰cole polytechnique, Institut Polytechnique de
-	Paris}
-\usepackage{datetime}
-\newdate{date}{24}{08}{2026}
-\date{\displaydate{date}}
+\institute{LIX, École polytechnique, Institut Polytechnique de Paris}
+\date{24 août 2026}
 
 \begin{document}
 	
 	\frame{\titlepage}
 	
 	\begin{frame}
-		\frametitle{Sample frame title}
-		This is some text in the first frame. This is some text in the first frame. This is some text in the first frame.
+		\frametitle{Introduction}
+	\end{frame}
+
+	% --------- Sommaire ---------
+	\section*{Sommaire}
+	\begin{frame}
+		\tableofcontents
+	\end{frame}      
+	% ----------------------------
+	
+	\begin{frame}
+		\frametitle{Catégories}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Schémas composables}
+	\end{frame}
+	
+	\begin{tikzcd}
+		& X_0 \arrow{r}{f_1} 
+		& X_1 \arrow{r}{f_2} 
+		& \cdots \arrow{r}{f_n} 
+		& X_n
+	\end{tikzcd}
+	
+	\begin{tikzcd}
+		& x \arrow{r}{f} 
+		& y  
+		& z \arrow{l}{g}
+	\end{tikzcd}
+	
+	\begin{tikzcd}
+		& y \\
+		x \arrow[rd, "g"'] \arrow[ru, "f"] &   \\
+		& z
+	\end{tikzcd}
+	
+	\begin{tikzcd}
+		x \arrow[r, "f", bend left] & y \arrow[l, "g", bend left]
+	\end{tikzcd}
+	
+	\begin{prooftree}
+		\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
+	\end{prooftree}
+	\hspace{50pt}
+	\begin{prooftree}
+		\hypo[]{\Gamma \vdash_{ps} x \rightarrow y}
+		\infer1[(ext) $z \notin b(\Gamma) \cup \{x\}$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
+	\end{prooftree}
+	
+	
+	
+		
+
+	
+	\begin{frame}
+		\frametitle{termes normaux}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Catégories cartésiennes}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Schémas composables cartésiens}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{incréments}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conclusion}
+	\end{frame}
+	
+	\appendix
+	
+	\begin{frame}
+		\frametitle{Green slime problem}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{séquents}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conclusion}
 	\end{frame}
 	
 \end{document}

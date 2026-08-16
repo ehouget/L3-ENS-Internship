@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  7 AUG 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  16 AUG 2026 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -699,11 +699,7 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/usr/share/texmf-dist/tex/latex/backnaur/backnaur.sty
-Package: backnaur 2019/06/18 3.1 Typesetting for Backus-Naur Form (BNF) definit
-ions
-)
-(/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+))) (/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 
 (/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
@@ -721,7 +717,11 @@ File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowlength=\dimen304
 \pgfarrowwidth=\dimen305
 \pgfarrowlinewidth=\dimen306
-))) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+))) (/usr/share/texmf-dist/tex/latex/backnaur/backnaur.sty
+Package: backnaur 2019/06/18 3.1 Typesetting for Backus-Naur Form (BNF) definit
+ions
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks36
 \inpenc@posthook=\toks37
@@ -763,24 +763,24 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
 (./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -805,41 +805,41 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 35.
  (./rapport.out) (./rapport.out)
 \@outlinefile=\write4
 \openout4 = `rapport.out'.
 
 \c@lstlisting=\count358
-LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 []\OT1/ptm/b/it/9 Abstract\OT1/ptm/b/n/9 ---Il est possible d'engendrer des cat
 []egories
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 50--52
+Underfull \hbox (badness 1552) in paragraph at lines 51--53
 []\OT1/ptm/b/it/9 Index Terms\OT1/ptm/b/n/9 ---Th[]eorie des types, th[]eorie d
 es cat[]egories,
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 60--61
+Underfull \hbox (badness 3803) in paragraph at lines 61--62
 \OT1/ptm/m/n/10 des types d[]ependants non biais[]ee pour les cat[]egories
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 60--61
+Underfull \hbox (badness 5787) in paragraph at lines 61--62
 \OT1/ptm/m/n/10 (de dimension sup[]erieure). Ce but s'inscrit lui-m[]eme
  []
 
@@ -848,129 +848,129 @@ ts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 2452) in paragraph at lines 73--74
+Underfull \hbox (badness 2452) in paragraph at lines 74--75
 []\OT1/ptm/m/n/10 la source et le but sont compatibles avec la
  []
 
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 80.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 81.
 
 (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 134.
+(hyperref)                removing `\sim' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--180
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des termes normaux : [][]pasting-sche
 me-for-
  []
 
 [2]
-Overfull \hbox (5.72632pt too wide) detected at line 254
+Overfull \hbox (5.72632pt too wide) detected at line 255
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 []\OT1/ptm/m/n/10 Nous montrons que ces deux r[]egles d[]efinissent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 340--341
+Underfull \hbox (badness 1424) in paragraph at lines 341--342
 []\OT1/ptm/b/it/10 Preuve \OT1/ptm/m/n/10 Nous raisonnons par induction sur l'a
 rbre de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 
-Underfull \hbox (badness 5189) in paragraph at lines 344--345
+Underfull \hbox (badness 5189) in paragraph at lines 345--346
 \OT1/ptm/m/n/10 et $\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/c
 mr/m/n/10 )$ \OT1/ptm/m/n/10 sont deux termes normaux dont le couple
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 344--345
+Underfull \hbox (badness 1668) in paragraph at lines 345--346
 \OT1/ptm/m/n/10 contexte/fl[]eche est un sch[]ema composable ainsi, par le
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
-Underfull \hbox (badness 2753) in paragraph at lines 347--348
+Underfull \hbox (badness 2753) in paragraph at lines 348--349
 \OT1/ptm/m/n/10 composable est habit[]e par un terme. Pour cela, nous
  []
 
 [3]
-Underfull \hbox (badness 3148) in paragraph at lines 361--362
+Underfull \hbox (badness 3148) in paragraph at lines 362--363
 []\OT1/ptm/m/n/10 Les trois premiers sont relatifs aux axiomes de la
  []
 
 
-Underfull \hbox (badness 7576) in paragraph at lines 374--375
+Underfull \hbox (badness 7576) in paragraph at lines 375--376
 []\OT1/ptm/m/n/10 Nous souhaitons maintenant []etendre aux cat[]egories
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 374--375
+Underfull \hbox (badness 1776) in paragraph at lines 375--376
 \OT1/ptm/m/n/10 renvoy[]ee. L'introduction du produit cart[]esien permet de
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 376--377
+Underfull \hbox (badness 5203) in paragraph at lines 377--378
 []\OT1/ptm/m/n/10 Nous n'avons pas pu conclure la preuve formelle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 394--396
+Underfull \hbox (badness 1490) in paragraph at lines 395--397
 \OT1/ptm/m/n/10 un type produit nous introduisons le pr[]edicat $\U/msa/m/n/10 
 I$ \OT1/ptm/m/n/10 d[]efini
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 418--418
+Underfull \hbox (badness 6001) in paragraph at lines 419--419
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des contextes : [][]pasting-scheme-fo
 r-cartesian-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--424
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda des termes : [][]pasting-scheme-for-c
 artesian-
  []
@@ -978,111 +978,111 @@ artesian-
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 446.
+(hyperref)                removing `math shift' on input line 447.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 446.
+(hyperref)                removing `\sim' on input line 447.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 446.
+(hyperref)                removing `math shift' on input line 447.
 
 
-Overfull \hbox (9.7526pt too wide) in paragraph at lines 498--499
+Overfull \hbox (9.7526pt too wide) in paragraph at lines 499--500
  [] 
  []
 
 
-Overfull \hbox (15.6363pt too wide) detected at line 593
+Overfull \hbox (15.6363pt too wide) detected at line 594
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--660
+Underfull \hbox (badness 10000) in paragraph at lines 661--661
 [][][][]\OT1/ptm/m/n/8 Preuve formalis[]ee partiellement : [][]pasting-scheme-f
 or-cartesian-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
 
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 685--685
+Underfull \hbox (badness 4967) in paragraph at lines 686--686
 [][][][]\OT1/ptm/m/n/8 Formalisation Agda de la preuve : [][]pasting-scheme-for
 -cartesian-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 713--714
+Underfull \hbox (badness 1365) in paragraph at lines 714--715
 \OT1/ptm/m/n/8 quotients, S[]eminaire Bourbaki: ann[]ees 1960/61, expos[]es 205
 -222,
  []
 
 [6]
-Overfull \hbox (18.12035pt too wide) detected at line 761
+Overfull \hbox (18.12035pt too wide) detected at line 762
 []
  []
 
 
-Overfull \hbox (17.6426pt too wide) in paragraph at lines 773--782
+Overfull \hbox (17.6426pt too wide) in paragraph at lines 774--783
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--791
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
 
-Overfull \hbox (25.49573pt too wide) in paragraph at lines 801--824
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 802--825
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Overfull \hbox (25.49573pt too wide) in paragraph at lines 801--824
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 802--825
 $\OT1/cmr/m/n/10 ^^E[] =$ [] 
  []
 
 
-Overfull \hbox (37.4104pt too wide) detected at line 888
+Overfull \hbox (37.4104pt too wide) detected at line 889
 []
  []
 
 
-Overfull \hbox (37.2391pt too wide) detected at line 920
+Overfull \hbox (37.2391pt too wide) detected at line 921
 []
  []
 
 [7]
-Overfull \hbox (16.59053pt too wide) detected at line 973
+Overfull \hbox (16.59053pt too wide) detected at line 974
 []
  []
 
 
-Overfull \hbox (98.53352pt too wide) detected at line 986
+Overfull \hbox (98.53352pt too wide) detected at line 987
 []
  []
 
 
-Overfull \hbox (20.99895pt too wide) in paragraph at lines 1023--1024
+Overfull \hbox (20.99895pt too wide) in paragraph at lines 1024--1025
 [][] 
  []
 
 
-Overfull \hbox (21.01535pt too wide) detected at line 1032
+Overfull \hbox (21.01535pt too wide) detected at line 1033
 []
  []
 

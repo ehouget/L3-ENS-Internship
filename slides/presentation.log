@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  7 AUG 2026 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  16 AUG 2026 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -158,8 +158,8 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count309
 )))
-(/usr/share/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/extsizes/size14.clo
+File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -666,6 +666,33 @@ Package: amsthm 2020/05/29 v2.20.6
 \beamer@dimb=\dimen301
 )
 (/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks46
+\inpenc@posthook=\toks47
+
+(/usr/share/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (enco
+ding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (enc
+oding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (
+encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarter
+s (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodi
+ng ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encodin
+g ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (en
+coding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (e
+ncoding ?) on input line 57.
+))
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
 eX and XeLaTeX
@@ -691,103 +718,225 @@ on input line 2111.
 \bbl@readstream=\read3
 LaTeX Info: Redefining \textlatin on input line 3974.
 \bbl@dirlevel=\count359
-Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4265.
-Package babel Info: Importing font and identification data for nil
-(babel)             from babel-und-x-nil.ini. Reported on input line 4330.
 
-(/usr/share/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2026/02/14 v26.3 Nil language
-\l@nil=\language6
+(/usr/share/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex)
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 4330.
+
+(/usr/share/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2025-08-15 v4.0e French support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel-french/french3.ldf
+Language: french 2025-08-15 v3.7e French support from the babel system
+\FB@stdchar=\count360
+Package babel Info: Making : an active character on input line 273.
+Package babel Info: Making ; an active character on input line 274.
+Package babel Info: Making ! an active character on input line 275.
+Package babel Info: Making ? an active character on input line 276.
+\FBguill@level=\count361
+\FBold@everypar=\toks48
+\FB@Mht=\dimen303
+\mc@charclass=\count362
+\mc@charfam=\count363
+\mc@charslot=\count364
+\std@mcc=\count365
+\dec@mcc=\count366
+\FB@pardim=\dimen304
+\listindentFB=\dimen305
+\descindentFB=\dimen306
+\labelindentFB=\dimen307
+\labelwidthFB=\dimen308
+\leftmarginFB=\dimen309
+\parindentFFN=\dimen310
+\FBfnindent=\dimen311
+)))
+(/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+Package french3.ldf Info: No list customisation for the beamer class,
+(french3.ldf)             reported on input line 6.
+
+(/usr/share/texmf-dist/tex/latex/pslatex/pslatex.sty
+Package: pslatex 2021/01/13 v1.3 pslatex emulation (DPC)
+LaTeX Encoding Info:    Redeclaring text command \textsterling (encoding ?) on 
+input line 51.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 66.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 66.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 66.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 67.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 67.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 67.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 68.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 68.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 68.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 69.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 69.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 69.
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 75.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 76.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 76.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 76.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 457.
+)
+(/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box78
+)
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen312
+\pgf@nodesepend=\dimen313
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(/usr/share/texmf-dist/tex/latex/datetime/datetime.sty
-Package: datetime 2015/03/20 v2.60 Date Time Package
-
-(/usr/share/texmf-dist/tex/latex/fmtcount/fmtcount.sty
-Package: fmtcount 2025/12/02 v3.12 Displaying the values of LaTeX counters (NT,
-VB,NE)
-
-(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
-\XKV@tempb@toks=\toks48
-)
-\XKV@depth=\count360
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen314
+\pgffor@skip=\dimen315
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
 ))
-(/usr/share/texmf-dist/tex/latex/fmtcount/fcprefix.sty
-Package: fcprefix 2012/09/28
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
-(/usr/share/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
-Package: fcnumparser 2017/06/15
-\fc@digit@counter=\count361
-))
-\c@padzeroesN=\count362
-\fc@tmpcatcode=\count363
-\@DT@modctr=\count364
-\@ordinalctr=\count365
-\@orgargctr=\count366
-\@strctr=\count367
-\@tmpstrctr=\count368
-\@DT@loopN=\count369
-\@DT@X=\count370
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
+x
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count367
+\pgfplotmarksize=\dimen316
 )
-(/usr/share/texmf-dist/tex/latex/datetime/datetime-defaults.sty
-Package: datetime-defaults 2013/09/10
+\tikz@lastx=\dimen317
+\tikz@lasty=\dimen318
+\tikz@lastxsaved=\dimen319
+\tikz@lastysaved=\dimen320
+\tikz@lastmovetox=\dimen321
+\tikz@lastmovetoy=\dimen322
+\tikzleveldistance=\dimen323
+\tikzsiblingdistance=\dimen324
+\tikz@figbox=\box79
+\tikz@figbox@bg=\box80
+\tikz@tempbox=\box81
+\tikz@tempbox@bg=\box82
+\tikztreelevel=\count368
+\tikznumberofchildren=\count369
+\tikznumberofcurrentchild=\count370
+\tikz@fig@count=\count371
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count372
+\pgfmatrixcurrentcolumn=\count373
+\pgf@matrix@numberofcolumns=\count374
 )
-\@day=\count371
-\@month=\count372
-\@year=\count373
-\c@HOUR=\count374
-\c@HOURXII=\count375
-\c@MINUTE=\count376
-\c@TOHOUR=\count377
-\c@TOMINUTE=\count378
-\c@SECOND=\count379
-\currenthour=\count380
-\currentminute=\count381
-\currentsecond=\count382
-Package datetime Info: No datetime.cfg file found, using default settings on in
-put line 308.
-\@dtctr=\count383
-\dayofyear=\count384
-\dayofweek=\count385
-LaTeX Info: Redefining \today on input line 736.
-\dt@a=\toks49
-\dt@b=\toks50
+\tikz@expandcount=\count375
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+matrix.code.tex
+File: tikzlibrarymatrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+quotes.code.tex
+File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen325
+\pgfarrowlength=\dimen326
+\pgfarrowwidth=\dimen327
+\pgfarrowlinewidth=\dimen328
+))) (/usr/share/texmf-dist/tex/latex/ebproof/ebproof.sty
+(/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count386
+\l__color_backend_stack_int=\count376
+))
+(/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
 )
-(./presentation.aux)
+Package: ebproof 2021/01/28 v2.1.1 EB's proof trees
+\l__ebproof_separation_dim=\dimen329
+\l__ebproof_rule_margin_dim=\dimen330
+\l__ebproof_rule_thickness_dim=\dimen331
+\l__ebproof_rule_separation_dim=\dimen332
+\l__ebproof_rule_dash_length_dim=\dimen333
+\l__ebproof_rule_dash_space_dim=\dimen334
+\l__ebproof_label_separation_dim=\dimen335
+\l__ebproof_label_axis_dim=\dimen336
+\g__ebproof_register_int=\count377
+\l__ebproof_transit_dim=\dimen337
+\g__ebproof_level_int=\count378
+\g__ebproof_stack_box=\box83
+\l__ebproof_1_box=\box84
+\l__ebproof_2_box=\box85
+\l__ebproof_3_box=\box86
+\l__ebproof_4_box=\box87
+)
+(/usr/share/texmf-dist/tex/latex/beamer/beamerthemeCopenhagen.sty
+(/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty))
+(./presentation.aux
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 11.
+)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 20.
+LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
+ 20.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omspzccm.fd
+File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -808,12 +957,12 @@ LaTeX Font Info:    ... okay on input line 13.
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=14.0pt
 * \footskip=14.22636pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -825,16 +974,16 @@ LaTeX Font Info:    ... okay on input line 13.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count387
-\scratchdimen=\dimen303
-\scratchbox=\box78
-\nofMPsegments=\count388
-\nofMParguments=\count389
+\scratchcounter=\count379
+\scratchdimen=\dimen338
+\scratchbox=\box88
+\nofMPsegments=\count380
+\nofMParguments=\count381
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count390
-\MPscratchDim=\dimen304
-\MPnumerator=\count391
-\makeMPintoPDFobject=\count392
+\MPscratchCnt=\count382
+\MPscratchDim=\dimen339
+\MPnumerator=\count383
+\makeMPintoPDFobject=\count384
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -845,64 +994,54 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 20.
 
 (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/ptmcm/m/n --> OT1/cmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 13.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/ptmcm/m/n --> OT1/cmss/b/n on input line 20.
+\symnumbers=\mathgroup8
+\sympureletters=\mathgroup9
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 13.
+(Font)                  OT1/cmss/m/n --> T1/ptm/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 13.
+(Font)                  OT1/ptm/bx/n --> T1/phv/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 13.
+(Font)                  OT1/ptm/bx/n --> T1/phv/b/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 13.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 13.
+(Font)                  OT1/ptm/m/it --> T1/phv/m/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 13.
+(Font)                  OT1/ptm/m/it --> T1/phv/m/it on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 13.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 13.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 13.
+(Font)                  OT1/cmss/b/n --> T1/ptm/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 13.
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 13.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 13.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 13.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 13.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-3.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 1
-3.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 13.
+(Font)                  T1/pcr/m/n --> T1/pcr/b/n on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English
 .dict
@@ -927,18 +1066,98 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texmf-dist/tex/latex/translator/translator-theorem-dictionary-Engli
 sh.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./presentation.nav)
+)
+LaTeX Info: Redefining \degres on input line 20.
+ (./presentation.nav)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 20.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 22.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 22.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 3.59998pt on input line 22.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fo
+nts/enc/dvips/base/8r.enc}
 
-Package datetime Warning: No week day names defined for language 'nil', default
-ing to English on input line 15.
+] [2
+
+]
+(./presentation.toc) [3
+
+] [4
+
+] [5
+
+]
+LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
+ 44.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omlptmcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
+ 44.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omxpsycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
 
-Package datetime Warning: No month names provided for language 'nil' on input l
-ine 15.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
-[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 12.9599pt on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.85492pt on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 7.19995pt on input line 44.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8] [9
+
+] [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
 
 ]
 \tf@nav=\write6
@@ -956,23 +1175,25 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: EEB0FFCC93134BE6264A84FFC579A162;154.
  ) 
 Here is how much of TeX's memory you used:
- 23224 strings out of 469486
- 437998 string characters out of 5469659
- 850327 words of memory out of 5000000
- 51433 multiletter control sequences out of 15000+600000
- 629533 words of font info for 46 fonts, out of 8000000 for 9000
+ 28411 strings out of 469486
+ 567253 string characters out of 5469659
+ 957814 words of memory out of 5000000
+ 56466 multiletter control sequences out of 15000+600000
+ 666639 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 128i,14n,123p,1022b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/
+ 128i,19n,123p,387b,948s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on presentation.pdf (2 pages, 37672 bytes).
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/h
+elvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+</usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
+Output written on presentation.pdf (16 pages, 74461 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
