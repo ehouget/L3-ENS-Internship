@@ -20,11 +20,13 @@
 \headcommand {\beamer@framepages {7}{7}}
 \headcommand {\slideentry {2}{0}{6}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {2}{0}{7}{10/10}{}{0}}
+\headcommand {\slideentry {2}{0}{7}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {2}{0}{8}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {2}{0}{8}{11/11}{}{0}}
+\headcommand {\slideentry {2}{0}{9}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {2}{0}{9}{12/12}{}{0}}
+\headcommand {\slideentry {2}{0}{10}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\beamer@sectionpages {3}{12}}
 \headcommand {\beamer@subsectionpages {3}{12}}
@@ -47,33 +49,35 @@
 \headcommand {\beamer@framepages {20}{20}}
 \headcommand {\slideentry {5}{0}{3}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@sectionpages {19}{21}}
-\headcommand {\beamer@subsectionpages {19}{21}}
-\headcommand {\sectionentry {6}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{22}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{0}}
-\headcommand {\slideentry {6}{0}{1}{22/22}{}{0}}
+\headcommand {\slideentry {5}{0}{4}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {6}{0}{2}{23/29}{}{0}}
-\headcommand {\beamer@framepages {23}{29}}
-\headcommand {\gdef \insertmainframenumber {13}}
+\headcommand {\beamer@sectionpages {19}{22}}
+\headcommand {\beamer@subsectionpages {19}{22}}
+\headcommand {\sectionentry {6}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{23}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{0}}
+\headcommand {\slideentry {6}{0}{1}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {6}{0}{2}{24/30}{}{0}}
+\headcommand {\beamer@framepages {24}{30}}
+\headcommand {\gdef \insertmainframenumber {15}}
 \headcommand {\partentry {Annexe}{1}}
-\headcommand {\beamer@partpages {1}{29}}
-\headcommand {\beamer@sectionpages {22}{29}}
-\headcommand {\beamer@subsectionpages {22}{29}}
-\headcommand {\beamer@appendixpages {30}}
-\headcommand {\slideentry {6}{0}{3}{30/30}{}{1}}
-\headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {6}{0}{4}{31/31}{}{1}}
+\headcommand {\beamer@partpages {1}{30}}
+\headcommand {\beamer@sectionpages {23}{30}}
+\headcommand {\beamer@subsectionpages {23}{30}}
+\headcommand {\beamer@appendixpages {31}}
+\headcommand {\slideentry {6}{0}{3}{31/31}{}{1}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {6}{0}{5}{32/32}{}{1}}
+\headcommand {\slideentry {6}{0}{4}{32/32}{}{1}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {6}{0}{6}{33/33}{}{1}}
+\headcommand {\slideentry {6}{0}{5}{33/33}{}{1}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {6}{0}{7}{34/34}{}{1}}
+\headcommand {\slideentry {6}{0}{6}{34/34}{}{1}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {6}{0}{8}{35/35}{}{1}}
+\headcommand {\slideentry {6}{0}{7}{35/35}{}{1}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\beamer@partpages {30}{35}}
-\headcommand {\beamer@subsectionpages {30}{35}}
-\headcommand {\beamer@sectionpages {30}{35}}
-\headcommand {\beamer@documentpages {35}}
-\headcommand {\gdef \inserttotalframenumber {13}}
+\headcommand {\slideentry {6}{0}{8}{36/36}{}{1}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\beamer@partpages {31}{36}}
+\headcommand {\beamer@subsectionpages {31}{36}}
+\headcommand {\beamer@sectionpages {31}{36}}
+\headcommand {\beamer@documentpages {36}}
+\headcommand {\gdef \inserttotalframenumber {15}}

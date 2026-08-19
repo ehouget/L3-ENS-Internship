@@ -12,12 +12,18 @@
 \usepackage{graphicx}
 \usepackage{adjustbox}
 
-\usetheme{Madrid}
+\usetheme{Antibes}
 
 \title{Une approche non biaisée des catégories cartésiennes}
 \subtitle{Stage de recherche L3}
-\author{Eliott Houget}
+
+\author{{Eliott Houget} \\
+	{\and} \\
+	{\textit{Encadrant}} \\
+	{Samuel Mimram}}
+
 \institute{LIX, École polytechnique, Institut Polytechnique de Paris}
+
 \date{24 août 2026}
 
 \begin{document}
@@ -96,10 +102,14 @@
 		\end{itemize}
 	\end{frame}
 	
+	\begin{frame}[fragile]{Catégories cartésiennes}
+	\begin{center}
 	\begin{tikzcd}
 		X \arrow[r, "f"] \arrow[rr, "g \circ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] \arrow[rd, "{\left<f,g\ \circ\ f\right>}"'] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]           \\
 		X \times X \arrow[loop, distance=2em, in=305, out=235]                                                                                                & Y \times Z \arrow[loop, distance=2em, in=305, out=235]               & Z \times X \times Y \arrow[loop, distance=2em, in=305, out=235]
-	\end{tikzcd}	
+	\end{tikzcd}
+	\end{center}	
+	\end{frame}
 	
 	\begin{frame}{Termes catégoriques typés}
 		\begin{center}
@@ -249,44 +259,49 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}[fragile]
-		\frametitle{Schémas composables}
-		\begin{center}
+	\begin{frame}[fragile]{Schémas composables}
+		Chaine de morphisme
 		\begin{tikzcd}
 			& X_0 \arrow{r}{f_1} 
 			& X_1 \arrow{r}{f_2} 
 			& \cdots \arrow{r}{f_n} 
 			& X_n
-		\end{tikzcd}
-		\end{center}
-		
+		\end{tikzcd} \\
+		\vspace{5pt}
+		On souhaite éviter :\\
+		\begin{center}
 		\begin{tikzcd}
-			& x \arrow{r}{"f"} 
+			& x \arrow{r}{f} 
 			& y  
 			& z \arrow{l}{g}
 		\end{tikzcd}
-		or
+		\hspace{15pt}
 		\begin{tikzcd}
 			& y \\
 			x \arrow[rd, "g"'] \arrow[ru, "f"] &   \\
 			& z
 		\end{tikzcd}
-		or
+		\hspace{15pt}
 		\begin{tikzcd}
 			x \arrow[r, "f", bend left] & y \arrow[l, "g", bend left]
 		\end{tikzcd}
+		\end{center}
 		
 		\par\noindent\rule{\textwidth}{0.4pt}
-		\vspace{5pt}
 		
 		\begin{center}
 		\begin{prooftree}
 			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\end{prooftree}\hspace{30pt}\begin{prooftree}
+		\end{prooftree}\hspace{20pt}\begin{prooftree}
 			\hypo[]{\Gamma \vdash_{ps} x \rightarrow y}
 			\infer1[(ext) $\left[z \notin b(\Gamma) \cup \{x\}\right]$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
 		\end{prooftree}
 		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Contractibilité des schémas composables}
+		\includegraphics[scale=0.2]{images/PSTm}\\
+		\includegraphics[scale=0.2]{images/PSEq}
 	\end{frame}
 	
 	\begin{frame}[fragile]{Termes normaux}
@@ -336,8 +351,14 @@
 	
 	\appendix
 	
-	\begin{frame}[noframenumbering]
-		\frametitle{Green slime problem}
+	\begin{frame}[noframenumbering]{Green slime problem}
+		Difficulté lié au systeme d'inférence et d'identification d'Agda.\\
+		\vspace{10pt}
+		
+		\textit{Exemple de définition causant un "green slime problem :"}
+		\includegraphics[scale=0.3]{images/exemple-greenslime}\\
+		\textit{Une solution possible :}
+		\includegraphics[scale=0.3]{images/exemple-greenslime-fix}
 	\end{frame}
 	
 	\begin{frame}[noframenumbering]{Séquents minimales (cas catégories simples)}
