@@ -189,8 +189,8 @@
 		\vspace{20pt}
 		\begin{prooftree}
 			\hypo[]{\Gamma \vdash_{Norm} f : x \rightarrow y}
-			\hypo[]{y \rightarrow z \in \Gamma}
-			\infer2[(norm-comp)]{\Gamma \vdash_{Norm} f \cdot var_{y \rightarrow z} : x \rightarrow z}
+			\hypo[]{g : y \rightarrow z \in \Gamma}
+			\infer2[(norm-comp)]{\Gamma \vdash_{Norm} f \cdot g : x \rightarrow z}
 		\end{prooftree}
 	\end{center}
 	\vspace{15pt}
@@ -642,7 +642,7 @@
 	\begin{center}
 	\begin{tabular}{c||c}
 		\hline
-		\bfseries{termes normaux}	& \bfseries{schémas composable} \\
+		\bfseries{termes normaux}	& \bfseries{schémas composables} \\
 		\hline
 			(norm-term) & (ps-term) \\
 		\hline
@@ -746,7 +746,7 @@
 			\hypo[]{\Pi_{id \cdot f}}
 			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
 			\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
-			\infer3[]{f : x \rightarrow y \vdash id \cdot f = f}
+			\infer3[]{f : x \rightarrow y \vdash id_x \cdot f = f}
 		\end{prooftree}
 		
 		\begin{align*}
@@ -767,7 +767,7 @@
 			\hypo[]{\Pi_{f \cdot id}}
 			\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
 			\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
-			\infer3[]{f : x \rightarrow y \vdash f \cdot id = f}
+			\infer3[]{f : x \rightarrow y \vdash f \cdot id_y = f}
 		\end{prooftree} 
 		\vspace{15pt}
 		
@@ -775,8 +775,8 @@
 			\begin{prooftree}
 				\hypo[]{f : x \rightarrow y \in f : x \rightarrow y}
 				\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
-				\infer0[]{f : x \rightarrow y \vdash id_x : x \rightarrow x}
-				\infer2[]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
+				\infer0[]{f : x \rightarrow y \vdash id_y : y \rightarrow y}
+				\infer2[]{f : x \rightarrow y \vdash id_y \cdot f : x \rightarrow y}
 			\end{prooftree}
 		\vspace{20pt}
 		\item
@@ -790,14 +790,14 @@
 		
 		$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\
 		
-		$\Pi_{id \cdot f} =$
+		$\Pi_{ps} =$
 			\begin{prooftree}
 				\infer0[]{\emptyset \vdash_{ps} x \rightarrow x}
 				\infer1[]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 				\infer1[]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
 				\infer1[]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
 			\end{prooftree}
-			\vspace{15pt}
+		\vspace{15pt}
 		
 		$\Pi_{(f \cdot g) \cdot h} =$
 		\begin{prooftree}
@@ -810,7 +810,8 @@
 			\infer1[]{\Gamma \vdash h : z \rightarrow w}
 			\infer2[]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
 		\end{prooftree}
-			\vspace{15pt}
+		\vspace{15pt}
+		
 		$\Pi_{f \cdot (g \cdot h)} =$
 		\begin{prooftree}
 			\hypo[]{f : x \rightarrow y \in \Gamma}
@@ -1022,6 +1023,7 @@
 			\infer0[]{f : x \rightarrow y \vdash term_x : x \rightarrow \mathbbm 1}
 			\infer3[]{f : x \rightarrow y \vdash f \cdot term_y = term_x}
 		\end{prooftree}
+		\vspace{15pt}
 		
 		\begin{align*}
 			\Pi_f = 

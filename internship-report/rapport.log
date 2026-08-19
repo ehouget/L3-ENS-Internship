@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  16 AUG 2026 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  19 AUG 2026 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,7 +1037,7 @@ Overfull \hbox (18.12035pt too wide) detected at line 762
  []
 
 
-Overfull \hbox (17.6426pt too wide) in paragraph at lines 774--783
+Overfull \hbox (16.50726pt too wide) in paragraph at lines 774--783
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
@@ -1047,42 +1047,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 791--792
  []
 
 
-Overfull \hbox (25.49573pt too wide) in paragraph at lines 802--825
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 802--814
 []$\OT1/cmr/m/n/10 ^^E[] =$ []
  []
 
 
-Overfull \hbox (25.49573pt too wide) in paragraph at lines 802--825
-$\OT1/cmr/m/n/10 ^^E[] =$ [] 
+Overfull \hbox (25.49573pt too wide) in paragraph at lines 815--826
+[]$\OT1/cmr/m/n/10 ^^E[] =$ [] 
  []
 
 
-Overfull \hbox (37.4104pt too wide) detected at line 889
+Underfull \vbox (badness 2080) has occurred while \output is active []
+
+
+Overfull \hbox (37.4104pt too wide) detected at line 890
 []
  []
 
 
-Overfull \hbox (37.2391pt too wide) detected at line 921
+Overfull \hbox (37.2391pt too wide) detected at line 922
 []
  []
 
 [7]
-Overfull \hbox (16.59053pt too wide) detected at line 974
+Overfull \hbox (16.59053pt too wide) detected at line 975
 []
  []
 
 
-Overfull \hbox (98.53352pt too wide) detected at line 987
+Overfull \hbox (98.53352pt too wide) detected at line 988
 []
  []
 
 
-Overfull \hbox (20.99895pt too wide) in paragraph at lines 1024--1025
-[][] 
+Overfull \hbox (20.99895pt too wide) in paragraph at lines 1025--1027
+[][]
  []
 
 
-Overfull \hbox (21.01535pt too wide) detected at line 1033
+Overfull \hbox (21.01535pt too wide) detected at line 1035
 []
  []
 
@@ -1097,9 +1100,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8
-
-] (./rapport.aux)
+[8] (./rapport.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1110,7 +1111,7 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 Here is how much of TeX's memory you used:
  25158 strings out of 469486
  469348 string characters out of 5469659
- 892669 words of memory out of 5000000
+ 890669 words of memory out of 5000000
  53304 multiletter control sequences out of 15000+600000
  670093 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1131,7 +1132,7 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on rapport.pdf (8 pages, 251383 bytes).
+Output written on rapport.pdf (8 pages, 251599 bytes).
 PDF statistics:
  434 PDF objects out of 1000 (max. 8388607)
  383 compressed objects within 4 object streams

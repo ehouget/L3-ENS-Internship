@@ -32,6 +32,7 @@ WkNormTm⁻¹ {A = X i} {B = X j} (_▸_ {B = X (suc k)} t x) = WkNormTm⁻¹ t 
 
 ------------------------------------------------------------------------
 -- Normal terms merging
+
 merge-NormTm : {n : ℕ} {Γ : Con n} {A B C : Ty n} (t : NormTm Γ (A , B)) (u : NormTm Γ (B , C)) → NormTm Γ (A , C)
 merge-NormTm t norm-id = t
 merge-NormTm t (u ▸ x) = (merge-NormTm t u) ▸ x
