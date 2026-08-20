@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  20 AUG 2026 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  20 AUG 2026 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1319,10 +1319,48 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.37988pt on input line 165.
+(Font)              scaled to size 8.99994pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 168.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.49991pt on input line 165.
- [10
+(Font)              scaled to size 16.37988pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 14.3999pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.69992pt on input line 168.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 168.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 168.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 168.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.09996> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.1899pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.84996pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <13> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 11.69992pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9.09996> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.1899pt on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6.5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 168.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 5.84996pt on input line 168.
+[10
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1357,36 +1395,8 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 5.39996pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.70992pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.78992pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.17993pt on input line 23.
-LaTeX Font Info:    Calculating math sizes for size <10.2> on input line 23.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.2> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.13995> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.09999> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.4259pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.58995pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.2> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.17993pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7.13995> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.4259pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5.09999> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 4.58995pt on input line 23.
-) [12
+)
+[12
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1406,20 +1416,18 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 9.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.65994pt on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7.4> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.65994pt on input line 9.
-)
-[14
+) [14
 
 ]
 \openout4 = `presentation.vrb'.
 
- (./presentation.vrb) [15
+ (./presentation.vrb)
+[15
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1428,25 +1436,25 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 <images/Ty-cat.png, id=598, 883.3pt x 141.52875pt>
 File: images/Ty-cat.png Graphic file (type png)
 <use images/Ty-cat.png>
-Package pdftex.def Info: images/Ty-cat.png  used on input line 13.
+Package pdftex.def Info: images/Ty-cat.png  used on input line 23.
 (pdftex.def)             Requested size: 132.48927pt x 21.2284pt.
 <images/Ty-ccat.png, id=600, 884.30376pt x 290.08376pt>
 File: images/Ty-ccat.png Graphic file (type png)
 <use images/Ty-ccat.png>
-Package pdftex.def Info: images/Ty-ccat.png  used on input line 19.
+Package pdftex.def Info: images/Ty-ccat.png  used on input line 29.
 (pdftex.def)             Requested size: 132.63983pt x 43.51068pt.
 ) [16
 
  <./images/Ty-cat.png> <./images/Ty-ccat.png>]
 \openout4 = `presentation.vrb'.
 
- (./presentation.vrb
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 5.
 
-(/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+(./presentation.vrb
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 5.
+ (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ))
-Overfull \vbox (59.02933pt too high) detected at line 371
+Overfull \vbox (59.02933pt too high) detected at line 384
  []
 
 [17
@@ -1469,29 +1477,40 @@ Overfull \vbox (59.02933pt too high) detected at line 371
 
  </usr/share/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 406.
+(Font)              scaled to size 22.39185pt on input line 419.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 406.
+(Font)              scaled to size 22.39185pt on input line 419.
  [26
 
 ]
 <images/exemple-greenslime.png, id=972, 951.555pt x 160.6pt>
 File: images/exemple-greenslime.png Graphic file (type png)
 <use images/exemple-greenslime.png>
-Package pdftex.def Info: images/exemple-greenslime.png  used on input line 416.
+Package pdftex.def Info: images/exemple-greenslime.png  used on input line 429.
 
 (pdftex.def)             Requested size: 285.4687pt x 48.18036pt.
 <images/exemple-greenslime-fix.png, id=973, 951.555pt x 160.6pt>
 File: images/exemple-greenslime-fix.png Graphic file (type png)
 <use images/exemple-greenslime-fix.png>
 Package pdftex.def Info: images/exemple-greenslime-fix.png  used on input line 
-416.
+429.
 (pdftex.def)             Requested size: 285.4687pt x 48.18036pt.
  [27
 
  <./images/exemple-greenslime.png> <./images/exemple-greenslime-fix.png>] [28
 
-] [29
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 491.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 491.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 15.55188pt on input line 491.
+
+Overfull \vbox (9.33577pt too high) detected at line 491
+ []
+
+[29
 
 ] [30
 
@@ -1500,6 +1519,12 @@ Package pdftex.def Info: images/exemple-greenslime-fix.png  used on input line
 ] [32
 
 ] [33
+
+] [34
+
+] [35
+
+] [36
 
 
 ]
@@ -1512,39 +1537,44 @@ Package pdftex.def Info: images/exemple-greenslime-fix.png  used on input line
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-
-(./presentation.aux)
+ (./presentation.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: FD26C8CE7A619C2C003D5F503BA57630;1266.
  ) 
 Here is how much of TeX's memory you used:
- 48959 strings out of 469486
- 1164006 string characters out of 5469659
+ 48986 strings out of 469486
+ 1164258 string characters out of 5469659
  1810048 words of memory out of 5000000
- 76789 multiletter control sequences out of 15000+600000
- 777845 words of font info for 230 fonts, out of 8000000 for 9000
+ 76807 multiletter control sequences out of 15000+600000
+ 783763 words of font info for 243 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 128i,16n,123p,387b,1117s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
-xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/
-urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.
-pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on presentation.pdf (33 pages, 275873 bytes).
+ 128i,17n,123p,387b,1146s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk> </h
+ome/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-di
+st/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/he
+lvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
+usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dis
+t/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on presentation.pdf (36 pages, 283138 bytes).
 PDF statistics:
- 1269 PDF objects out of 1440 (max. 8388607)
- 1053 compressed objects within 11 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 1363 PDF objects out of 1440 (max. 8388607)
+ 1139 compressed objects within 12 object streams
+ 89 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
