@@ -1,6 +1,5 @@
 \babel@toc {french}{}\relax 
-\beamer@sectionintoc {2}{Cadre (intuition des objets manipul\'es)}{3}{0}{1}
-\beamer@sectionintoc {3}{Motivations et objectifs}{13}{0}{2}
-\beamer@sectionintoc {4}{Sch\'emas composables : cas cat\'egories}{18}{0}{3}
-\beamer@sectionintoc {5}{Sch\'emas composables : cas cat\'egories}{19}{0}{4}
-\beamer@sectionintoc {6}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{23}{0}{5}
+\beamer@sectionintoc {2}{Cadre et intuition des objets manipul\'es}{3}{0}{1}
+\beamer@sectionintoc {3}{Motivations et objectifs}{11}{0}{2}
+\beamer@sectionintoc {4}{Sch\'emas composables : cas des cat\'egories simples}{12}{0}{3}
+\beamer@sectionintoc {5}{Sch\'emas composables : cas cat\'egories cart\'esiennes}{16}{0}{4}

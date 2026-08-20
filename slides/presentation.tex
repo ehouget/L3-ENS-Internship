@@ -11,6 +11,7 @@
 \usepackage{ebproof}
 \usepackage{graphicx}
 \usepackage{adjustbox}
+\usepackage{bbm}
 
 \usetheme{Antibes}
 
@@ -20,8 +21,9 @@
 \author{{Eliott Houget} \\
 	{\and} \\
 	{\textit{Encadrant}} \\
-	{Samuel Mimram}}
-
+	{Samuel Mimram}\\
+	{\textit{Équipe} Cosynus}}
+	
 \institute{LIX, École polytechnique, Institut Polytechnique de Paris}
 
 \date{24 août 2026}
@@ -32,92 +34,101 @@
 	
 	% --------- Sommaire ---------
 	\section*{Sommaire}
-	\begin{frame}[noframenumbering]{Sommaire}
+	\begin{frame}[noframenumbering, c]{Sommaire}
 		\tableofcontents
 	\end{frame}      
 	% ----------------------------
 	
-	\section{Cadre (intuition des objets manipulés)}
+	
+	\section{Cadre et intuition des objets manipulés}
+	\begin{frame}{Domaines de l'informatique concernés}
+		\noindent
+		\begin{minipage}[c]{0.48\linewidth}
+			\begin{center}
+			\textbf{Théorie des langages de programmation}\\
+			\vspace{20pt}
+			Outils et objets similaire au $\lambda$-calcul simplement typé.\\
+			\vspace{15pt}
+			Théories des types \\
+			\end{center}
+			
+		\end{minipage}
+		\hfill\vline\hfill
+		\begin{minipage}[c]{0.48\linewidth}
+			\begin{center}
+			\textbf{Théorie des catégories}\\
+			\vspace{20pt}
+			Vaste domaine décrivant les structures abstraites des mathématiques. 
+			\end{center}
+		\end{minipage}
+	\end{frame}
 	\begin{frame}[fragile]{Théorie des catégories}
 		\begin{definition}[Catégories]
-		\begin{itemize}
-			\item Une collection d'objets $\mathcal C_0$.
+			Une \textbf{catégorie} est la donnée d'une collection d'objets $\mathcal{C}_0$ et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+		\end{definition}
+		\vspace{15pt}
 		\begin{center}
 		\begin{tikzcd}
 			X & Y & Z
 		\end{tikzcd}
 		\end{center}
-		\end{itemize}
-		\end{definition}
 	\end{frame}
 
 	\begin{frame}[fragile, noframenumbering]{Théorie des catégories}
 		\begin{definition}[Catégories]
-		\begin{itemize}
-			\item Une collection d'objets $\mathcal C_0$.
-			\item $f \in \mathcal C(X, Y)$...
+			Une \textbf{catégorie} est la donnée d'une collection d'objets $\mathcal{C}_0$ et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+		\end{definition}
+		\vspace{15pt}
 		\begin{center}
 		\begin{tikzcd}
 			X \arrow[r, "f"] & Y \arrow[r, "g"] & Z
 		\end{tikzcd}
 		\end{center}
-		\end{itemize}
-		\end{definition}
 	\end{frame}
 	
 	\begin{frame}[fragile, noframenumbering]{Théorie des catégories}
 		\begin{definition}[Catégories]
+			Une \textbf{catégorie} est la donnée d'une collection d'objets $\mathcal{C}_0$ et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+		\end{definition}
+		\vspace{15pt}
 		\begin{center}
 		\begin{tikzcd}
 			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] & Y \arrow[r, "g"] & Z
 		\end{tikzcd}
 		\end{center}
-		\end{definition}
 	\end{frame}
 	
 	\begin{frame}[fragile, noframenumbering]{Théorie des catégories}
 		\begin{definition}[Catégories]
+			Une \textbf{catégorie} est la donnée d'une collection d'objets $\mathcal{C}_0$ et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+		\end{definition}
+		\vspace{0pt}
 		\begin{center}
 		\begin{tikzcd}
 			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
 		\end{tikzcd}
 		\end{center}
-		\begin{itemize}
-			\item Pour tout $X \in \mathcal C_0$, il existe $id_x$.
-		\end{itemize}
-		\end{definition}
 	\end{frame}
 	
 	\begin{frame}[fragile]{Théorie des catégories}
 		\begin{definition}[Catégories]
-			\begin{center}
-				\begin{tikzcd}
-					X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
-				\end{tikzcd}
-			\end{center}
+			Une \textbf{catégorie} est la donnée d'une collection d'objets $\mathcal{C}_0$ et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
 		\end{definition}
-		\begin{itemize}
-			\item Pour tout $X \in \mathcal C_0$, il existe $id_x$.
-			\item Pour tout $f \in \mathcal C(X , Y)$, $g \in \mathcal C(Y , Z)$ et $h \in \mathcal C(Z , W)$, $$h \circ (g \circ f) = (h \circ g) \circ f$$
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}[fragile]{Catégories cartésiennes}
-	\begin{center}
-	\begin{tikzcd}
-		X \arrow[r, "f"] \arrow[rr, "g \circ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] \arrow[rd, "{\left<f,g\ \circ\ f\right>}"'] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]           \\
-		X \times X \arrow[loop, distance=2em, in=305, out=235]                                                                                                & Y \times Z \arrow[loop, distance=2em, in=305, out=235]               & Z \times X \times Y \arrow[loop, distance=2em, in=305, out=235]
-	\end{tikzcd}
-	\end{center}	
+		\begin{center}
+		\begin{tikzcd}
+			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
+		\end{tikzcd}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}{Termes catégoriques typés}
+		Comme en $\lambda$-calcul simplement typé, les termes typés sont définis par un système de règles d'inférence :
 		\begin{center}
 			\begin{prooftree}
 				\hypo[]{f : A \in \Gamma}
 				\infer1[(var)]{\Gamma \vdash f : A}
-			\end{prooftree}
-			\hspace{10pt}
+			\end{prooftree} \\
+			\vspace{20pt}
 			\begin{prooftree}
 				\infer0[(id)]{\Gamma \vdash id_x : x \rightarrow x}
 			\end{prooftree} \\
@@ -130,47 +141,7 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}{Termes catégoriques typés}
-		\begin{center}
-			\begin{figure}[!ht]
-				\centering
-				\resizebox{1\textwidth}{!}{%
-					\begin{circuitikz}
-						\tikzstyle{every node}=[font=\fontsize{18.2pt}{23.7pt}\selectfont]
-						\draw  (-2.5,19.625) rectangle (17.375,9.625);
-						\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.5,19.125) {Types};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (1.625,13) {$x \rightarrow y, y \rightarrow x \vdash x \rightarrow x$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.75,18) {$\emptyset \vdash x \rightarrow y$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (10.25,14.125) {$x \rightarrow y, y \rightarrow z \vdash x \rightarrow z$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (5,14.625) {$x \rightarrow y, x \rightarrow z \vdash x \rightarrow z$};
-					\end{circuitikz}
-				}%
-			\end{figure}
-		\end{center}
-	\end{frame}  
-	
-	\begin{frame}{Termes catégoriques typés}
-		\begin{center}
-			\begin{figure}[!ht]
-				\centering
-				\resizebox{1\textwidth}{!}{%
-					\begin{circuitikz}
-						\tikzstyle{every node}=[font=\fontsize{18.2pt}{23.7pt}\selectfont]
-						\draw  (7.75,14.625) ellipse (9.5cm and 3.875cm);
-						\draw  (-2.5,19.625) rectangle (17.375,9.625);
-						\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.5,19.125) {Types};
-						\node [font=\fontsize{13.9pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (2,16) {Propositionel};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (1.625,13) {$x \rightarrow y, y \rightarrow x \vdash x \rightarrow x$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.75,18) {$\emptyset \vdash x \rightarrow y$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (10.25,14.125) {$x \rightarrow y, y \rightarrow z \vdash x \rightarrow z$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (5,14.625) {$x \rightarrow y, x \rightarrow z \vdash x \rightarrow z$};
-					\end{circuitikz}
-				}%
-			\end{figure}
-		\end{center}
-	\end{frame}
-	
-	\begin{frame}[noframenumbering]{Termes catégoriques typés}
+	\begin{frame}[c]{Termes catégoriques typés}
 		\begin{center}
 			\begin{figure}[!ht]
 				\centering
@@ -181,60 +152,42 @@
 						\draw  (9.25,14.75) ellipse (6.875cm and 2.5cm);
 						\draw  (-2.5,19.625) rectangle (17.375,9.625);
 						\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.5,19.125) {Types};
-						\node [font=\fontsize{11.9pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (0.5,16) {Propositionel};
-						\node [font=\fontsize{11.9pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (4.125,15.375) {Contractiles};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (1.625,13) {$x \rightarrow y, y \rightarrow x \vdash x \rightarrow x$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.75,18) {$\emptyset \vdash x \rightarrow y$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (10.25,14.125) {$x \rightarrow y, y \rightarrow z \vdash x \rightarrow z$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (5,14.625) {$x \rightarrow y, x \rightarrow z \vdash x \rightarrow z$};
+						\node [font=\fontsize{15pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (0.5,16) {Propositionel};
+						\node [font=\fontsize{15pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (4.125,15.375) {Contractiles};
+						\node [font=\fontsize{12pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (1.625,13) {$x \rightarrow y, y \rightarrow x \vdash x \rightarrow x$};
+						\node [font=\fontsize{12pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.75,18) {$\emptyset \vdash x \rightarrow y$};
+						\node [font=\fontsize{12pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (10.25,14.125) {$x \rightarrow y, y \rightarrow z \vdash x \rightarrow z$};
+						\node [font=\fontsize{12pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (5,14.625) {$x \rightarrow y, x \rightarrow z \vdash x \rightarrow z$};
 					\end{circuitikz}
 				}%
 			\end{figure}
 		\end{center}
 	\end{frame}
-	
-	
 	
 	\section{Motivations et objectifs}
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{Motivations et objectifs}
+		\begin{enumerate}
+			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
+			\vspace{15pt}
+			\item
+			\begin{prooftree}
+				\hypo[]{\Theta\ |\ \Gamma \vdash_{ps} A}
+				\infer1[(ps)]{\Theta\ |\ \Gamma \vdash_{ps} \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
+			\end{prooftree}
+			\vspace{15pt}
+			\item Formalisation des schémas composables
+			\begin{center}
+			\includegraphics[scale=0.1]{images/agda.png}
+			\end{center}
+
+		\end{enumerate}
 	\end{frame}
 	
-	\begin{frame}{Agda}
-		\includegraphics[scale=0.1]{images/agda.png}\\
-		\begin{itemize}
-			\item[]<2->Exemple de définition\\\includegraphics[scale=0.4]{images/exemple-definition.png}
-			\item[]<3->Exemple de proposition\\\includegraphics[scale=0.4]{images/exemple-proposition.png}
-			\item[]<4->Exemple de transformation\\\includegraphics[scale=0.4]{images/exemple-transformation.png}
-		\end{itemize}
-	\end{frame}
-	
-	\section{Schémas composables : cas catégories}
+	\section{Schémas composables : cas des catégories simples}
 	\begin{frame}[fragile]{Schémas composables}
-		\begin{center}
-			\begin{figure}[!ht]
-				\centering
-				\resizebox{1\textwidth}{!}{%
-					\begin{circuitikz}
-						\tikzstyle{every node}=[font=\fontsize{18.2pt}{23.7pt}\selectfont]
-						\draw  (7.75,14.625) ellipse (9.5cm and 3.875cm);
-						\draw  (9.25,14.75) ellipse (6.875cm and 2.5cm);
-						\draw  (-2.5,19.625) rectangle (17.375,9.625);
-						\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-1.5,19.125) {Types};
-						\node [font=\fontsize{11.9pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (0.5,16) {Propositionel};
-						\node [font=\fontsize{11.9pt}{15.5pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (4.125,15.375) {Contractiles};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (1.625,13) {$x \rightarrow y, y \rightarrow x \vdash x \rightarrow x$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (-0.75,18) {$\emptyset \vdash x \rightarrow y$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (10.25,14.125) {$x \rightarrow y, y \rightarrow z \vdash x \rightarrow z$};
-						\node [font=\fontsize{10.2pt}{13.3pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (5,14.625) {$x \rightarrow y, x \rightarrow z \vdash x \rightarrow z$};
-					\end{circuitikz}
-				}%
-			\end{figure}
-		\end{center}
-	\end{frame}
-	
-	\section{Schémas composables : cas catégories}
-	\begin{frame}[fragile, noframenumbering]{Schémas composables}
+		\small
+		Schémas composables $\subset$ Types Contractiles $\subset$ Types Propositionels
 		\begin{center}
 		\begin{figure}[!ht]
 			\centering
@@ -299,9 +252,29 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}{Contractibilité des schémas composables}
-		\includegraphics[scale=0.2]{images/PSTm}\\
-		\includegraphics[scale=0.2]{images/PSEq}
+	\begin{frame}[fragile]{Contractibilité des schémas composables}
+		\begin{enumerate}
+			\small
+			\item Montrer que les schémas composables sont propositionels :
+			\begin{theorem}
+				Si $\Gamma \vdash A$ est un schéma composable alors il existe un terme $f$ typé $\Gamma \vdash f : A$. \\
+				\begin{center}
+					\footnotesize
+					$\mathtt{PSTm : \left\{n : \mathbb N\right\}} \left\{\Gamma\mathtt{ : Con\ n}\right\} \left\{\mathtt{A : Arr\ n}\right\} \rightarrow \color{red} \mathrm{PS}\ \Gamma\ A \color{black}\rightarrow \color{red}\mathrm{Tm}\ \Gamma\ A\color{black}$	
+				\end{center}
+			\end{theorem}
+			
+			\item Montrer que les schémas composables sont contractiles :
+			\begin{theorem}
+				Si $\Gamma \vdash A$ est un schéma composable alors il existe au plus un terme $f$, à équivalence près, typé $\Gamma \vdash f : A$.
+				\begin{center}
+					\footnotesize
+					$\mathtt{PSEq : \left\{n : \mathbb N\right\}} \left\{\Gamma\mathtt{ : Con\ n}\right\} \left\{\mathtt{A : Arr\ n}\right\} \color{red} \left(ps : \mathrm{PS}\ \Gamma\ A\right) \left(t\ u : \mathrm{Tm}\ \Gamma\ A\right) \color{black} \rightarrow \color{red} t \sim u \color{black}$		
+				\end{center}
+			\end{theorem}
+		\end{enumerate}
+		
+		
 	\end{frame}
 	
 	\begin{frame}[fragile]{Termes normaux}
@@ -332,20 +305,81 @@
 	\end{frame}
 	
 	\section{Schémas composables : cas catégories cartésiennes}
-	\begin{frame}
-		\frametitle{Schémas composables cartésiens}
+	\begin{frame}[fragile]{Catégories cartésiennes}
+		Catégories cartésiennes sont enrichies d'objets produits, de paires de morphismes, de projecteurs et d'objets terminaux.
+		\begin{center}
+			\begin{tikzcd}
+				& X \arrow[ld, "f"'] \arrow[rd, "g"] \arrow[d, "{\left<f,g\right>}"] &   \\
+				A & A\times B \arrow[l, "\pi_0"] \arrow[r, "\pi_1"']                   & B
+			\end{tikzcd}
+		\end{center}
+		\vspace{10pt}
+		\noindent
+		\begin{minipage}[c]{0.48\linewidth}
+			\begin{center}
+				\includegraphics[scale=0.15]{images/Ty-cat}
+			\end{center}
+		\end{minipage}
+		\hfill\vline\hfill
+		\begin{minipage}[c]{0.48\linewidth}
+			\begin{center}
+				\includegraphics[scale=0.15]{images/Ty-ccat}
+			\end{center}
+		\end{minipage}
+		 
 	\end{frame}
 	
-	\begin{frame}
-		\frametitle{Bilan}
+	\begin{frame}[fragile]{Schémas composables cartésiens}
+	\begin{center}
+		\footnotesize
+		\begin{prooftree}
+			\infer0[(ps-term)]{\Gamma \vdash_{ps} : A \rightarrow \mathbbm 1}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
+			\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
+			\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{A \blacktriangleright x}
+			\infer1[(ps-proj) $[A$ linéaire$]$]{\emptyset \vdash_{ps} : A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow B}
+			
+			\infer1[(ps-ext) $[x \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright x\right)]$]{\Gamma , B \rightarrow x \vdash_{ps} A \rightarrow x}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+			\infer1[(ps-const) 
+			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+			]{\Gamma , \mathbbm 1 \rightarrow y \vdash_{ps} A \rightarrow y}
+		\end{prooftree} \\
+		\vspace{15pt}
+		\begin{prooftree}
+			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+			\infer1[(ps-weak) 
+			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+			]{\Gamma , B \rightarrow y \vdash_{ps} A \rightarrow x}
+		\end{prooftree}
+		\vspace{15pt}
+	\end{center}
+	\end{frame}
+	
+	\section*{Bilan}
+	\begin{frame}{Bilan}
 		\begin{itemize}
-			\item<1-> Formalisation de la définition de schémas composables catégoriques
-			\item<2-> Termes normaux
+			\item<1-> Formalisation de la définition des schémas composables dans le cas des catégories simples.
+			\item<2-> Termes normaux.
 			\item<3-> Formalisation de la preuve que les schémas composables sont habités.
 			\item<4-> Formalisation de la preuve que les schémas composables sont habités \textbf{de manière unique}.
-			\item<5-> Définition schémas composables pour les catégories cartésiennes
-			\item<6-> Preuve que ceci sont habités
-			\item<7-> 
+			\item<5-> Définition des schémas composables pour les catégories cartésiennes.
+			\item<6-> Preuve que ceux-ci sont habités.
+			\item<7-> Preuve que ceux-ci sont habités \textbf{de manière unique}. (Formalisation Agda incomplète.)
 		\end{itemize}
 	\end{frame}
 	

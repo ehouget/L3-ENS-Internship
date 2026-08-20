@@ -84,10 +84,8 @@
 	
 	\begin{center}
 		\begin{tikzcd}
-			& X \arrow[d, "\left<f\, g\right>"] \arrow[rd, "g"] \arrow[ld, "f"]\\
-			A
-			& A \times B \arrow[r, "\pi_1"] \arrow[l, "\pi_0"]
-			& B
+			& X \arrow[ld, "f"'] \arrow[rd, "g"] \arrow[d, "{\left<f,g\right>}"] &   \\
+			A & A\times B \arrow[l, "\pi_0"] \arrow[r, "\pi_1"']                   & B
 		\end{tikzcd}
 	\end{center}
 	
