@@ -383,7 +383,27 @@
 		\end{itemize}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{References}
+		\bibliographystyle{amsalpha}
+		\begin{thebibliography}{00}
+			\bibitem{b1} \href{https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/docs/mimram_cccatt.pdf}
+			{Samuel Mimram, ``An unbiased simply typed combinatory logic,'' LIX, CNRS, École polytechnique, Institut Polytechnique de Paris, Palaiseau, France, 2026}
+			\bibitem{b2} \href{https://umontreal.scholaris.ca/items/f2d7e64e-fc35-4149-ad60-113a22d4011a}
+			{Dominique Boucher, ``La Théorie des catégories en informatique :
+				notions de base et application,'' Département d'informatique et recherche opérationnelle
+				Faculté des études supérieures, Université de Montréal, Août 1993}
+			\bibitem{b3} \href{https://www.numdam.org/item/?id=SB_1960-1961__6__99_0}
+			{Alexander Grothendieck, Section 4 of: Techniques de construction et théorèmes d?existence en géométrie algébrique III: préschémas quotients, Séminaire Bourbaki: années 1960/61, exposés 205-222, Séminaire Bourbaki, no. 6 (1961), Exposé no. 212}
+		\end{thebibliography}
+	\end{frame}
+	
 	\appendix
+	
+	\begin{frame}[c]
+		\centering
+		\huge \textbf{Annexes}
+	\end{frame}
 	
 	\begin{frame}[noframenumbering]{Green slime problem}
 		Difficulté lié au systeme d'inférence et d'identification d'Agda.\\
@@ -395,8 +415,8 @@
 		\includegraphics[scale=0.3]{images/exemple-greenslime-fix}
 	\end{frame}
 	
-	\begin{frame}[noframenumbering]{Séquents minimales (cas catégories simples)}
-		Listes des séquents necessaires pour montrer la cohérence de $CCaTT_1$.
+	\begin{frame}[noframenumbering]{Séquents nécessaires (cas catégories simples)}
+		Listes des séquents nécessaires pour montrer la cohérence de $CaTT_1$.
 		\begin{enumerate}
 			\item $\emptyset \vdash_{ps} x \rightarrow x$
 			\item $x \rightarrow y \vdash_{ps} x \rightarrow y$
@@ -412,7 +432,7 @@
 		Identité : \hspace{20pt}
 		\begin{prooftree}
 			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\end{prooftree}
+		\end{prooftree}\label{id-proof}
 		
 		\vspace{30pt}
 		
@@ -420,7 +440,7 @@
 		\begin{prooftree}
 			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
 			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
-		\end{prooftree}
+		\end{prooftree}\label{fleche-proof}
 		
 		\vspace{30pt}
 		
@@ -429,7 +449,7 @@
 			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
 			\infer1[(ext)]{x \rightarrow y \vdash_{ps} x \rightarrow y}
 			\infer1[(ext)]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
-		\end{prooftree}
+		\end{prooftree}\label{trans-proof}
 		
 	\end{frame}
 	
@@ -446,7 +466,7 @@
 					\infer2[]{f : x \rightarrow y \vdash id_x \cdot f : x \rightarrow y}
 				\end{prooftree}
 			\end{gathered}
-		\end{align*}
+		\end{align*}\label{left-id-proof}
 		
 		\vspace{30pt}
 		\begin{prooftree}
@@ -472,7 +492,7 @@
 			\infer1[]{f : x \rightarrow y \vdash f : x \rightarrow y}
 			\infer0[]{f : x \rightarrow y \vdash id_y : y \rightarrow y}
 			\infer2[]{f : x \rightarrow y \vdash f \cdot id_y : x \rightarrow y}
-		\end{prooftree}
+		\end{prooftree}\label{right-id-proof}
 		
 		\vspace{30pt}
 		\begin{prooftree}
@@ -487,17 +507,19 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}[noframenumbering]{Séquents minimales (cas catégories simples)}
-		
+	\begin{frame}[noframenumbering, allowframebreaks, c]{Séquents essentiels : associativité}
+		\begin{center}
 		\begin{prooftree}
 			\hypo[]{\Pi_{ps}}
 			\hypo[]{\Pi_{(f \cdot g) \cdot h}}
 			\hypo[]{\Pi_{f \cdot (g \cdot h)}}
 			\infer3[$(ps^=)$]{\Gamma \vdash (f \cdot g) \cdot h = f \cdot (g \cdot h)}
-		\end{prooftree} \\
-		\vspace{10pt}
+		\end{prooftree}\label{assoc-proof} \\
+		\vspace{20pt}
 		
 		$\Gamma = f : x \rightarrow y, g : y \rightarrow z, h : z \rightarrow w$ \\
+		
+		\vspace{15pt}
 		
 		$\Pi_{ps} =$
 		\begin{prooftree}
@@ -506,7 +528,7 @@
 			\infer1[]{x \rightarrow y, y \rightarrow z \vdash_{ps} x \rightarrow z}
 			\infer1[]{x \rightarrow y, y \rightarrow z, z \rightarrow w \vdash_{ps} x \rightarrow w}
 		\end{prooftree}
-		\vspace{15pt}
+		\vspace{20pt}
 		
 		$\Pi_{(f \cdot g) \cdot h} =$
 		\begin{prooftree}
@@ -519,7 +541,7 @@
 			\infer1[]{\Gamma \vdash h : z \rightarrow w}
 			\infer2[]{\Gamma \vdash (f \cdot g) \cdot h  : x \rightarrow w}
 		\end{prooftree}
-		\vspace{15pt}
+		\vspace{30pt}
 		
 		$\Pi_{f \cdot (g \cdot h)} =$
 		\begin{prooftree}
@@ -532,5 +554,6 @@
 			\infer2[]{\Gamma \vdash g \cdot h : y \rightarrow w}
 			\infer2[]{\Gamma \vdash f \cdot (g \cdot h)  : x \rightarrow w}
 		\end{prooftree}
+		\end{center}
 	\end{frame}
 \end{document}

@@ -52,14 +52,14 @@
 \headcommand {\sectionentry {6}{Bilan}{18}{Bilan}{0}}
 \headcommand {\slideentry {6}{0}{1}{18/24}{}{0}}
 \headcommand {\beamer@framepages {18}{24}}
-\headcommand {\gdef \insertmainframenumber {14}}
-\headcommand {\partentry {Annexe}{1}}
-\headcommand {\beamer@partpages {1}{24}}
-\headcommand {\beamer@sectionpages {18}{24}}
-\headcommand {\beamer@subsectionpages {18}{24}}
-\headcommand {\beamer@appendixpages {25}}
-\headcommand {\slideentry {6}{0}{2}{25/25}{}{1}}
+\headcommand {\slideentry {6}{0}{2}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
+\headcommand {\gdef \insertmainframenumber {15}}
+\headcommand {\partentry {Annexe}{1}}
+\headcommand {\beamer@partpages {1}{25}}
+\headcommand {\beamer@sectionpages {18}{25}}
+\headcommand {\beamer@subsectionpages {18}{25}}
+\headcommand {\beamer@appendixpages {26}}
 \headcommand {\slideentry {6}{0}{3}{26/26}{}{1}}
 \headcommand {\beamer@framepages {26}{26}}
 \headcommand {\slideentry {6}{0}{4}{27/27}{}{1}}
@@ -70,8 +70,14 @@
 \headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {6}{0}{7}{30/30}{}{1}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@partpages {25}{30}}
-\headcommand {\beamer@subsectionpages {25}{30}}
-\headcommand {\beamer@sectionpages {25}{30}}
-\headcommand {\beamer@documentpages {30}}
-\headcommand {\gdef \inserttotalframenumber {14}}
+\headcommand {\slideentry {6}{0}{8}{31/31}{}{1}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {6}{0}{9}{32/32}{}{1}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {6}{0}{9}{32/33}{}{1}}
+\headcommand {\beamer@framepages {32}{33}}
+\headcommand {\beamer@partpages {26}{33}}
+\headcommand {\beamer@subsectionpages {26}{33}}
+\headcommand {\beamer@sectionpages {26}{33}}
+\headcommand {\beamer@documentpages {33}}
+\headcommand {\gdef \inserttotalframenumber {16}}
