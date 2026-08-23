@@ -1,39 +1,39 @@
 \frametitle{Schémas composables cartésiens}
 \begin{center}
-		\footnotesize
-		\begin{prooftree}
-			\infer0[(ps-term)]{\Gamma \vdash_{ps} : A \rightarrow \mathbbm 1}
-		\end{prooftree} \\
-		\vspace{15pt}
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
-			\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
-			\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
-		\end{prooftree} \\
-		\vspace{15pt}
-		\begin{prooftree}
-			\hypo[]{A \blacktriangleright x}
-			\infer1[(ps-proj) $[A$ linéaire$]$]{\emptyset \vdash_{ps} : A \rightarrow x}
-		\end{prooftree} \\
-		\vspace{15pt}
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{ps} A \rightarrow B}
-			
-			\infer1[(ps-ext) $[x \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright x\right)]$]{\Gamma , B \rightarrow x \vdash_{ps} A \rightarrow x}
-		\end{prooftree} \\
-		\vspace{15pt}
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
-			\infer1[(ps-const)
-			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
-			]{\Gamma , \mathbbm 1 \rightarrow y \vdash_{ps} A \rightarrow y}
-		\end{prooftree} \\
-		\vspace{15pt}
-		\begin{prooftree}
-			\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
-			\infer1[(ps-weak)
-			$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
-			]{\Gamma , B \rightarrow y \vdash_{ps} A \rightarrow x}
-		\end{prooftree}
-		\vspace{15pt}
-	\end{center}
+			\footnotesize
+			\begin{prooftree}
+				\infer0[(ps-term)]{\Gamma \vdash_{ps} : A \rightarrow \mathbbm 1}
+			\end{prooftree} \\
+			\vspace{15pt}
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
+				\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
+				\infer2[(ps-pair)]{\Gamma \vdash_{ps} \left<f, g\right> : A \rightarrow B \times C}
+			\end{prooftree} \\
+			\vspace{15pt}
+			\begin{prooftree}
+				\hypo[]{A \blacktriangleright x}
+				\infer1[(ps-proj) $[A$ linéaire$]$]{\emptyset \vdash_{ps} : A \rightarrow x}
+			\end{prooftree} \\
+			\vspace{15pt}
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{ps} A \rightarrow B}
+				
+				\infer1[(ps-ext) $[x \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright x\right)]$]{\Gamma , B \rightarrow x \vdash_{ps} A \rightarrow x}
+			\end{prooftree} \\
+			\vspace{15pt}
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+				\infer1[(ps-const)
+				$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+				]{\Gamma , \mathbbm 1 \rightarrow y \vdash_{ps} A \rightarrow y}
+			\end{prooftree} \\
+			\vspace{15pt}
+			\begin{prooftree}
+				\hypo[]{\Gamma \vdash_{ps} A \rightarrow x}
+				\infer1[(ps-weak)
+				$[y \notin t(\Gamma) \wedge \neg\left(A \blacktriangleright y\right)]$
+				]{\Gamma , B \rightarrow y \vdash_{ps} A \rightarrow x}
+			\end{prooftree}
+			\vspace{15pt}
+		\end{center}

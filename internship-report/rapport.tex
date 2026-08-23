@@ -324,11 +324,11 @@
 	\begin{center}
 		\begin{prooftree}
 			\infer0[(ax)]{\emptyset \vdash_{ps} x \rightarrow x}
-		\end{prooftree}
-		\hspace{50pt}
+		\end{prooftree} \\
+		\vspace{15pt}
 		\begin{prooftree}
 			\hypo[]{\Gamma \vdash_{ps} x \rightarrow y}
-			\infer1[(ext) $z \notin b(\Gamma) \cup \{x\}$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
+			\infer1[(ext) $\left[z \notin t(\Gamma) \cup \{x\}\right]$]{\Gamma , y \rightarrow z \vdash_{ps} x \rightarrow z}
 		\end{prooftree}
 	\end{center} 
 	
