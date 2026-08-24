@@ -127,14 +127,17 @@
 		\frametitle{Motivations et objectifs}
 		\begin{enumerate}
 			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
-			\vspace{15pt}
+			\vspace{10pt}
 			\item
-			L'introduction 
+			L'introduction des schémas composables (\textit{pasting scheme}) comme objets auxiliaires pour définir les termes.
+			\vspace{10pt}
+			\begin{center}
 			\begin{prooftree}
 				\hypo[]{\Theta\ |\ \Gamma \vdash_{ps} A}
 				\infer1[(ps)]{\Theta\ |\ \Gamma \vdash \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
 			\end{prooftree}
-			\vspace{15pt}
+			\end{center}
+			\vspace{10pt}
 			\item Formalisation des schémas composables
 			\begin{center}
 			\includegraphics[scale=0.1]{images/agda.png}
