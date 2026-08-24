@@ -129,9 +129,10 @@
 			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
 			\vspace{15pt}
 			\item
+			L'introduction 
 			\begin{prooftree}
 				\hypo[]{\Theta\ |\ \Gamma \vdash_{ps} A}
-				\infer1[(ps)]{\Theta\ |\ \Gamma \vdash_{ps} \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
+				\infer1[(ps)]{\Theta\ |\ \Gamma \vdash \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
 			\end{prooftree}
 			\vspace{15pt}
 			\item Formalisation des schémas composables
@@ -170,7 +171,8 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}[fragile]{Schémas composables}
+	\begin{frame}[fragile, c]{Schémas composables}
+		\footnotesize
 		Chaine de morphismes
 		\begin{tikzcd}
 			& X_0 \arrow{r}{f_1} 
@@ -186,13 +188,13 @@
 			& y  
 			& z \arrow{l}{g}
 		\end{tikzcd}
-		\hspace{15pt}
+		\hspace{20pt}
 		\begin{tikzcd}
 			& y \\
 			x \arrow[rd, "g"'] \arrow[ru, "f"] &   \\
 			& z
 		\end{tikzcd}
-		\hspace{15pt}
+		\hspace{20pt}
 		\begin{tikzcd}
 			x \arrow[r, "f", bend left] & y \arrow[l, "g", bend left]
 		\end{tikzcd}
