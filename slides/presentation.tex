@@ -129,7 +129,7 @@
 			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
 			\vspace{10pt}
 			\item
-			L'introduction des schémas composables (\textit{pasting scheme}) comme objets auxiliaires pour définir les termes.
+			L'introduction des schémas composables (\textit{pasting schemes}) comme objets auxiliaires pour définir les termes.
 			\vspace{10pt}
 			\begin{center}
 			\begin{prooftree}
@@ -215,26 +215,26 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}[fragile]{Contractibilité des schémas composables}
+	\begin{frame}[fragile, c]{Contractibilité des schémas composables}
 		\begin{enumerate}
 			\small
 			\item Montrer que les schémas composables sont propositionnels :
-			\begin{theorem}
+			\begin{block}{Théorème (Schémas composables $\subset$ Types Propositionnels)}
 				Si $\Gamma \vdash A$ est un schéma composable alors il existe un terme $f$ typé $\Gamma \vdash f : A$. \\
 				\begin{center}
 					\footnotesize
 					$\mathtt{PSTm : \left\{n : \mathbb N\right\}} \left\{\Gamma\mathtt{ : Con\ n}\right\} \left\{\mathtt{A : Arr\ n}\right\} \rightarrow \color{red} \mathrm{PS}\ \Gamma\ A \color{black}\rightarrow \color{red}\mathrm{Tm}\ \Gamma\ A\color{black}$	
 				\end{center}
-			\end{theorem}
+			\end{block}
 			
 			\item Montrer que les schémas composables sont contractiles :
-			\begin{theorem}
+			\begin{block}{Théorème (Schémas composables $\subset$ Types Contractiles)}
 				Si $\Gamma \vdash A$ est un schéma composable alors il existe au plus un terme $f$, à équivalence près, typé $\Gamma \vdash f : A$.
 				\begin{center}
 					\footnotesize
 					$\mathtt{PSEq : \left\{n : \mathbb N\right\}} \left\{\Gamma\mathtt{ : Con\ n}\right\} \left\{\mathtt{A : Arr\ n}\right\} \color{red} \left(ps : \mathrm{PS}\ \Gamma\ A\right) \left(t\ u : \mathrm{Tm}\ \Gamma\ A\right) \color{black} \rightarrow \color{red} t \sim u \color{black}$		
 				\end{center}
-			\end{theorem}
+			\end{block}
 		\end{enumerate}
 		
 		

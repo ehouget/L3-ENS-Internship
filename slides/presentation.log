@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  24 AUG 2026 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  24 AUG 2026 10:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1540,10 +1540,10 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: FD26C8CE7A619C2C003D5F503BA57630;1266.
  ) 
 Here is how much of TeX's memory you used:
- 48848 strings out of 469486
- 1160857 string characters out of 5469659
+ 48844 strings out of 469486
+ 1160767 string characters out of 5469659
  1810048 words of memory out of 5000000
- 76677 multiletter control sequences out of 15000+600000
+ 76673 multiletter control sequences out of 15000+600000
  786134 words of font info for 245 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,16n,123p,387b,1117s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1560,7 +1560,7 @@ lvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
 usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dis
 t/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb>
-Output written on presentation.pdf (34 pages, 273213 bytes).
+Output written on presentation.pdf (34 pages, 272466 bytes).
 PDF statistics:
  1272 PDF objects out of 1440 (max. 8388607)
  1078 compressed objects within 11 object streams
