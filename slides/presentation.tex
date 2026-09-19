@@ -10,34 +10,48 @@
 \usepackage{circuitikz}
 \usepackage{ebproof}
 \usepackage{graphicx}
+\graphicspath{ {./images/} }
 \usepackage{adjustbox}
 \usepackage{bbm}
+\usepackage[inkscapeformat=png]{svg}
 
-\usetheme{Antibes}
+\usetheme{CambridgeUS}
 
-\title{Une approche non biaisée des catégories cartésiennes}
-\subtitle{Stage de recherche L3}
+\title[Types catégoriques non biaisés]{Une approche non biaisée des catégories cartésiennes}
+%\subtitle[]{Stage de recherche L3}
 
-\author{{Eliott Houget} \\
+\author[Eliott Houget]{{Eliott Houget} \\
 	{\and} \\
-	{\textit{Encadrant}} \\
-	{Samuel Mimram}\\
-	{\textit{Équipe} Cosynus}}
+	{\footnotesize{Encadré par} \textit{Samuel Mimram}}\\
+	{\footnotesize{Dans l'équipe} \textit{Cosynus}}}
 	
-\institute{LIX, École polytechnique, Institut Polytechnique de Paris}
+\institute[]{LIX, École polytechnique, Institut Polytechnique de Paris}
 
-\date{24 août 2026}
+\titlegraphic{
+	\vspace{-45pt}
+	\begin{figure}
+		\begin{minipage}[c]{0.3\linewidth}
+			\input{images/lix.pdf_tex}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[c]{0.15\linewidth}
+			\input{images/ens-rennes.pdf_tex}
+		\end{minipage}%
+	\end{figure}
+}
+
+\date{21 septembre 2026}
 
 \begin{document}
 	
 	\frame{\titlepage}
 	
-	% --------- Sommaire ---------
-	\section*{Sommaire}
-	\begin{frame}[noframenumbering, c]{Sommaire}
-		\tableofcontents
-	\end{frame}      
-	% ----------------------------
+%	% --------- Sommaire ---------
+%	\section*{Sommaire}
+%	\begin{frame}[noframenumbering, c]{Sommaire}
+%		\tableofcontents
+%	\end{frame}      
+%	% ----------------------------
 	
 	
 	\section{Cadre et intuition des objets manipulés}
@@ -324,8 +338,14 @@
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}
-		\frametitle{Références}
+	\appendix
+	
+	\begin{frame}[noframenumbering, c]
+		\centering
+		\huge \textbf{Annexes}
+	\end{frame}
+	
+	\begin{frame}[noframenumbering]{Références}
 		\bibliographystyle{amsalpha}
 		\begin{thebibliography}{00}
 			\bibitem{b1} \href{https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/docs/mimram_cccatt.pdf}
@@ -339,13 +359,6 @@
 		\end{thebibliography}
 	\end{frame}
 	
-	\appendix
-	
-	\begin{frame}[c]
-		\centering
-		\huge \textbf{Annexes}
-	\end{frame}
-	
 	\begin{frame}[noframenumbering]{Green slime problem}
 		Difficulté lié au systeme d'inférence et d'identification d'Agda.\\
 		\vspace{10pt}
@@ -356,7 +369,7 @@
 		\includegraphics[scale=0.3]{images/exemple-greenslime-fix}
 	\end{frame}
 	
-	\begin{frame}{Termes (cas cartésien)}
+	\begin{frame}[noframenumbering]{Termes (cas cartésien)}
 		On enrichit la définition inductive des termes pour obtenir les termes typés catégoriques cartésiens :
 		\begin{center}
 			\begin{prooftree}
@@ -379,7 +392,7 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}{Relation $\sim$}
+	\begin{frame}[noframenumbering]{Relation $\sim$}
 		\footnotesize
 		\begin{center}
 			\begin{prooftree}
@@ -418,7 +431,7 @@
 		\end{center}
 	\end{frame}
 	
-	\begin{frame}{Relation $\sim$ (cas cartésien)}
+	\begin{frame}[noframenumbering]{Relation $\sim$ (cas cartésien)}
 		\begin{center}
 			\begin{prooftree}
 				\hypo[]{\Gamma \vdash f : x \rightarrow y}
@@ -499,7 +512,7 @@
 		Arbres de dérivation sur les slides suivantes.
 	\end{frame}
 	
-	\begin{frame}
+	\begin{frame}[noframenumbering]
 		On enrichit la définition inductive des types.
 		
 		\vspace{20pt}
