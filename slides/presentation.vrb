@@ -3,8 +3,8 @@
 			\footnotesize
 			\begin{prooftree}
 				\infer0[(ps-term)]{\Gamma \vdash_{ps} : A \rightarrow \mathbbm 1}
-			\end{prooftree} \\
-			\vspace{15pt}
+			\end{prooftree}
+			\hspace{15pt}
 			\begin{prooftree}
 				\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
 				\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}

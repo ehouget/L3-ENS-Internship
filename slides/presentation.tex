@@ -17,7 +17,7 @@
 
 \usetheme{CambridgeUS}
 
-\title[Types catégoriques non biaisés]{Une approche non biaisée des catégories cartésiennes}
+\title[Théorie des types catégorique non biaisée]{Une approche non biaisée des catégories cartésiennes}
 %\subtitle[]{Stage de recherche L3}
 
 \author[Eliott Houget]{{Eliott Houget} \\
@@ -53,41 +53,174 @@
 %	\end{frame}      
 %	% ----------------------------
 	
+	\section{Motivations et objectifs}
 	
-	\section{Cadre et intuition des objets manipulés}
-	\begin{frame}{Domaines de l'informatique concernés}
-		\noindent
-		\begin{minipage}[c]{0.48\linewidth}
+	\begin{frame}[fragile]{Motivation}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles
+		\footnotesize
+		\begin{itemize}
+			\item<2->[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
 			\begin{center}
-			\textbf{Théorie des langages de programmation}\\
-			\vspace{20pt}
-			Outils et objets similaires au $\lambda$-calcul simplement typé.\\
-			\vspace{15pt}
-			Théories des types \\
+				\includegraphics[width=200pt]{images/coherence-2-cells.png}
 			\end{center}
 			
-		\end{minipage}
-		\hfill\vline\hfill
-		\begin{minipage}[c]{0.48\linewidth}
+			\item<3->[] On veut alors que toute situation composable
 			\begin{center}
-			\textbf{Théorie des catégories}\\
-			\vspace{20pt}
-			Vaste domaine décrivant les structures abstraites des mathématiques. 
+			\begin{tikzcd}
+				& X_0 \arrow{r}{f_1} 
+				& X_1 \arrow{r}{f_2} 
+				& \cdots \arrow{r}{f_n} 
+				& X_n
+			\end{tikzcd}
 			\end{center}
-		\end{minipage}
+			ait une unique composition relativement à un témoin d'égalité d'ordre 2.
+		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}[fragile, noframenumbering, c]{Théorie des catégories}
-		\begin{definition}[Catégories]
-			Une \textbf{catégorie} est la donnée d'une collection d'objets  et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
-		\end{definition}
-		\vspace{10pt}
-		\begin{center}
-		\begin{tikzcd}
-			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
-		\end{tikzcd}
-		\end{center}
+	\begin{frame}[fragile, noframenumbering]{Motivation}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles
+		\footnotesize
+		\begin{itemize}
+			\item[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
+			\begin{center}
+				\includegraphics[width=200pt]{images/coherence-2-cells.png}
+			\end{center}
+			
+			\item[] On veut alors que toute situation composable
+			\begin{center}
+				\begin{tikzcd}
+					& X_0 \arrow{r}{f_1} 
+					& X_1 \arrow{r}{f_2} 
+					& \cdots \arrow{r}{f_n} 
+					& X_n
+				\end{tikzcd}
+			\end{center}
+			ait une unique composition relativement à un témoin d'égalité d'ordre 2, qui doit être unique.
+		\end{itemize}
 	\end{frame}
+	
+	\begin{frame}[fragile, noframenumbering]{Motivation}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles
+		\footnotesize
+		\begin{itemize}
+			\item[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
+			\begin{center}
+				\includegraphics[width=200pt]{images/coherence-2-cells.png}
+			\end{center}
+			
+			\item[] On veut alors que toute situation composable
+			\begin{center}
+				\begin{tikzcd}
+					& X_0 \arrow{r}{f_1} 
+					& X_1 \arrow{r}{f_2} 
+					& \cdots \arrow{r}{f_n} 
+					& X_n
+				\end{tikzcd}
+			\end{center}
+			ait une unique composition relativement à un témoin d'égalité d'ordre 2, qui doit être unique relativement à un témoin d'égalité d'ordre 3.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[fragile, noframenumbering]{Motivation}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles
+		\footnotesize
+		\begin{itemize}
+			\item[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
+			\begin{center}
+				\includegraphics[width=200pt]{images/coherence-2-cells.png}
+			\end{center}
+			
+			\item[] On veut alors que toute situation composable
+			\begin{center}
+				\begin{tikzcd}
+					& X_0 \arrow{r}{f_1} 
+					& X_1 \arrow{r}{f_2} 
+					& \cdots \arrow{r}{f_n} 
+					& X_n
+				\end{tikzcd}
+			\end{center}
+			ait une unique composition relativement à un témoin d'égalité d'ordre 2, qui doit être unique relativement à un témoin d'égalité d'ordre 3, qui doit être unique relativement à un témoin d'égalité d'ordre 4, etc.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[fragile]{Motivations et objectifs}
+		
+		On veut que les cellules de cohérence soit elles-même cohérentes. \\ Par exemple, pour l'associativité, on a
+	
+		\begin{center}
+			\includegraphics[width=200pt]{images/associativity_coherence.png}
+		\end{center}
+		\vspace{-25pt}
+		\par\noindent\rule{\textwidth}{0.4pt}
+		{\footnotesize Source: Samuel Mimram, An unbiased simply-typed combinatory logic. Logic, models and formal methods seminar, June 11, 2026. \cite{b4}}
+	\end{frame}
+	
+	\begin{frame}[fragile, c]
+	    La cohérence pour la dimension supérieure demande environ quatres pages d'axiomes tels que
+	    
+	    \resizebox{1.05\linewidth}{!}{\input{images/higher_cat_axiom.pdf_tex}}\\[-1ex]
+	    
+	    \par\noindent\rule{\textwidth}{0.4pt}
+	    
+	    {\footnotesize Source: Samuel Mimram, An unbiased simply-typed combinatory logic. Logic, models and formal methods seminar, June 11, 2026. \cite{b4}}
+	\end{frame}
+	
+	\begin{frame}[fragile]{Motivations et objectifs}
+		\begin{enumerate}
+			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
+			\vspace{10pt}
+			\item
+			L'introduction des schémas composables (\textit{pasting schemes}) comme objets auxiliaires pour définir les termes.
+			\vspace{10pt}
+			\begin{center}
+				\begin{prooftree}
+					\hypo[]{\Theta\ |\ \Gamma \vdash_{ps} A}
+					\infer1[(ps)]{\Theta\ |\ \Gamma \vdash \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
+				\end{prooftree}
+			\end{center}
+			\vspace{10pt}
+			\item Formalisation des schémas composables
+			\begin{center}
+				\includegraphics[scale=0.1]{images/agda.png}
+			\end{center}
+			
+		\end{enumerate}
+	\end{frame}
+	
+%	\section{Cadre et intuition des objets manipulés}
+%	\begin{frame}{Domaines de l'informatique concernés}
+%		\noindent
+%		\begin{minipage}[c]{0.48\linewidth}
+%			\begin{center}
+%			\textbf{Théorie des langages de programmation}\\
+%			\vspace{20pt}
+%			Outils et objets similaires au $\lambda$-calcul simplement typé.\\
+%			\vspace{15pt}
+%			Théories des types \\
+%			\end{center}
+%			
+%		\end{minipage}
+%		\hfill\vline\hfill
+%		\begin{minipage}[c]{0.48\linewidth}
+%			\begin{center}
+%			\textbf{Théorie des catégories}\\
+%			\vspace{20pt}
+%			Vaste domaine décrivant les structures abstraites des mathématiques. 
+%			\end{center}
+%		\end{minipage}
+%	\end{frame}
+	
+%	\begin{frame}[fragile, noframenumbering, c]{Théorie des catégories}
+%		\begin{definition}[Catégories]
+%			Une \textbf{catégorie} est la donnée d'une collection d'objets  et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+%		\end{definition}
+%		\vspace{10pt}
+%		\begin{center}
+%		\begin{tikzcd}
+%			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
+%		\end{tikzcd}
+%		\end{center}
+%	\end{frame}
 	
 	\begin{frame}[c]{Termes catégoriques typés}
 		Comme en $\lambda$-calcul simplement typé, les termes typés sont définis par un système de règles d'inférence :
@@ -134,30 +267,6 @@
 				}%
 			\end{figure}
 		\end{center}
-	\end{frame}
-	
-	\section{Motivations et objectifs}
-	\begin{frame}[fragile]
-		\frametitle{Motivations et objectifs}
-		\begin{enumerate}
-			\item $CCCATT_1$ $\longrightarrow$ $C$artesian $C$losed $CA$tegorie $T$ypes $T$heorie (en dimension $1$) 
-			\vspace{10pt}
-			\item
-			L'introduction des schémas composables (\textit{pasting schemes}) comme objets auxiliaires pour définir les termes.
-			\vspace{10pt}
-			\begin{center}
-			\begin{prooftree}
-				\hypo[]{\Theta\ |\ \Gamma \vdash_{ps} A}
-				\infer1[(ps)]{\Theta\ |\ \Gamma \vdash \mathrm{coh}_{\Theta|\Gamma\vdash A} : A}
-			\end{prooftree}
-			\end{center}
-			\vspace{10pt}
-			\item Formalisation des schémas composables
-			\begin{center}
-			\includegraphics[scale=0.1]{images/agda.png}
-			\end{center}
-
-		\end{enumerate}
 	\end{frame}
 	
 	\section{Schémas composables : cas des catégories simples}
@@ -355,7 +464,9 @@
 				notions de base et application,'' Département d'informatique et recherche opérationnelle
 				Faculté des études supérieures, Université de Montréal, Août 1993}
 			\bibitem{b3} \href{https://www.numdam.org/item/?id=SB_1960-1961__6__99_0}
-			{Alexander Grothendieck, Section 4 of: Techniques de construction et théorèmes d?existence en géométrie algébrique III: préschémas quotients, Séminaire Bourbaki: années 1960/61, exposés 205-222, Séminaire Bourbaki, no. 6 (1961), Exposé no. 212}
+			{Alexander Grothendieck, Section 4 of: Techniques de construction et théorèmes d'existence en géométrie algébrique III: préschémas quotients, Séminaire Bourbaki: années 1960/61, exposés 205-222, Séminaire Bourbaki, no. 6 (1961), Exposé no. 212}
+			\bibitem{b4} \href{https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/docs/mimram_cccatt_slides_lmfm.pdf}
+			{Samuel Mimram, An unbiased simply-typed combinatory logic. Logic, models and formal methods seminar, June 11, 2026.}
 		\end{thebibliography}
 	\end{frame}
 	
@@ -463,8 +574,8 @@
 			\footnotesize
 			\begin{prooftree}
 				\infer0[(ps-term)]{\Gamma \vdash_{ps} : A \rightarrow \mathbbm 1}
-			\end{prooftree} \\
-			\vspace{15pt}
+			\end{prooftree}
+			\hspace{15pt}
 			\begin{prooftree}
 				\hypo[]{\Gamma \vdash_{ps} f : A \rightarrow B}
 				\hypo[]{\Gamma \vdash_{ps} g : A \rightarrow C}
