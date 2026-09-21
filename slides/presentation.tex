@@ -56,15 +56,33 @@
 	\section{Motivations et objectifs}
 	
 	\begin{frame}[fragile]{Une théorie des types sans égalité}
-		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles.
+	\end{frame}
+	
+	\begin{frame}[fragile]{Une théorie des types sans égalité}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles.
+		\vspace{15pt}
+		\begin{block}{Définition (Catégories)}
+			Une \textbf{catégorie} est la donnée d'une collection d'objets et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
+		\end{block}
+		\vspace{10pt}
+		\begin{center}
+			\begin{tikzcd}
+				X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
+			\end{tikzcd}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}[fragile, noframenumbering]{Une théorie des types sans égalité}
+		\small On souhaite définir une théorie des types dépendants sans égalités définitionnelles.
 		\footnotesize
 		\begin{itemize}
-			\item<2->[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
+			\item<1->[] Par exemple, les axiomes d'associativité et de composition avec l'identité sont réduits à l'existence de témoins d'égalités d'ordre 2.
 			\begin{center}
 				\includegraphics[width=200pt]{images/coherence-2-cells.png}
 			\end{center}
 			
-			\item<3->[] On veut alors que toute situation composable
+			\item<2->[] On veut alors que toute situation composable
 			\begin{center}
 			\begin{tikzcd}
 				& X_0 \arrow{r}{f_1} 
@@ -156,7 +174,7 @@
 	\end{frame}
 	
 	\begin{frame}[fragile, c]{En dimension supérieur}
-	    La cohérence pour la dimension supérieure demande environ quatres pages d'axiomes tels que
+	    La cohérence pour la dimension suivante demande environ quatres pages d'axiomes tels que
 	    
 	    \resizebox{1.05\linewidth}{!}{\input{images/higher_cat_axiom.pdf_tex}}\\[-1ex]
 	    
@@ -209,19 +227,7 @@
 %			\end{center}
 %		\end{minipage}
 %	\end{frame}
-	
-%	\begin{frame}[fragile, noframenumbering, c]{Théorie des catégories}
-%		\begin{definition}[Catégories]
-%			Une \textbf{catégorie} est la donnée d'une collection d'objets  et de flèches entre ses objets vérifiants certaines contraintes axiomatiques.
-%		\end{definition}
-%		\vspace{10pt}
-%		\begin{center}
-%		\begin{tikzcd}
-%			X \arrow[r, "f"] \arrow[rr, "g\ \circ\ f"', bend right] \arrow["id_X"', loop, distance=2em, in=125, out=55] & Y \arrow[r, "g"] \arrow["id_Y"', loop, distance=2em, in=125, out=55] & Z \arrow["id_Z"', loop, distance=2em, in=125, out=55]
-%		\end{tikzcd}
-%		\end{center}
-%	\end{frame}
-	
+	\section{Présentation des objets}
 	\begin{frame}[c]{Termes catégoriques typés}
 		Comme en $\lambda$-calcul simplement typé, les termes typés sont définis par un système de règles d'inférence :
 		\vspace{5pt}
@@ -454,18 +460,6 @@
 			\item<1-> Formalisation de la preuve que les schémas composables sont habités \textbf{de manière unique}.
 			\item<2-> Définition des schémas composables pour les catégories cartésiennes.
 			\item<3-> Preuve que ceux-ci sont habités \textbf{de manière unique}. (Formalisation Agda incomplète.)
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}[noframenumbering]{Bilan}
-		\footnotesize
-		Mes contributions :
-		\begin{itemize}
-			\item<1-> Formalisation de la définition des schémas composables dans le cas des catégories simples.
-			\item<1-> Termes normaux.
-			\item<1-> Formalisation de la preuve que les schémas composables sont habités \textbf{de manière unique}.
-			\item<1-> Définition des schémas composables pour les catégories cartésiennes.
-			\item<1-> Preuve que ceux-ci sont habités \textbf{de manière unique}. (Formalisation Agda incomplète.)
 		\end{itemize}
 	\end{frame}
 	

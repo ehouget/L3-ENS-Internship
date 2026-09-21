@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  21 SEP 2026 08:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.7)  21 SEP 2026 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1256,7 +1256,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 47.
  (./images/lix.pdf_tex
-<./images/lix.pdf, id=47, page=1, 69.65611pt x 61.1819pt>
+<./images/lix.pdf, id=51, page=1, 69.65611pt x 61.1819pt>
 File: ./images/lix.pdf Graphic file (type pdf)
 <use ./images/lix.pdf, page 1>
 Package pdftex.def Info: ./images/lix.pdf , page1 used on input line 56.
@@ -1309,7 +1309,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.29996pt on input line 47.
  (./images/ens-rennes.pdf_tex
-<./images/ens-rennes.pdf, id=48, page=1, 34.11212pt x 32.0093pt>
+<./images/ens-rennes.pdf, id=52, page=1, 34.11212pt x 32.0093pt>
 File: ./images/ens-rennes.pdf Graphic file (type pdf)
 <use ./images/ens-rennes.pdf, page 1>
 Package pdftex.def Info: ./images/ens-rennes.pdf , page1 used on input line 56.
@@ -1331,7 +1331,39 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/ens-rennes.pdf): PDF inclusion
  (./presentation.vrb
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 9.85492pt on input line 2.
-<images/coherence-2-cells.png, id=91, 320.8788pt x 67.452pt>
+) [2
+
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.85492pt on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 7.19995pt on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 5.39996pt on input line 10.
+) [3
+
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb
+<images/coherence-2-cells.png, id=180, 320.8788pt x 67.452pt>
 File: images/coherence-2-cells.png Graphic file (type png)
 <use images/coherence-2-cells.png>
 Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
@@ -1340,39 +1372,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.65994pt on input line 13.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7.4> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 13.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.65994pt on input line 13.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 13.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.39996pt on input line 13.
-) [2
+)
+[4
 
- <./images/coherence-2-cells.png>]
-(./presentation.vrb
-File: images/coherence-2-cells.png Graphic file (type png)
-<use images/coherence-2-cells.png>
-Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
-(pdftex.def)             Requested size: 200.0pt x 42.04211pt.
-) [3
-
-] (./presentation.vrb
-File: images/coherence-2-cells.png Graphic file (type png)
-<use images/coherence-2-cells.png>
-Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
-(pdftex.def)             Requested size: 200.0pt x 42.04211pt.
-) [4
-
-]
-\openout4 = `presentation.vrb'.
-
- (./presentation.vrb
+ <./images/coherence-2-cells.png>] (./presentation.vrb
 File: images/coherence-2-cells.png Graphic file (type png)
 <use images/coherence-2-cells.png>
 Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
@@ -1404,20 +1413,31 @@ Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb
-<images/associativity_coherence.png, id=290, 426.84468pt x 284.56313pt>
+File: images/coherence-2-cells.png Graphic file (type png)
+<use images/coherence-2-cells.png>
+Package pdftex.def Info: images/coherence-2-cells.png  used on input line 7.
+(pdftex.def)             Requested size: 200.0pt x 42.04211pt.
+) [8
+
+]
+\openout4 = `presentation.vrb'.
+
+
+(./presentation.vrb
+<images/associativity_coherence.png, id=346, 426.84468pt x 284.56313pt>
 File: images/associativity_coherence.png Graphic file (type png)
 <use images/associativity_coherence.png>
 Package pdftex.def Info: images/associativity_coherence.png  used on input line
  6.
 (pdftex.def)             Requested size: 200.0pt x 133.33652pt.
-) [8
+) [9
 
  <./images/associativity_coherence.png>]
 \openout4 = `presentation.vrb'.
 
- (./presentation.vrb
-(./images/higher_cat_axiom.pdf_tex
-<./images/higher_cat_axiom.pdf, id=327, page=1, 481.80043pt x 192.72018pt>
+
+(./presentation.vrb (./images/higher_cat_axiom.pdf_tex
+<./images/higher_cat_axiom.pdf, id=383, page=1, 481.80043pt x 192.72018pt>
 File: ./images/higher_cat_axiom.pdf Graphic file (type pdf)
 <use ./images/higher_cat_axiom.pdf, page 1>
 Package pdftex.def Info: ./images/higher_cat_axiom.pdf , page1 used on input li
@@ -1428,85 +1448,67 @@ Overfull \hbox (17.14479pt too wide) in paragraph at lines 4--4
 [][]  
  []
 
-) [9
+) [10
 
  <./images/higher_cat_axiom.pdf>]
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb
-<images/agda.png, id=370, 1284.8pt x 420.57124pt>
+<images/agda.png, id=427, 1284.8pt x 420.57124pt>
 File: images/agda.png Graphic file (type png)
 <use images/agda.png>
 Package pdftex.def Info: images/agda.png  used on input line 17.
 (pdftex.def)             Requested size: 128.48752pt x 42.05959pt.
-) [10
+) [11
 
- <./images/agda.png>] [11
+ <./images/agda.png>] [12
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 270.
+(Font)              scaled to size 8.99994pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.37988pt on input line 270.
+(Font)              scaled to size 16.37988pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 14.3999pt on input line 270.
+(Font)              scaled to size 14.3999pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.69992pt on input line 270.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 270.
+(Font)              scaled to size 11.69992pt on input line 276.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 276.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 270.
+(Font)              size <12> substituted on input line 276.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 270.
+(Font)              size <6> substituted on input line 276.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 270.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 276.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.09996> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 270.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 276.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 270.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.1899pt on input line 270.
+(Font)              scaled to size 8.1899pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.84996pt on input line 270.
+(Font)              scaled to size 5.84996pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <13> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 270.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 11.69992pt on input line 270.
+(Font)              scaled to size 11.69992pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9.09996> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 270.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.1899pt on input line 270.
+(Font)              scaled to size 8.1899pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6.5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 270.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.84996pt on input line 270.
+(Font)              scaled to size 5.84996pt on input line 276.
 
-Overfull \vbox (6.28802pt too high) detected at line 270
+Overfull \vbox (6.28802pt too high) detected at line 276
  []
 
-[12
-
-]
-\openout4 = `presentation.vrb'.
-
- (./presentation.vrb
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.85492pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 7.19995pt on input line 3.
-) [13
+[13
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1516,18 +1518,23 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 ]
 \openout4 = `presentation.vrb'.
 
- (./presentation.vrb)
-[15
+ (./presentation.vrb) [15
 
 ]
 \openout4 = `presentation.vrb'.
 
- (./presentation.vrb) [16
+ (./presentation.vrb)
+[16
 
 ]
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb) [17
+
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb) [18
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1538,18 +1545,16 @@ LaTeX Font Info:    Trying to load font information for U+bbm on input line 23.
 
 (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)) [18
-
-] [19
+)) [19
 
 ] [20
 
 ] [21
 
-]
-[22
+] [22
 
-] [23
+]
+[23
 
 ] [24
 
@@ -1559,25 +1564,25 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 496.
+(Font)              scaled to size 22.39185pt on input line 490.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 496.
+(Font)              scaled to size 22.39185pt on input line 490.
  [27
 
 ] [28
 
  </usr/share/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
-<images/exemple-greenslime.png, id=1024, 951.555pt x 160.6pt>
+<images/exemple-greenslime.png, id=1046, 951.555pt x 160.6pt>
 File: images/exemple-greenslime.png Graphic file (type png)
 <use images/exemple-greenslime.png>
-Package pdftex.def Info: images/exemple-greenslime.png  used on input line 522.
+Package pdftex.def Info: images/exemple-greenslime.png  used on input line 516.
 
 (pdftex.def)             Requested size: 285.4687pt x 48.18036pt.
-<images/exemple-greenslime-fix.png, id=1025, 951.555pt x 160.6pt>
+<images/exemple-greenslime-fix.png, id=1047, 951.555pt x 160.6pt>
 File: images/exemple-greenslime-fix.png Graphic file (type png)
 <use images/exemple-greenslime-fix.png>
 Package pdftex.def Info: images/exemple-greenslime-fix.png  used on input line 
-522.
+516.
 (pdftex.def)             Requested size: 285.4687pt x 48.18036pt.
  [29
 
@@ -1585,11 +1590,11 @@ Package pdftex.def Info: images/exemple-greenslime-fix.png  used on input line
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 584.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 578.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 584.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 578.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 15.55188pt on input line 584.
+(Font)              scaled to size 15.55188pt on input line 578.
  [31
 
 ] [32
@@ -1598,7 +1603,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-Overfull \vbox (9.91022pt too high) detected at line 652
+Overfull \vbox (9.91022pt too high) detected at line 646
  []
 
 [33
@@ -1606,15 +1611,15 @@ Overfull \vbox (9.91022pt too high) detected at line 652
 ] [34
 
 ]
-<images/Ty-cat.png, id=1207, 883.3pt x 141.52875pt>
+<images/Ty-cat.png, id=1229, 883.3pt x 141.52875pt>
 File: images/Ty-cat.png Graphic file (type png)
 <use images/Ty-cat.png>
-Package pdftex.def Info: images/Ty-cat.png  used on input line 684.
+Package pdftex.def Info: images/Ty-cat.png  used on input line 678.
 (pdftex.def)             Requested size: 132.48927pt x 21.2284pt.
-<images/Ty-ccat.png, id=1208, 884.30376pt x 290.08376pt>
+<images/Ty-ccat.png, id=1230, 884.30376pt x 290.08376pt>
 File: images/Ty-ccat.png Graphic file (type png)
 <use images/Ty-ccat.png>
-Package pdftex.def Info: images/Ty-ccat.png  used on input line 684.
+Package pdftex.def Info: images/Ty-ccat.png  used on input line 678.
 (pdftex.def)             Requested size: 132.63983pt x 43.51068pt.
  [35
 
@@ -1651,16 +1656,16 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: DD99E4C3C56B192E5BE611430B164C88;927.
+(rerunfilecheck)             Checksum: 39F82C3AC0994F4E14C906122A736E16;1094.
  ) 
 Here is how much of TeX's memory you used:
- 49987 strings out of 469486
- 1187331 string characters out of 5469659
- 1850341 words of memory out of 5000000
- 77762 multiletter control sequences out of 15000+600000
- 782187 words of font info for 242 fonts, out of 8000000 for 9000
+ 50020 strings out of 469486
+ 1187970 string characters out of 5469659
+ 1849342 words of memory out of 5000000
+ 77786 multiletter control sequences out of 15000+600000
+ 788655 words of font info for 249 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 128i,16n,123p,387b,1251s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,387b,1252s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk> </h
 ome/eliott/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/shar
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/f
@@ -1674,10 +1679,10 @@ lvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
 usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dis
 t/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb>
-Output written on presentation.pdf (40 pages, 448056 bytes).
+Output written on presentation.pdf (40 pages, 450110 bytes).
 PDF statistics:
- 1478 PDF objects out of 1728 (max. 8388607)
- 1268 compressed objects within 13 object streams
- 96 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1501 PDF objects out of 1728 (max. 8388607)
+ 1279 compressed objects within 13 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 
